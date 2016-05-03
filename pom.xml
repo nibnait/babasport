@@ -1,0 +1,278 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.nibnait</groupId>
+  <artifactId>babasport</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>babasport Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <java-version>1.7</java-version>
+    <junit-version>4.8.2</junit-version>
+    <org.springframework-version>3.2.4.RELEASE</org.springframework-version>
+    <jackson-mapper-asl-version>1.9.12</jackson-mapper-asl-version>
+    <jackson-core-asl-version>1.9.12</jackson-core-asl-version>
+    <mysql-connector-java-version>5.1.8</mysql-connector-java-version>
+    <org.mybatis-version>3.2.7</org.mybatis-version>
+    <org.mybatis-spring-version>1.2.2</org.mybatis-spring-version>
+    <opensymphony-version>2.4.2</opensymphony-version>
+    <freemarker-version>2.3.9</freemarker-version>
+    <c3p0-version>0.9.1.2</c3p0-version>
+    <commons-collections-version>1.0</commons-collections-version>
+    <commons-fileupload-version>1.2.2</commons-fileupload-version>
+    <org.apache.commons-version>3.1</org.apache.commons-version>
+    <commons-codec-version>1.6</commons-codec-version>
+    <dom4j-version>1.6.1</dom4j-version>
+    <javax.servlet-version>1.2</javax.servlet-version>
+    <aspectjweaver-version>1.6.6</aspectjweaver-version>
+    <slf4j-log4j12-version>1.6.6</slf4j-log4j12-version>
+    <log4j-version>1.2.16</log4j-version>
+    <javax.servlet-jsp-version>2.0</javax.servlet-jsp-version>
+    <cglib-version>2.2.2</cglib-version>
+    <slf4j-api-version>1.6.6</slf4j-api-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- with junit4.8.2 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit-version}</version>
+      <type>jar</type>
+    </dependency>
+    <!-- with spring -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-instrument</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-instrument-tomcat</artifactId>
+      <version>${org.springframework-version}</version>
+    </dependency>
+    <!--springmvc 转 Json-->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>${jackson-mapper-asl-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>${jackson-core-asl-version}</version>
+    </dependency>
+    <!--freemarker-->
+    <dependency>
+      <groupId>freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>${freemarker-version}</version>
+    </dependency>
+    <!-- with mybatis-spring -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${org.mybatis-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>${org.mybatis-spring-version}</version>
+    </dependency>
+    <!-- jdbc driver -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-connector-java-version}</version>
+    </dependency>
+    <!-- connect pool with c3p0 -->
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>${c3p0-version}</version>
+    </dependency>
+    <!-- apache commons jar -->
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>${commons-collections-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>${commons-fileupload-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${org.apache.commons-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>${commons-codec-version}</version>
+    </dependency>
+    <!-- analyze xml use dom4j -->
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>${dom4j-version}</version>
+    </dependency>
+    <!-- about servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${javax.servlet-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.6.6</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.6.6</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <!-- memcached -->
+    <dependency>
+      <groupId>com.google.code.maven-play-plugin.spy</groupId>
+      <artifactId>memcached</artifactId>
+      <version>2.4.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.danga</groupId>
+      <artifactId>memcached</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>memcached-util</groupId>
+      <artifactId>memcached</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>${cglib-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.fckeditor</groupId>
+      <artifactId>java-core</artifactId>
+      <version>2.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20131018</version>
+    </dependency>
+
+    <dependency>
+      <groupId>oscache</groupId>
+      <artifactId>oscache</artifactId>
+      <version>2.4.1</version>
+    </dependency>
+    <!--jerson -->
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>1.18.1</version>
+    </dependency>
+    <!--jcaptcha -->
+    <dependency>
+      <groupId>com.octo.captcha</groupId>
+      <artifactId>jcaptcha-my</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <!--page -->
+    <dependency>
+      <groupId>cn.itcast</groupId>
+      <artifactId>page</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>babasport</finalName>
+  </build>
+</project>
