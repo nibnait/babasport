@@ -43,7 +43,7 @@
 				<td><input type="checkbox" value="${entry.id }" name="ids"/></td>
 				<td align="center">${entry.id }</td>
 				<td align="center">${entry.name }</td>
-				<td align="center"><img width="40" height="40" src="/res/img/pic/ppp0.jpg"/></td>
+				<td align="center"><img width="40" height="40" src="${entry.allUrl}"/></td>
 				<td align="center">${entry.description }</td>
 				<td align="center">${entry.sort }</td>
 				<td align="center"><c:if test="${entry.isDisplay == 1 }">是</c:if><c:if test="${entry.isDisplay == 0 }">不是</c:if></td>

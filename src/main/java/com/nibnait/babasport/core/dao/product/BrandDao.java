@@ -15,4 +15,7 @@ public interface BrandDao {
 
     //获取总几率数
     public int getBrandCount(Brand brand);
+
+    //添加品牌
+    public void addBrand(Brand brand);
 }

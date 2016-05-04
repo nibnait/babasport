@@ -2,42 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2003baa9-1bb7-4a02-b2ad-0b64d6e9085c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nibnait_common_pagination_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/CenterController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/FrameController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_itcast_page_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/babasport/WEB-INF/classes/com/nibnait/babasport/core/controller/CenterController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/nibnait/babasport/core/controller/CenterController.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/CenterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/ProductController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/FormatDateUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/ResponseUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/UploadController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/WEB-INF/classes/com/nibnait/babasport/core/web/CustomDateEdtor.class" afterPath="$PROJECT_DIR$/target/babasport/WEB-INF/classes/com/nibnait/babasport/core/web/CustomDateEdtor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/nibnait/babasport/core/web/CustomDateEdtor.class" afterPath="$PROJECT_DIR$/target/classes/com/nibnait/babasport/core/web/CustomDateEdtor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/技术点笔记附件/新巴巴运动网总结笔记.docx" afterPath="$PROJECT_DIR$/技术点笔记附件/新巴巴运动网总结笔记.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/babasport_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/babasport_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/babasport.iml" afterPath="$PROJECT_DIR$/babasport.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandService.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/CustomDateEdtor.java" afterPath="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/CustomDateEdtor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/springmvc-back.xml" afterPath="$PROJECT_DIR$/src/main/resources/springmvc-back.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_left.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/babasport/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/WEB-INF/back_page/brand/list.jsp" afterPath="$PROJECT_DIR$/target/babasport/WEB-INF/back_page/brand/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/WEB-INF/back_page/frame/product_left.jsp" afterPath="$PROJECT_DIR$/target/babasport/WEB-INF/back_page/frame/product_left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/WEB-INF/back_page/frame/product_main.jsp" afterPath="$PROJECT_DIR$/target/babasport/WEB-INF/back_page/frame/product_main.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/WEB-INF/classes/springmvc-back.xml" afterPath="$PROJECT_DIR$/target/babasport/WEB-INF/classes/springmvc-back.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/common/css/jquery.treeview.css" afterPath="$PROJECT_DIR$/target/babasport/res/common/css/jquery.treeview.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/common/css/jquery.ui.css" afterPath="$PROJECT_DIR$/target/babasport/res/common/css/jquery.ui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/common/js/jquery.js" afterPath="$PROJECT_DIR$/target/babasport/res/common/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample01.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample01.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample02.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample02.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample03.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample03.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample04.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sample04.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sampleposteddata.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/_samples/perl/sampleposteddata.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/basexml.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/basexml.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/commands.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/commands.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/config.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/config.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/connector.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/connector.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/io.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/io.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/upload.cgi" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/upload.cgi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/upload_fck.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/upload_fck.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/util.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/editor/filemanager/connectors/perl/util.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/fckeditor/fckeditor.pl" afterPath="$PROJECT_DIR$/target/babasport/res/fckeditor/fckeditor.pl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/js/html5.js" afterPath="$PROJECT_DIR$/target/babasport/res/js/html5.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/js/jquery.js" afterPath="$PROJECT_DIR$/target/babasport/res/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/babasport/res/js/unitpngfix.js" afterPath="$PROJECT_DIR$/target/babasport/res/js/unitpngfix.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/springmvc-back.xml" afterPath="$PROJECT_DIR$/target/classes/springmvc-back.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/技术点笔记附件/数据库表.sql" afterPath="$PROJECT_DIR$/技术点笔记附件/数据库表.sql" />
     </list>
     <ignored path="babasport.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="springmvc-back.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-back.xml">
+      <file leaf-file-name="BrandController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.488746">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.7661539">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,8 +95,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -119,22 +125,27 @@
         <option value="$PROJECT_DIR$/src/main/resources/springmvc-front.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/annotation.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/CustomDateEdtor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/CenterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/FrameController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_left.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/CenterController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/UploadController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/springmvc-back.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/ResponseUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/FileUploadUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/FormatDateUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/CustomDateEdtor.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/list.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/UploadController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java" />
       </list>
     </option>
   </component>
@@ -162,6 +173,34 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="babasport Maven Webapp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="babasport Maven Webapp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="54" />
@@ -219,15 +258,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="babasport" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -573,6 +613,10 @@
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -887,13 +931,54 @@
               <option name="myItemId" value="babasport" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="babasport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="babasport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="babasport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -908,17 +993,18 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.nibnait.babasport.core.service.product" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\CodeRepo\java-idea\babasport\mylib" />
-      <recent name="C:\CodeRepo\java-idea\babasport\lib" />
-      <recent name="C:\CodeRepo\java-idea\babasport\src\main\resources\com\nibnait\babasport\core\dao\product" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\CodeRepo\java-idea\babasport\src\main\java\com\nibnait\babasport\common\web" />
       <recent name="C:\CodeRepo\java-idea\babasport\src\main\webapp\WEB-INF" />
-      <recent name="C:\CodeRepo\java-idea\babasport\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nibnait.babasport.core.controller.admin" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CodeRepo\java-idea\babasport\src\main\java\com\nibnait\babasport\common\web" />
+      <recent name="C:\CodeRepo\java-idea\babasport\mylib" />
+      <recent name="C:\CodeRepo\java-idea\babasport\lib" />
+      <recent name="C:\CodeRepo\java-idea\babasport\src\main\resources\com\nibnait\babasport\core\dao\product" />
       <recent name="C:\CodeRepo\java-idea\babasport\src\main\webapp\WEB-INF" />
     </key>
   </component>
@@ -1280,6 +1366,28 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1509,6 +1617,7 @@
       <workItem from="1462346791197" duration="2004000" />
       <workItem from="1462348930317" duration="6079000" />
       <workItem from="1462355438754" duration="2762000" />
+      <workItem from="1462360310095" duration="12496000" />
     </task>
     <servers />
   </component>
@@ -1536,42 +1645,42 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35758000" />
+    <option name="totallyTimeSpent" value="48263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58064514" sideWeight="0.5031746" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6697389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6689189" sideWeight="0.4968254" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.14132105" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.56682026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6697389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6697389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2468254" sideWeight="0.49199083" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23333333" sideWeight="0.49199083" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28333333" sideWeight="0.50800914" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28333333" sideWeight="0.50800914" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58064514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1586,7 +1695,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="7" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1594,41 +1705,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/TestTbDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56265986">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/TestTbService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43734014">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/TestDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06109325">
-          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/TestTbServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4969231">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/TestTb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33715597">
@@ -1655,9 +1731,9 @@
         <state vertical-scroll-proportion="0.3971061">
           <caret line="13" column="63" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="63" />
           <folding>
-            <marker date="1462301284430" expanded="true" signature="97:1469" placeholder="..." />
-            <marker date="1462301284430" expanded="true" signature="1102:1230" placeholder="..." />
-            <marker date="1462301284430" expanded="true" signature="1351:1458" placeholder="..." />
+            <marker date="1462360246235" expanded="true" signature="97:1469" placeholder="..." />
+            <marker date="1462360246235" expanded="true" signature="1102:1230" placeholder="..." />
+            <marker date="1462360246235" expanded="true" signature="1351:1458" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1667,8 +1743,8 @@
         <state vertical-scroll-proportion="0.41582492">
           <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
           <folding>
-            <marker date="1462301304539" expanded="true" signature="97:1234" placeholder="..." />
-            <marker date="1462301304539" expanded="true" signature="1058:1186" placeholder="..." />
+            <marker date="1462360246229" expanded="true" signature="97:1234" placeholder="..." />
+            <marker date="1462360246229" expanded="true" signature="1058:1186" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1722,20 +1798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4649266">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/CustomDateEdtor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35076922">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/nibnait/common-pagination/1.0/common-pagination-1.0.jar!/com/nibnait/common/page/Pagination.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28731942">
@@ -1743,35 +1805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8095238">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <marker date="1462337984563" expanded="true" signature="56:126" placeholder="..." />
-            <marker date="1462337984563" expanded="true" signature="128:176" placeholder="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/properties/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05846154">
           <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/properties/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/application-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1787,115 +1824,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/config/jdbc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/config/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/config/property.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/config/transation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/config/annotation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33601287">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <marker date="1462348734705" expanded="true" signature="104:9065" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="463:1834" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="1852:8994" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="1898:2049" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="2091:2253" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="2270:2431" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="2448:2610" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="2627:2792" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="2809:2982" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="2999:3160" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="3178:3342" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="3359:3521" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="3538:3698" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="3715:3883" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="3900:4075" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="4120:4289" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="4306:4471" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="4510:4653" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="4703:4845" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="4862:5018" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="5060:5218" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="5271:5396" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="5445:5615" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="5633:5800" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="5818:5980" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="5998:6150" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="6202:6330" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="6374:6517" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="6535:6657" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="6674:6841" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="6858:6987" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7004:7122" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7140:7265" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7282:7415" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7456:7609" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7627:7752" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7770:7898" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="7916:8044" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="8062:8189" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="8207:8329" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="8347:8468" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="8504:8639" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="8677:8809" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="8843:8976" placeholder="..." />
-            <marker date="1462348734705" expanded="true" signature="9005:9054" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2749196">
           <caret line="9" column="38" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <marker date="1420773886000" expanded="true" signature="283:648" placeholder="..." />
-            <marker date="1420773886000" expanded="true" signature="290:394" placeholder="..." />
-            <marker date="1420773886000" expanded="true" signature="461:605" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47384617">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <marker date="1462321543717" expanded="true" signature="55:546" placeholder="..." />
-            <marker date="1462321543717" expanded="true" signature="548:596" placeholder="/**...*/" />
-            <marker date="1462321543717" expanded="true" signature="772:830" placeholder="{...}" />
+            <marker date="1462360246290" expanded="true" signature="283:648" placeholder="..." />
+            <marker date="1462360246290" expanded="true" signature="290:394" placeholder="..." />
+            <marker date="1462360246290" expanded="true" signature="461:605" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1912,11 +1848,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1420764751000" expanded="true" signature="233:2303" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="240:1370" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="1391:2295" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="1410:2287" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="1485:2280" placeholder="..." />
+            <marker date="1462360246271" expanded="true" signature="233:2303" placeholder="..." />
+            <marker date="1462360246271" expanded="true" signature="240:1370" placeholder="..." />
+            <marker date="1462360246271" expanded="true" signature="1391:2295" placeholder="..." />
+            <marker date="1462360246271" expanded="true" signature="1410:2287" placeholder="..." />
+            <marker date="1462360246271" expanded="true" signature="1485:2280" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1926,31 +1862,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1420764751000" expanded="true" signature="283:1454" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="290:397" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="418:1446" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="437:1438" placeholder="..." />
-            <marker date="1420764751000" expanded="true" signature="512:1431" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/FrameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47384617">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <marker date="1462322048691" expanded="true" signature="61:166" placeholder="..." />
-            <marker date="1462322048691" expanded="true" signature="168:220" placeholder="/**...*/" />
-            <marker date="1462322048691" expanded="true" signature="221:268" placeholder="@{...}" />
-            <marker date="1462322048691" expanded="false" signature="397:407" placeholder=" { " />
-            <marker date="1462322048691" expanded="false" signature="436:442" placeholder=" }" />
-            <marker date="1462322048691" expanded="false" signature="541:551" placeholder=" { " />
-            <marker date="1462322048691" expanded="false" signature="580:586" placeholder=" }" />
-            <marker date="1462322048691" expanded="false" signature="680:690" placeholder=" { " />
-            <marker date="1462322048691" expanded="false" signature="717:723" placeholder=" }" />
-            <marker date="1462322048691" expanded="false" signature="817:827" placeholder=" { " />
-            <marker date="1462322048691" expanded="false" signature="854:860" placeholder=" }" />
+            <marker date="1462360246300" expanded="true" signature="283:1454" placeholder="..." />
+            <marker date="1462360246300" expanded="true" signature="290:397" placeholder="..." />
+            <marker date="1462360246300" expanded="true" signature="418:1446" placeholder="..." />
+            <marker date="1462360246300" expanded="true" signature="437:1438" placeholder="..." />
+            <marker date="1462360246300" expanded="true" signature="512:1431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1960,110 +1876,9 @@
         <state vertical-scroll-proportion="0.3381877">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding>
-            <marker date="1462351386558" expanded="true" signature="164:553" placeholder="..." />
-            <marker date="1462351386558" expanded="true" signature="171:275" placeholder="..." />
-            <marker date="1462351386558" expanded="true" signature="343:510" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6278317">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding>
-            <marker date="1462352041286" expanded="true" signature="215:1599" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="277:609" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="705:1152" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="715:1115" placeholder="SELECT id , ..bbs_brand..." />
-            <marker date="1462352041286" expanded="true" signature="715:1139" placeholder="SELECT id , ..bbs_brand..." />
-            <marker date="1462352041286" expanded="true" signature="715:1140" placeholder="SELECT id,na..." />
-            <marker date="1462352041286" expanded="true" signature="806:1071" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="846:906" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="1001:1054" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="1246:1588" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="1284:1295" placeholder="SELECT COUNT..bbs_brand..." />
-            <marker date="1462352041286" expanded="true" signature="1309:1574" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="1349:1409" placeholder="..." />
-            <marker date="1462352041286" expanded="true" signature="1504:1557" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36842105">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding>
-            <marker date="1462352165630" expanded="true" signature="50:98" placeholder="/**...*/" />
-            <marker date="1462352165630" expanded="true" signature="418:451" placeholder="{...}" />
-            <marker date="1462352165630" expanded="true" signature="497:508" placeholder=" { " />
-            <marker date="1462352165630" expanded="true" signature="533:539" placeholder=" }" />
-            <marker date="1462352165630" expanded="true" signature="573:650" placeholder="{...}" />
-            <marker date="1462352165630" expanded="true" signature="698:784" placeholder="{...}" />
-            <marker date="1462352165630" expanded="false" signature="816:827" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="841:847" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="890:901" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="922:928" placeholder=" }" />
-            <marker date="1462352165630" expanded="true" signature="973:1283" placeholder="{...}" />
-            <marker date="1462352165630" expanded="false" signature="1311:1322" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1332:1338" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1373:1384" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1397:1403" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1432:1443" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1455:1461" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1499:1510" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1527:1533" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1569:1580" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1599:1605" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1657:1668" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1699:1705" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1736:1747" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1761:1767" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1809:1820" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1841:1847" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1877:1888" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1900:1906" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="1945:1956" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="1973:1979" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="2014:2025" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="2042:2048" placeholder=" }" />
-            <marker date="1462352165630" expanded="false" signature="2097:2108" placeholder=" { " />
-            <marker date="1462352165630" expanded="false" signature="2135:2141" placeholder=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20588236">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <marker date="1462341893532" expanded="false" signature="60:149" placeholder="..." />
-            <marker date="1462341893532" expanded="true" signature="151:193" placeholder="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/CenterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41438356">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <marker date="1462352502027" expanded="false" signature="61:252" placeholder="..." />
-            <marker date="1462352502027" expanded="true" signature="254:302" placeholder="/**...*/" />
-            <marker date="1462352502027" expanded="true" signature="303:350" placeholder="@{...}" />
-            <marker date="1462352502027" expanded="true" signature="513:571" placeholder="{...}" />
-            <marker date="1462352502027" expanded="false" signature="653:663" placeholder=" { " />
-            <marker date="1462352502027" expanded="false" signature="678:684" placeholder=" }" />
-            <marker date="1462352502027" expanded="false" signature="760:770" placeholder=" { " />
-            <marker date="1462352502027" expanded="false" signature="783:789" placeholder=" }" />
-            <marker date="1462352502027" expanded="false" signature="868:878" placeholder=" { " />
-            <marker date="1462352502027" expanded="false" signature="892:898" placeholder=" }" />
-            <marker date="1462352502027" expanded="false" signature="976:986" placeholder=" { " />
-            <marker date="1462352502027" expanded="false" signature="1000:1006" placeholder=" }" />
-            <marker date="1462352502027" expanded="false" signature="1086:1096" placeholder=" { " />
-            <marker date="1462352502027" expanded="false" signature="1111:1117" placeholder=" }" />
+            <marker date="1462360246280" expanded="true" signature="164:553" placeholder="..." />
+            <marker date="1462360246280" expanded="true" signature="171:275" placeholder="..." />
+            <marker date="1462360246280" expanded="true" signature="343:510" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2073,38 +1888,38 @@
         <state vertical-scroll-proportion="-2.5659163">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1420764469000" expanded="true" signature="283:6830" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="290:769" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="421:761" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="447:496" placeholder="{...}" />
-            <marker date="1420764469000" expanded="true" signature="518:690" placeholder="{...}" />
-            <marker date="1420764469000" expanded="true" signature="551:586" placeholder="{...}" />
-            <marker date="1420764469000" expanded="true" signature="611:625" placeholder="{...}" />
-            <marker date="1420764469000" expanded="true" signature="714:752" placeholder="{...}" />
-            <marker date="1420764469000" expanded="true" signature="776:6822" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="802:1007" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="864:973" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1030:6814" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1102:1592" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1271:1390" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1440:1535" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1628:6807" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1805:5721" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1832:2130" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="1839:2120" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="2157:5712" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="2255:2866" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="2640:2858" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="2964:3575" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="3349:3567" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="3673:4284" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="4058:4276" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="4382:4993" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="4767:4985" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="5091:5702" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="5476:5694" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="5745:6544" placeholder="..." />
-            <marker date="1420764469000" expanded="true" signature="5774:6538" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="283:6830" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="290:769" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="421:761" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="447:496" placeholder="{...}" />
+            <marker date="1462360246364" expanded="true" signature="518:690" placeholder="{...}" />
+            <marker date="1462360246364" expanded="true" signature="551:586" placeholder="{...}" />
+            <marker date="1462360246364" expanded="true" signature="611:625" placeholder="{...}" />
+            <marker date="1462360246364" expanded="true" signature="714:752" placeholder="{...}" />
+            <marker date="1462360246364" expanded="true" signature="776:6822" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="802:1007" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="864:973" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1030:6814" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1102:1592" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1271:1390" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1440:1535" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1628:6807" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1805:5721" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1832:2130" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="1839:2120" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="2157:5712" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="2255:2866" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="2640:2858" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="2964:3575" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="3349:3567" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="3673:4284" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="4058:4276" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="4382:4993" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="4767:4985" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="5091:5702" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="5476:5694" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="5745:6544" placeholder="..." />
+            <marker date="1462360246364" expanded="true" signature="5774:6538" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2121,37 +1936,294 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5846154">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7636656">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="39" />
           <folding>
-            <marker date="1462325937434" expanded="true" signature="99:130" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="132:698" placeholder="CREATE TABLE..bbs_addr..." />
-            <marker date="1462325937434" expanded="true" signature="801:833" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="835:1325" placeholder="CREATE TABLE..bbs_brand..." />
-            <marker date="1462325937434" expanded="true" signature="1429:1461" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="1463:2125" placeholder="CREATE TABLE..bbs_buyer..." />
-            <marker date="1462325937434" expanded="true" signature="2227:2258" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="2260:2567" placeholder="CREATE TABLE..bbs_city..." />
-            <marker date="1462325937434" expanded="true" signature="2670:2702" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="2704:3033" placeholder="CREATE TABLE..bbs_color..." />
-            <marker date="1462325937434" expanded="true" signature="3137:3170" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="3172:3805" placeholder="CREATE TABLE..bbs_detail..." />
-            <marker date="1462325937434" expanded="true" signature="3912:3947" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="3949:4569" placeholder="CREATE TABLE..bbs_employee..." />
-            <marker date="1462325937434" expanded="true" signature="4674:4708" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="4710:5076" placeholder="CREATE TABLE..bbs_feature..." />
-            <marker date="1462325937434" expanded="true" signature="5177:5207" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="5209:5661" placeholder="CREATE TABLE..bbs_img..." />
-            <marker date="1462325937434" expanded="true" signature="5764:5796" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="5798:6865" placeholder="CREATE TABLE..bbs_order..." />
-            <marker date="1462325937434" expanded="true" signature="6969:7003" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="7005:8535" placeholder="CREATE TABLE..bbs_product..." />
-            <marker date="1462325937434" expanded="true" signature="8641:8676" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="8678:8940" placeholder="CREATE TABLE..bbs_province..." />
-            <marker date="1462325937434" expanded="true" signature="9041:9071" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="9073:10458" placeholder="CREATE TABLE..bbs_sku..." />
-            <marker date="1462325937434" expanded="true" signature="10560:10591" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="10593:10897" placeholder="CREATE TABLE..bbs_town..." />
-            <marker date="1462325937434" expanded="true" signature="11000:11031" placeholder="DROP TABLE I..." />
-            <marker date="1462325937434" expanded="true" signature="11033:11462" placeholder="CREATE TABLE..bbs_type..." />
+            <marker date="1462360246278" expanded="true" signature="233:1720" placeholder="..." />
+            <marker date="1462360246278" expanded="true" signature="240:1370" placeholder="..." />
+            <marker date="1462360246278" expanded="true" signature="1391:1712" placeholder="..." />
+            <marker date="1462360246278" expanded="true" signature="1410:1704" placeholder="..." />
+            <marker date="1462360246278" expanded="true" signature="1485:1697" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-back.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9163987">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <marker date="1462360360380" expanded="true" signature="97:1690" placeholder="..." />
+            <marker date="1462360360380" expanded="true" signature="1114:1242" placeholder="..." />
+            <marker date="1462360360380" expanded="true" signature="1362:1468" placeholder="..." />
+            <marker date="1462360360380" expanded="true" signature="1588:1680" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/BaiduYunDownload/itheima/day75-84_babasport/day76_babSport 第二天/babasport12/src/main/java/cn/itcast/common/web/ResponseUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1420791725000" expanded="false" signature="38:106" placeholder="..." />
+            <marker date="1420791725000" expanded="true" signature="108:167" placeholder="/**...*/" />
+            <marker date="1420791725000" expanded="true" signature="295:478" placeholder="{...}" />
+            <marker date="1420791725000" expanded="true" signature="563:627" placeholder="{...}" />
+            <marker date="1420791725000" expanded="true" signature="708:764" placeholder="{...}" />
+            <marker date="1420791725000" expanded="true" signature="847:905" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/ResponseUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6276923">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/common/web/FormatDateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26307693">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding>
+            <marker date="1462362534065" expanded="true" signature="50:100" placeholder="..." />
+            <marker date="1462362534065" expanded="true" signature="102:144" placeholder="/**...*/" />
+            <marker date="1462362534065" expanded="true" signature="223:234" placeholder=" { " />
+            <marker date="1462362534065" expanded="true" signature="285:291" placeholder=" }" />
+            <marker date="1462362534065" expanded="true" signature="297:340" placeholder="/**...*/" />
+            <marker date="1462362534065" expanded="true" signature="390:500" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.4.RELEASE/spring-beans-3.2.4.RELEASE.jar!/org/springframework/beans/propertyeditors/CustomDateEditor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33601287">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/CustomDateEdtor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23384616">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <marker date="1462363144278" expanded="false" signature="48:372" placeholder="..." />
+            <marker date="1462363144278" expanded="true" signature="374:428" placeholder="/**...*/" />
+            <marker date="1462363144278" expanded="true" signature="562:735" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7489879">
+          <caret line="270" column="18" selection-start-line="270" selection-start-column="18" selection-end-line="270" selection-end-column="18" />
+          <folding>
+            <marker date="1462364103917" expanded="true" signature="104:9065" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="463:485" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="463:1834" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="1852:8994" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="1898:2049" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="2091:2253" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="2270:2431" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="2448:2610" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="2627:2792" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="2809:2982" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="2999:3160" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="3178:3342" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="3359:3521" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="3538:3698" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="3715:3883" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="3900:4075" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="4120:4289" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="4306:4471" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="4510:4653" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="4703:4845" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="4862:5018" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="5060:5218" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="5271:5396" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="5445:5615" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="5633:5800" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="5818:5980" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="5998:6150" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="6202:6330" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="6374:6517" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="6535:6657" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="6674:6841" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="6858:6987" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7004:7122" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7140:7265" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7282:7415" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7456:7609" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7627:7752" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7770:7898" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="7916:8044" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="8062:8189" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="8207:8329" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="8347:8468" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="8504:8639" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="8677:8809" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="8843:8976" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="9005:9054" placeholder="..." />
+            <marker date="1462364103917" expanded="true" signature="9044:9054" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/dao/product/BrandDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6545454">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <marker date="1462364709176" expanded="false" signature="56:126" placeholder="..." />
+            <marker date="1462364709176" expanded="true" signature="128:176" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5163636">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <marker date="1462364759809" expanded="true" signature="60:149" placeholder="..." />
+            <marker date="1462364759809" expanded="true" signature="151:193" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <marker date="1462365010497" expanded="true" signature="60:375" placeholder="..." />
+            <marker date="1462365010497" expanded="true" signature="377:429" placeholder="/**...*/" />
+            <marker date="1462365010497" expanded="true" signature="430:470" placeholder="@{...}" />
+            <marker date="1462365010497" expanded="true" signature="629:907" placeholder="{...}" />
+            <marker date="1462365010497" expanded="true" signature="639:689" placeholder="//..." />
+            <marker date="1462365010497" expanded="true" signature="983:994" placeholder=" { " />
+            <marker date="1462365010497" expanded="true" signature="1019:1025" placeholder=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/web/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44727272">
+          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
+          <folding>
+            <marker date="1462363115707" expanded="true" signature="41:91" placeholder="/**...*/" />
+            <marker date="1462363115707" expanded="true" signature="127:151" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/bean/product/Brand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.589091">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <marker date="1462365276741" expanded="true" signature="100:148" placeholder="/**...*/" />
+            <marker date="1462365276741" expanded="true" signature="476:486" placeholder=" { " />
+            <marker date="1462365276741" expanded="true" signature="520:526" placeholder=" }" />
+            <marker date="1462365276741" expanded="true" signature="561:594" placeholder="{...}" />
+            <marker date="1462365276741" expanded="false" signature="640:651" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="676:682" placeholder=" }" />
+            <marker date="1462365276741" expanded="true" signature="716:793" placeholder="{...}" />
+            <marker date="1462365276741" expanded="true" signature="841:927" placeholder="{...}" />
+            <marker date="1462365276741" expanded="false" signature="959:970" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="984:990" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1033:1044" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1065:1071" placeholder=" }" />
+            <marker date="1462365276741" expanded="true" signature="1116:1426" placeholder="{...}" />
+            <marker date="1462365276741" expanded="false" signature="1454:1465" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1475:1481" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1516:1527" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1540:1546" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1575:1586" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1598:1604" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1642:1653" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1670:1676" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1712:1723" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1742:1748" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1800:1811" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1842:1848" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1879:1890" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1904:1910" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="1952:1963" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="1984:1990" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="2020:2031" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="2043:2049" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="2088:2099" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="2116:2122" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="2157:2168" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="2185:2191" placeholder=" }" />
+            <marker date="1462365276741" expanded="false" signature="2240:2251" placeholder=" { " />
+            <marker date="1462365276741" expanded="false" signature="2278:2284" placeholder=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16559486">
+          <caret line="45" column="82" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="82" />
+          <folding>
+            <marker date="1462363347957" expanded="true" signature="283:2543" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="290:397" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="404:2535" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="430:636" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="492:602" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="659:2527" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="729:1062" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="812:1005" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="1144:2253" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="1171:1400" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="1178:1390" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="1427:2244" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="1481:2232" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="1583:2217" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="2056:2208" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="2277:2408" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="2308:2401" placeholder="..." />
+            <marker date="1462363347957" expanded="true" signature="2365:2392" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/nibnait/babasport/core/dao/product/BrandDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72347265">
+          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding>
+            <marker date="1462365507481" expanded="true" signature="215:2057" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="277:609" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="705:1152" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="715:1139" placeholder="SELECT id , ..bbs_brand..." />
+            <marker date="1462365507481" expanded="true" signature="806:1071" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="846:906" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1001:1054" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1246:1588" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1309:1574" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1349:1409" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1504:1557" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1656:2045" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1666:2032" placeholder="INSERT into bbs_brand..." />
+            <marker date="1462365507481" expanded="true" signature="1723:1845" placeholder="..." />
+            <marker date="1462365507481" expanded="true" signature="1897:2031" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2161,138 +2233,769 @@
         <state vertical-scroll-proportion="0.67202574">
           <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
           <folding>
-            <marker date="1462303508899" expanded="true" signature="101:2192" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="437:572" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="607:712" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="745:1029" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="902:1015" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1051:1157" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1179:1288" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1329:1617" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1470:1604" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1638:1737" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1777:2063" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="1917:2050" placeholder="..." />
-            <marker date="1462303508899" expanded="true" signature="2084:2179" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="101:2192" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="437:572" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="607:712" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="745:1029" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="902:1015" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1051:1157" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1179:1288" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1329:1617" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1470:1604" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1638:1737" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1777:2063" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="1917:2050" placeholder="..." />
+            <marker date="1462360246506" expanded="true" signature="2084:2179" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/service/product/BrandServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62">
-          <caret line="26" column="71" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.09163987">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding>
-            <marker date="1462352469307" expanded="true" signature="60:375" placeholder="..." />
-            <marker date="1462352469307" expanded="true" signature="377:429" placeholder="/**...*/" />
-            <marker date="1462352469307" expanded="true" signature="430:470" placeholder="@{...}" />
-            <marker date="1462352469307" expanded="true" signature="629:907" placeholder="{...}" />
-            <marker date="1462352469307" expanded="true" signature="639:689" placeholder="//..." />
+            <marker date="1462367320904" expanded="true" signature="74:282" placeholder="..." />
+            <marker date="1462367320904" expanded="true" signature="80:258" placeholder="..." />
+            <marker date="1462367320904" expanded="true" signature="116:250" placeholder="..." />
+            <marker date="1462367320904" expanded="true" signature="151:237" placeholder="{...}" />
+            <marker date="1462367320904" expanded="true" signature="265:275" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/frame/product_left.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-client/1.18.1/jersey-client-1.18.1.jar!/com/sun/jersey/api/client/Client.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7636656">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.18327974">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
           <folding>
-            <marker date="1462351358610" expanded="true" signature="233:1720" placeholder="..." />
-            <marker date="1462351358610" expanded="true" signature="240:1370" placeholder="..." />
-            <marker date="1462351358610" expanded="true" signature="1391:1712" placeholder="..." />
-            <marker date="1462351358610" expanded="true" signature="1410:1704" placeholder="..." />
-            <marker date="1462351358610" expanded="true" signature="1485:1697" placeholder="..." />
+            <marker date="1392752042000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1392752042000" expanded="false" signature="149:3011" placeholder="..." />
+            <marker date="1392752042000" expanded="false" signature="3494:3505" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="3601:3607" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="3646:3657" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="3730:3736" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="3796:3807" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="3861:3867" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="3984:4306" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="4072:4117" placeholder="f() → {" />
+            <marker date="1392752042000" expanded="false" signature="4283:4298" placeholder="}" />
+            <marker date="1392752042000" expanded="true" signature="4409:9608" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="4573:4639" placeholder="instance() → {" />
+            <marker date="1392752042000" expanded="false" signature="4875:4890" placeholder="}" />
+            <marker date="1392752042000" expanded="true" signature="7333:8095" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7450:7529" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7646:7725" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7818:7936" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="8024:8043" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="8071:8085" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="8230:9245" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="8276:8295" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="8327:8341" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="8439:9235" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="8975:9085" placeholder="getValue() → { " />
+            <marker date="1392752042000" expanded="false" signature="9094:9150" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="9636:9772" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="9821:9878" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="9915:9926" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="9948:9954" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10009:10020" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10040:10046" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10089:10100" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10136:10142" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10182:10193" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10242:10248" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10301:10312" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10353:10359" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10409:10420" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10474:10480" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10528:10539" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10579:10585" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10630:10641" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10674:10680" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10738:10749" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10794:10800" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="10855:10866" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10904:10910" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="10959:11043" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11091:11177" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11216:11297" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11335:11418" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11480:11574" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11635:11731" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11783:11874" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11925:12018" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="12078:12089" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="12135:12141" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="12194:12205" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="12262:12268" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="12323:12732" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="12789:12982" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="13031:13042" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="13093:13099" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="13148:13292" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13347:13448" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13499:13596" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13650:13750" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13810:13916" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14004:14421" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="14455:14466" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="14524:14530" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="14565:14576" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="14623:14629" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="14679:14690" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="14741:14747" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="14836:14913" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="14975:14986" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="15026:15032" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="15122:15864" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15275:15342" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="15391:15406" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="15438:15448" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="15522:15858" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15662:15847" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15707:15726" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="15779:15802" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="15815:15833" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="15972:16083" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="16030:16045" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="16067:16077" placeholder=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/list.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-client/1.18.1/jersey-client-1.18.1.jar!/com/sun/jersey/api/client/WebResource.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20879121">
-          <caret line="12" column="97" selection-start-line="12" selection-start-column="97" selection-end-line="12" selection-end-column="97" />
+        <state vertical-scroll-proportion="0.33279744">
+          <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
           <folding>
-            <marker date="1462357361858" expanded="true" signature="283:2549" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="290:397" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="404:2541" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="430:636" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="492:602" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="659:2533" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="729:1062" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="812:1005" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="1144:2259" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="1171:1400" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="1178:1390" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="1427:2250" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="1481:2238" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="1583:2223" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="2062:2214" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="2283:2414" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="2314:2407" placeholder="..." />
-            <marker date="1462357361858" expanded="true" signature="2371:2398" placeholder="..." />
+            <marker date="1392752042000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1392752042000" expanded="false" signature="149:1053" placeholder="..." />
+            <marker date="1392752042000" expanded="true" signature="1338:1429" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="1488:1638" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="1663:1674" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="1688:1694" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="1700:1718" placeholder="/**...*/" />
+            <marker date="1392752042000" expanded="false" signature="1769:1780" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="1814:1820" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="1859:1870" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="1904:1910" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="1962:1973" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="2006:2012" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="2042:2053" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="2078:2084" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="2111:2122" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="2147:2153" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="2193:2443" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="2508:2673" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="2769:2863" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="2966:3067" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="3159:3249" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="3348:3445" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="3526:3617" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="3718:3810" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="3902:3992" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="4091:4188" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="4302:4407" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="4528:4640" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="4722:4800" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="4902:4995" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="5088:5179" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="5279:5377" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="5492:5598" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="5720:5833" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="5917:5997" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="6101:6196" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="6291:6384" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="6486:6586" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="6703:6811" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="6935:7050" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7147:7225" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7344:7437" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7547:7638" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7755:7853" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="7985:8091" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="8230:8343" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="8398:8482" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="8553:8643" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="8711:8801" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="8854:8865" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="8929:8935" placeholder=" }" />
+            <marker date="1392752042000" expanded="false" signature="8985:8996" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="9060:9066" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="9126:9209" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="9266:9349" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="9416:9509" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="9576:9669" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="9724:9808" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="9875:9964" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="10006:10017" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="10079:10085" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="10123:10594" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="10656:10797" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="10873:11332" placeholder="{...}" />
+            <marker date="1392752042000" expanded="false" signature="11392:11403" placeholder=" { " />
+            <marker date="1392752042000" expanded="false" signature="11445:11451" placeholder=" }" />
+            <marker date="1392752042000" expanded="true" signature="11500:11644" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11695:11798" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="11912:12334" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="12455:12908" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13013:13347" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13453:19593" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13481:13492" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13545:13759" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="13822:14026" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14095:14187" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14287:14368" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14475:14557" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14653:14730" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14833:14911" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="14996:15067" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15172:15258" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15354:15431" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15534:15612" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15730:15822" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="15947:16040" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="16126:16198" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="16304:16391" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="16488:16566" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="16670:16749" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="16868:16961" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="17087:17181" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="17269:17343" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="17451:17540" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="17639:17719" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="17825:17906" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="18027:18122" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="18250:18346" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="18447:18519" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="18642:18729" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="18843:18921" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="19042:19121" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="19257:19350" placeholder="{...}" />
+            <marker date="1392752042000" expanded="true" signature="19493:19587" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar!/org/springframework/web/multipart/commons/CommonsMultipartFile.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6722689">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.6803279">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
-            <marker date="1462357462098" expanded="true" signature="61:517" placeholder="..." />
-            <marker date="1462357462098" expanded="true" signature="519:569" placeholder="/**...*/" />
-            <marker date="1462357462098" expanded="true" signature="814:1796" placeholder="{...}" />
-            <marker date="1462357462098" expanded="true" signature="1885:1923" placeholder="{...}" />
+            <marker date="1375775194000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1375775194000" expanded="false" signature="165:602" placeholder="..." />
+            <marker date="1375775194000" expanded="true" signature="884:970" placeholder="{...}" />
+            <marker date="1375775194000" expanded="false" signature="1011:1022" placeholder=" { " />
+            <marker date="1375775194000" expanded="false" signature="1043:1049" placeholder=" }" />
+            <marker date="1375775194000" expanded="false" signature="1078:1089" placeholder=" { " />
+            <marker date="1375775194000" expanded="false" signature="1125:1131" placeholder=" }" />
+            <marker date="1375775194000" expanded="true" signature="1173:1521" placeholder="{...}" />
+            <marker date="1375775194000" expanded="false" signature="1557:1568" placeholder=" { " />
+            <marker date="1375775194000" expanded="false" signature="1606:1612" placeholder=" }" />
+            <marker date="1375775194000" expanded="false" signature="1642:1653" placeholder=" { " />
+            <marker date="1375775194000" expanded="false" signature="1676:1682" placeholder=" }" />
+            <marker date="1375775194000" expanded="false" signature="1709:1720" placeholder=" { " />
+            <marker date="1375775194000" expanded="false" signature="1737:1743" placeholder=" }" />
+            <marker date="1375775194000" expanded="true" signature="1774:2033" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="2094:2428" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="2510:3809" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="3847:4037" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="4081:4275" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3319672">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <marker date="1395076510000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1395076510000" expanded="false" signature="135:419" placeholder="..." />
+            <marker date="1395076510000" expanded="false" signature="631:642" placeholder=" { " />
+            <marker date="1395076510000" expanded="false" signature="661:667" placeholder=" }" />
+            <marker date="1395076510000" expanded="true" signature="781:1321" placeholder="{...}" />
+            <marker date="1395076510000" expanded="false" signature="1376:1387" placeholder=" { " />
+            <marker date="1395076510000" expanded="false" signature="1406:1412" placeholder=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36885247">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1395076510000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1395076510000" expanded="false" signature="135:218" placeholder="..." />
+            <marker date="1395076510000" expanded="false" signature="383:394" placeholder=" { " />
+            <marker date="1395076510000" expanded="false" signature="417:423" placeholder=" }" />
+            <marker date="1395076510000" expanded="true" signature="537:593" placeholder="{...}" />
+            <marker date="1395076510000" expanded="false" signature="640:651" placeholder=" { " />
+            <marker date="1395076510000" expanded="false" signature="672:678" placeholder=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33088234">
+          <caret line="482" column="0" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
+          <folding>
+            <marker date="1395066726000" expanded="false" signature="0:215" placeholder="/.../" />
+            <marker date="1395066726000" expanded="false" signature="252:775" placeholder="..." />
+            <marker date="1395066726000" expanded="true" signature="777:1537" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="2675:2694" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="2765:2881" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="2979:3329" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="3335:3533" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="3889:4340" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="4346:4533" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="4552:5375" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="4562:4976" placeholder="//..." />
+            <marker date="1395066726000" expanded="false" signature="5426:5437" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="5476:5482" placeholder=" }" />
+            <marker date="1395066726000" expanded="false" signature="5529:5540" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="5559:5565" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="5571:5603" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="5657:5668" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="5681:5687" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="5693:5813" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="5855:5866" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="5878:5884" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="5890:5922" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="5966:5977" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="5994:6000" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="6006:6113" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="6118:6176" placeholder="@{...}" />
+            <marker date="1395066726000" expanded="false" signature="6132:6176" placeholder="/rawtypes, unchecked/" />
+            <marker date="1395066726000" expanded="true" signature="6231:6439" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="6445:6673" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="6709:6720" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="6738:6744" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="6750:7882" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="7922:8061" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="8067:8099" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="8155:8166" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="8196:8202" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="8208:8240" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="8276:8309" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="8316:8541" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="8600:8611" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="8651:8657" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="8663:8695" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="8751:8762" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="8792:8798" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="8804:9029" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="9088:9099" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="9139:9145" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="9151:9433" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="9472:9912" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="9918:10129" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="10155:10166" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="10237:10243" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="10249:11469" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="11499:11700" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="11766:11931" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="11937:13794" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="13844:13855" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="13925:13931" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="14004:14214" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="14220:17332" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="17513:17952" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="17958:18217" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="18247:18258" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="18305:18311" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="18317:18367" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="18412:18423" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="18448:18454" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="18460:18548" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="18595:18606" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="18633:18639" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="18645:19066" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="19098:19375" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="19108:19204" placeholder="//..." />
+            <marker date="1395066726000" expanded="true" signature="19690:20155" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="19700:19779" placeholder="//..." />
+            <marker date="1395066726000" expanded="false" signature="20293:20304" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="20326:20332" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="20474:20624" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="20630:21320" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="21357:21961" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="21967:22068" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="22145:22205" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="22211:22261" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="22310:22322" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="22360:22366" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="22372:22422" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="true" signature="22489:22580" placeholder="{...}" />
+            <marker date="1395066726000" expanded="true" signature="22586:22636" placeholder="/**...*/" />
+            <marker date="1395066726000" expanded="false" signature="22700:22711" placeholder=" { " />
+            <marker date="1395066726000" expanded="false" signature="22766:22772" placeholder=" }" />
+            <marker date="1395066726000" expanded="true" signature="22864:22970" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.4.RELEASE/spring-webmvc-3.2.4.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3319672">
+          <caret line="248" column="0" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
+          <folding>
+            <marker date="1375775202000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1375775202000" expanded="false" signature="170:5442" placeholder="..." />
+            <marker date="1375775202000" expanded="true" signature="5444:5462" placeholder="/**...*/" />
+            <marker date="1375775202000" expanded="true" signature="7020:7412" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="7478:7553" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="7602:7613" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="7656:7662" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="7726:7850" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="7908:8024" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="8103:8164" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="8252:8319" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="8407:8563" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="8669:8772" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="8844:8909" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9003:9074" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9156:9247" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9333:9398" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9495:9601" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9702:9781" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9865:9924" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="9985:9996" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="10026:10032" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="10069:10080" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="10099:10105" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="10132:10143" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="10161:10167" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="10225:10475" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="10520:10531" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="10590:10596" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="10720:11859" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="11999:12890" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="12967:12978" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="12989:12995" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="13103:13913" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14046:14118" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14226:14294" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14406:14476" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14613:18622" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14830:14957" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15116:16595" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="16752:17506" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17598:17882" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17993:18616" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="18726:19602" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="18913:18979" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="19073:19163" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="19225:19240" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="19281:19291" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="19368:19447" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="19492:19596" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="19640:23015" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="19916:20198" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="20236:20251" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="20283:20293" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="20332:20347" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="20368:20378" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="20415:20430" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="20457:20467" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="20503:20518" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="20544:20554" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="20591:20606" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="20633:20643" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="20704:20837" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="20905:21002" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="21073:21172" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="21246:21349" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="21392:21760" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="21804:22142" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="22174:22346" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="22381:23009" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23092:37337" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23217:23599" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23707:23819" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23907:23979" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="24106:24281" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="24381:24578" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="24684:24913" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="25021:25232" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="25293:25847" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="25975:26400" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="26530:27109" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="27230:29657" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="29843:33275" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="33384:33719" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="33844:34818" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="35008:37331" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="37416:51055" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="37574:37664" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="37723:39192" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="39289:46350" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="46424:46787" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="46858:47057" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="47175:48953" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="49058:50170" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="50295:51049" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.4.RELEASE/spring-web-3.2.4.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77868855">
+          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+          <folding>
+            <marker date="1375775194000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1375775194000" expanded="false" signature="171:3304" placeholder="..." />
+            <marker date="1375775194000" expanded="true" signature="4030:4096" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="4210:4393" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="4690:5093" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="5255:8266" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="8436:10694" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="10857:17790" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="17923:19609" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="19768:22669" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="22875:24565" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="24665:25797" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="26005:27255" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="27356:28595" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="28728:28868" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="28993:29300" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="29441:30976" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="31046:31958" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="32164:33042" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="33166:33252" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="33421:33952" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="34078:34165" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="34240:34591" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="34667:35183" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="35373:36305" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="36362:36541" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="36645:36774" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="36876:37003" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="37105:37238" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="37322:37379" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="37502:37570" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="37730:38000" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="38096:38160" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="38262:38348" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="38452:38531" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="38595:38690" placeholder="{...}" />
+            <marker date="1375775194000" expanded="false" signature="38746:38757" placeholder=" { " />
+            <marker date="1375775194000" expanded="false" signature="38770:38776" placeholder=" }" />
+            <marker date="1375775194000" expanded="true" signature="38900:39955" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="40072:40186" placeholder="{...}" />
+            <marker date="1375775194000" expanded="true" signature="40337:40826" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.4.RELEASE/spring-webmvc-3.2.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72131145">
+          <caret line="417" column="0" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
+          <folding>
+            <marker date="1375775202000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1375775202000" expanded="false" signature="155:2718" placeholder="..." />
+            <marker date="1375775202000" expanded="true" signature="5521:5528" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="5603:5614" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="5643:5649" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="5729:5802" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="5882:5955" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="6055:6148" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="6224:6293" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="6362:6373" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="6420:6426" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="6484:6495" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="6524:6530" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="6594:7007" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="7076:7687" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="7753:8408" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="8473:9116" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9183:10206" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="10273:11296" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="11373:12536" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="12615:13372" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="13437:14432" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14499:15166" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15214:15342" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="15401:15412" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="15442:15448" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="15545:15884" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15989:17344" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17433:17514" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17620:19975" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="20082:23236" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23338:23460" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23651:24908" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="24991:25291" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="25028:25284" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="25067:25086" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="25154:25168" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="25206:25225" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="25260:25274" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="25395:25860" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="25933:26184" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="26190:26208" placeholder="/**...*/" />
+            <marker date="1375775202000" expanded="true" signature="26332:26380" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="26474:27027" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="27138:27477" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="27566:28142" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="28300:29334" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="29454:30455" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="30542:30610" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="30751:31105" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="31273:31418" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="31612:31857" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="31964:33568" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="33581:33956" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.4.RELEASE/spring-webmvc-3.2.4.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09836066">
+          <caret line="460" column="42" selection-start-line="460" selection-start-column="42" selection-end-line="460" selection-end-column="42" />
+          <folding>
+            <marker date="1375775202000" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1375775202000" expanded="false" signature="155:2634" placeholder="..." />
+            <marker date="1375775202000" expanded="true" signature="3690:4049" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="4124:4543" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="4605:4616" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="4657:4663" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="4704:4715" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="4744:4750" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="4806:4817" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="4850:4856" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="4895:4906" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="4931:4937" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="4985:4996" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="5023:5029" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="5063:5074" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="5096:5102" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="5150:5161" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="5188:5194" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="5228:5239" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="5319:5325" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="5406:5481" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="5576:5874" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="5947:6014" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="6060:6071" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="6105:6111" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="6170:6181" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="6218:6224" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="6281:6292" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="6327:6333" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="6413:6486" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="6562:6631" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="6703:6768" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="6837:7844" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="7910:9355" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9421:9899" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="9992:11078" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="11179:12843" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="12939:13023" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="13098:14441" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14534:14541" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="14593:14604" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="14658:14664" placeholder=" }" />
+            <marker date="1375775202000" expanded="false" signature="14731:14742" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="14776:14782" placeholder=" }" />
+            <marker date="1375775202000" expanded="true" signature="14850:14857" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="14885:15215" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15281:15385" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15444:15451" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15479:15772" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="15896:16140" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="16268:16323" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="16452:16507" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="16635:16690" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="16821:16876" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17008:17587" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17278:17579" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17341:17569" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="17711:17968" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="18105:20079" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="20156:20224" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="20384:20538" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="20670:21108" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="21246:21588" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="21702:22130" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="22203:22339" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="22538:23593" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="22584:22595" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="22679:23187" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23297:23587" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23690:23892" placeholder="{...}" />
+            <marker date="1375775202000" expanded="true" signature="23733:23744" placeholder="{...}" />
+            <marker date="1375775202000" expanded="false" signature="23813:23828" placeholder=" { " />
+            <marker date="1375775202000" expanded="false" signature="23876:23886" placeholder=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back_page/brand/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3114754">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.36655948">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="25" />
           <folding>
-            <marker date="1420791725000" expanded="true" signature="283:2875" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="290:696" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="351:688" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="380:678" placeholder="{...}" />
-            <marker date="1420791725000" expanded="true" signature="405:617" placeholder="{&quot;url&quot;: &quot;/upload/uploadPic.do&quot;...}" />
-            <marker date="1420791725000" expanded="true" signature="504:614" placeholder="{...}" />
-            <marker date="1420791725000" expanded="true" signature="509:539" placeholder="//..." />
-            <marker date="1420791725000" expanded="true" signature="703:2867" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="729:937" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="791:903" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="980:2859" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1060:2852" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1144:2843" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1155:2629" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1164:1404" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1216:1275" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1311:1394" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1413:1624" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1465:1536" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1579:1614" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1633:1921" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1733:1911" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1930:2145" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="1982:1999" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2035:2135" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2154:2349" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2206:2221" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2257:2339" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2358:2617" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2410:2427" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2463:2607" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2640:2832" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2649:2820" placeholder="..." />
-            <marker date="1420791725000" expanded="true" signature="2690:2810" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="283:2875" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="290:696" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="351:688" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="380:678" placeholder="{...}" />
+            <marker date="1462360246246" expanded="true" signature="405:617" placeholder="{&quot;url&quot;: &quot;/upload/uploadPic.do&quot;...}" />
+            <marker date="1462360246246" expanded="true" signature="504:614" placeholder="{...}" />
+            <marker date="1462360246246" expanded="true" signature="509:539" placeholder="//..." />
+            <marker date="1462360246246" expanded="true" signature="703:2867" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="729:937" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="791:903" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="980:2859" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1060:2852" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1144:2843" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1155:2629" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1164:1404" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1216:1275" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1311:1394" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1413:1624" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1465:1536" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1579:1614" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1633:1921" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1733:1911" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1930:2145" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="1982:1999" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2035:2135" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2154:2349" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2206:2221" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2257:2339" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2358:2617" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2410:2427" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2463:2607" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2640:2832" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2649:2820" placeholder="..." />
+            <marker date="1462360246246" expanded="true" signature="2690:2810" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-back.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/UploadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.488746">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.5854545">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <marker date="1462379854138" expanded="true" signature="61:725" placeholder="..." />
+            <marker date="1462379854138" expanded="true" signature="727:797" placeholder="/**...*/" />
+            <marker date="1462379854138" expanded="true" signature="1012:1796" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nibnait/babasport/core/controller/admin/BrandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7661539">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>

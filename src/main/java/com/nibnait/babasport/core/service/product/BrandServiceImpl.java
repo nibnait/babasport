@@ -30,4 +30,11 @@ public class BrandServiceImpl implements BrandService {
 
         return pagination;
     }
+
+    @Transactional(readOnly = false)
+    public void addBrand(Brand brand) {
+        brandDao.addBrand(brand);
+    }
+
+
 }

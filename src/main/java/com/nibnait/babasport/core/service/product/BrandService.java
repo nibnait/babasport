@@ -8,4 +8,5 @@ import com.nibnait.common.page.Pagination;
  */
 public interface BrandService {
     Pagination getBrandListWithPage(Brand brand);
+    public void addBrand(Brand brand);
 }

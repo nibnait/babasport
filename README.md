@@ -33,6 +33,5 @@
 	 - 1. 该服务器配置文件（tomcat8之后 就不用担心此问题了，因为）
 	 - 2. 配置过滤器，将请求重编码: new String("".getByte("iso-8859-1"), utf8);  
 
- - 异步上传技术：
-
-jquery.form
+ - 异步上传技术：  
+```UniformInterfaceException：returned a response status of 409 Conflict```

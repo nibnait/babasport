@@ -1,5 +1,7 @@
 package com.nibnait.babasport.core.bean.product;
 
+import com.nibnait.babasport.core.web.Constants;
+
 /**
  * 品牌
  * Created by nibnait on 2016/5/4.
@@ -16,6 +18,11 @@ public class Brand {
     private Integer pageNo = 1;
     private Integer startRow;
     private Integer pageSize = 10;
+
+    //获取全路径
+    public String getAllUrl(){
+        return Constants.IMAGE_URL+imgUrl;
+    }
 
     public Integer getStartRow() {
 

@@ -17,7 +17,6 @@ public class CustomDateEdtor implements WebBindingInitializer{
 
     public void initBinder(WebDataBinder binder, WebRequest request) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
 }

@@ -45,4 +45,25 @@
         </where>
     </select>
 
+    <!-- 添加品牌 -->
+    <select id="addBrand" parameterType="Brand">
+        INSERT into bbs_brand
+        <trim prefix="(" suffix=")">
+            name ,
+            description,
+            img_url,
+            sort,
+            is_display
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")">
+            #{name},
+            #{description},
+            #{imgUrl},
+            #{sort},
+            #{isDisplay}
+        </trim>
+    </select>
+
+
 </mapper>

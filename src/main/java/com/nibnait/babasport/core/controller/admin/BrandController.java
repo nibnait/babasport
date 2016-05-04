@@ -55,10 +55,15 @@ public class BrandController {
 
     //跳转品牌添加页面
     @RequestMapping(value = "/brand/toAdd.do")
-    public String toAdd(){
-
-
-
+    public String toAdd(Brand brand){
         return "brand/add";
     }
+
+    //添加品牌
+    @RequestMapping(value = "/brand/add.do")
+    public String add(Brand brand){
+        brandService.addBrand(brand);
+        return "redirect:/brand/list.do";
+    }
+
 }
