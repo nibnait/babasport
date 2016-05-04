@@ -17,7 +17,7 @@ import java.util.Date;
  * Created by nibnait on 2016/5/4.
  */
 @Controller
-public class CenterController {
+public class ProductController {
 
     @RequestMapping(value = "/test/springmvc.do", method = RequestMethod.POST)
     public String test(String name, Date birthday){

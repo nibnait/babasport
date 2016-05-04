@@ -10,8 +10,8 @@
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/resources" />
           <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -20,6 +20,13 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/application-context.xml</file>
         </fileset>
+      </configuration>
+    </facet>
+    <facet type="javaeeApplication" name="javaEEApplication">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/src/main/webapp/res/fckeditor/_samples/adobeair/application.xml" />
+        </descriptors>
       </configuration>
     </facet>
   </component>
@@ -86,6 +93,6 @@
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-client:1.18.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.18.1" level="project" />
     <orderEntry type="library" name="Maven: com.octo.captcha:jcaptcha-my:1.0" level="project" />
-    <orderEntry type="library" name="Maven: cn.itcast:page:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.nibnait:common-pagination:1.0" level="project" />
   </component>
 </module>

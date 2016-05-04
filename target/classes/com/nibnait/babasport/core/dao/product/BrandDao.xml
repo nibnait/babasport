@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nibnait.babasport.core.dao.product.BrandDao">
+    <!-- resultMap-->
+    <resultMap id="brand" type="Brand">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="img_url" property="imgUrl"/>
+        <result column="sort" property="sort"/>
+        <result column="is_display" property="isDisplay"/>
+
+    </resultMap>
+
+    <!--查询品牌-->
+    <select id="getBrandListWithPage" parameterType="Brand" resultMap="brand">
+        SELECT id , name ,description,img_url,sort,is_display
+        FROM bbs_brand
+        <where>
+            <if test="isDisplay!=null">
+                is_display = #{isDisplay}
+            </if>
+            <!--如果display为空，where标签可以将 name前面的"and"自动屏蔽掉-->
+            <if test="name!=null">
+                and name = #{name}
+            </if>
+        </where>
+
+        ORDER BY sort DESC
+        LIMIT #{startRow}, #{pageSize}
+    </select>
+
+    <!--查询总记录数-->
+    <select id="getBrandCount" parameterType="Brand" resultType="Integer">
+        SELECT count(1)
+        FROM bbs_brand
+        <where>
+            <if test="isDisplay!=null">
+                is_display = #{isDisplay}
+            </if>
+            <!--如果display为空，where标签可以将 name前面的"and"自动屏蔽掉-->
+            <if test="name!=null">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+</mapper>

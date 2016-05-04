@@ -57,7 +57,7 @@
           <element id="library" level="project" name="Maven: com.sun.jersey:jersey-client:1.18.1" />
           <element id="library" level="project" name="Maven: com.sun.jersey:jersey-core:1.18.1" />
           <element id="library" level="project" name="Maven: com.octo.captcha:jcaptcha-my:1.0" />
-          <element id="library" level="project" name="Maven: cn.itcast:page:1.0" />
+          <element id="library" level="project" name="Maven: com.nibnait:common-pagination:1.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
