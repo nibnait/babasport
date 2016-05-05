@@ -62,8 +62,42 @@ public class BrandController {
     //添加品牌
     @RequestMapping(value = "/brand/add.do")
     public String add(Brand brand){
-        brandService.addBrand(brand);
+        try {
+            brandService.addBrand(brand);
+        }catch (Exception e){
+            // TODO: 2016/5/5 添加失败，将已传到服务器的图片 删除！！
+            e.printStackTrace();//最后 应该直接抛出个 运行时异常
+        }
+
         return "redirect:/brand/list.do";
     }
+
+    //删除一个品牌
+    @RequestMapping(value = "/brand/delete.do")
+    public String delete(Integer id, String name, Integer isDisplay, ModelMap model){
+
+        brandService.deleteBrandById(id);
+        if (StringUtils.isNotBlank(name)) {
+            model.addAttribute("name", name);
+        }
+        if (isDisplay!=null){
+            model.addAttribute("isDisplay", isDisplay);
+        }
+        return "redirect:/brand/list.do";
+    }
+    //删除多个品牌
+    @RequestMapping(value = "/brand/deletes.do")
+    public String deletes(Integer[] ids, String name, Integer isDisplay, ModelMap model){
+
+        brandService.deleteBrandByIds(ids);
+        if (StringUtils.isNotBlank(name)) {
+            model.addAttribute("name", name);
+        }
+        if (isDisplay!=null){
+            model.addAttribute("isDisplay", isDisplay);
+        }
+        return "redirect:/brand/list.do";
+    }
+
 
 }

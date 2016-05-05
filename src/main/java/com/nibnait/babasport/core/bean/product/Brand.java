@@ -6,7 +6,7 @@ import com.nibnait.babasport.core.web.Constants;
  * 品牌
  * Created by nibnait on 2016/5/4.
  */
-public class Brand {
+public class Brand{
 
     private Integer id;
     private String name;

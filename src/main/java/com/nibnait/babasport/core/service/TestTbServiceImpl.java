@@ -2,6 +2,7 @@ package com.nibnait.babasport.core.service;
 
 import com.nibnait.babasport.core.bean.TestTb;
 import com.nibnait.babasport.core.dao.TestTbDao;
+import com.nibnait.babasport.core.service.TestTbService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +13,7 @@ import javax.annotation.Resource;
  */
 @Service
 @Transactional
-public class TestTbServiceImpl implements TestTbService{
+public class TestTbServiceImpl implements TestTbService {
 
     @Resource
     private TestTbDao testTbDao;

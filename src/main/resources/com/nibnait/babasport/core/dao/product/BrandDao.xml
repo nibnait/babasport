@@ -66,4 +66,50 @@
     </select>
 
 
+    <!--删除品牌ById-->
+    <delete id="deleteBrandById" parameterType="Integer">
+        DELETE FROM bbs_brand
+        <where>
+            id=#{id}
+        </where>
+
+    </delete>
+
+
+    <!--删除品牌ByIds-->
+    <delete id="deleteBrandByIds" parameterType="Integer">
+        DELETE FROM bbs_brand
+        <where>
+            id IN
+            <foreach collection="array" item="id" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </delete>
+
+    <!--修改品牌-->
+    <update id="updateBrandById" parameterType="Integer">
+        UPDATE bbs_brand
+        <set>
+            <if test="name!=null">
+                name=#{name}
+            </if>
+            <if test="description!=null">
+                description=#{description}
+            </if>
+            <if test="imgUrl!=null">
+                img_url=#{imgUrl}
+            </if>
+            <if test="sort!=null">
+                sort=#{sort}
+            </if>
+            <if test="isDisplay!=null">
+                is_display=#{isDisplay}
+            </if>
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+
 </mapper>

@@ -7,19 +7,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**]
  * 品牌事物层
  * Created by nibnait on 2016/5/4.
  */
 @Service
-@Transactional(readOnly = true)
+@Transactional
 public class BrandServiceImpl implements BrandService {
 
     @Resource
     private BrandDao brandDao;
 
+    @Transactional(readOnly = true)
     public Pagination getBrandListWithPage(Brand brand){
         //1：起始页
         //2:pageSize
@@ -31,9 +31,21 @@ public class BrandServiceImpl implements BrandService {
         return pagination;
     }
 
-    @Transactional(readOnly = false)
+
     public void addBrand(Brand brand) {
         brandDao.addBrand(brand);
+    }
+
+
+    public void deleteBrandByIds(Integer[] ids) {
+        brandDao.deleteBrandByIds(ids);
+    }
+    public void deleteBrandById(Integer id) {
+        brandDao.deleteBrandById(id);
+    }
+
+    public void updateBrandById(Integer id) {
+        brandDao.updateBrandById(id);
     }
 
 

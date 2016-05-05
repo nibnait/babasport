@@ -18,4 +18,13 @@ public interface BrandDao {
 
     //添加品牌
     public void addBrand(Brand brand);
+
+
+
+    //删除
+    public void deleteBrandByIds(Integer[] ids);
+    public void deleteBrandById(Integer id);
+
+    //修改
+    public void updateBrandById(Integer id);
 }
