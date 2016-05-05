@@ -99,5 +99,21 @@ public class BrandController {
         return "redirect:/brand/list.do";
     }
 
+    //跳转到Eidt页面
+    @RequestMapping(value = "/brand/toEdit.do")
+    public String toEdit(Integer id, ModelMap model){
+        Brand brand= brandService.getBrandById(id);
+        model.addAttribute("brand", brand);
+        return "brand/edit";
+    }
+
+    @RequestMapping(value = "/brand/edit.do")
+    public String edit(Brand brand){
+        brandService.updateBrandById(brand);
+
+        return "redirect:/brand/list.do";
+    }
+
+
 
 }

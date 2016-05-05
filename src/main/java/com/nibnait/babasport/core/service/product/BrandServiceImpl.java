@@ -3,6 +3,7 @@ package com.nibnait.babasport.core.service.product;
 import com.nibnait.babasport.core.bean.product.Brand;
 import com.nibnait.babasport.core.dao.product.BrandDao;
 import com.nibnait.common.page.Pagination;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,9 +45,11 @@ public class BrandServiceImpl implements BrandService {
         brandDao.deleteBrandById(id);
     }
 
-    public void updateBrandById(Integer id) {
-        brandDao.updateBrandById(id);
+    public void updateBrandById(Brand brand) {
+        brandDao.updateBrandById(brand);
     }
 
-
+    public Brand getBrandById(Integer id){
+        return brandDao.getBrandById(id);
+    }
 }

@@ -15,5 +15,7 @@ public interface BrandService {
     public void deleteBrandById(Integer id);
 
     //修改
-    public void updateBrandById(Integer id);
+    public void updateBrandById(Brand brand);
+
+    public Brand getBrandById(Integer id);
 }

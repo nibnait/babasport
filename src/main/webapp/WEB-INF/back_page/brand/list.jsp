@@ -7,17 +7,7 @@
     <title>babasport-list</title>
     <script type="text/javascript">
 
-//        $(function () {
-//            $('input[type=checkbox]:first').unbind("click");
-//            $('input[type=checkbox]:first').bind('click', function () {
-//                if ($('input[type=checkbox]:first').attr('checked')) {
-//                    $('input[type=checkbox]').attr('checked', true);
-//                }else {
-//                    $('input[type=checkbox]').attr('checked', false);
-//                }
-//            });
-//        });
-
+        //表头的checkBox联动
         function checkHead(brand) {
             var s = $("input[name='ids']:checked").size();
             var pageSize = 5;
@@ -28,10 +18,12 @@
             }
         }
 
+        //全选
         function checkBox(brandHead){
             $("input[type=checkbox][name=ids]").attr("checked",brandHead.checked);
         }
 
+        //删除
         function optDelete(name,isDisplay) {
             var s = $("input[name='ids']:checked").size();
             if (s <= 0) {
@@ -92,7 +84,7 @@
                     <td align="center"><c:if test="${entry.isDisplay == 1 }">是</c:if><c:if
                             test="${entry.isDisplay == 0 }">不是</c:if></td>
                     <td align="center">
-                        <a class="pn-opt" href="#">修改</a> | <a class="pn-opt"
+                        <a class="pn-opt" href="javascript:void(0)" onclick="window.location.href='/brand/toEdit.do?id=${entry.id}'">修改</a> | <a class="pn-opt"
                                                                href="/brand/delete.do?id=${entry.id }&name=${name}&isDisplay=${isDisplay}">删除</a>
                     </td>
                 </tr>

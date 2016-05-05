@@ -42,7 +42,7 @@ public class UploadController {
         String bathpath2 = "upload/image/"+datepath;//返回给浏览器 url中的相对路径
         String webRoot = request.getServletContext().getRealPath("/");
         String filepath = webRoot+bathpath;
-        String path = bathpath+"\\"+ filename;//在图片服务器中的路径（也是保存在数据库中的 相对路径）
+        String path = bathpath2+"//"+ filename;//在图片服务器中的路径（也是保存在数据库中的 相对路径）
         String url = Constants.IMAGE_URL + bathpath2+"/" +filename;
 
         File file = new File(filepath);//在服务器中 new一个文件夹
