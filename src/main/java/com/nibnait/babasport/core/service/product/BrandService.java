@@ -17,11 +17,11 @@ public interface BrandService {
     public void addBrand(Brand brand);
 
     //删除
-    public void deleteBrandByIds(Integer[] ids);
-    public void deleteBrandById(Integer id);
+    public void deleteBrandByKeys(Integer[] ids);
+    public void deleteBrandByKey(Integer id);
 
     //修改
-    public void updateBrandById(Brand brand);
+    public void updateBrandByKey(Brand brand);
 
-    public Brand getBrandById(Integer id);
+    public Brand getBrandByKey(Integer id);
 }

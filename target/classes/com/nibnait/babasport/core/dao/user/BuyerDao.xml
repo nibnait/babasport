@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.user.BuyerDao">
+	<resultMap id="buyer" type="Buyer">
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="gender" column="gender" />
+		<result property="email" column="email" />
+		<result property="realName" column="real_name" />
+		<result property="registerTime" column="register_time" />
+		<result property="province" column="province" />
+		<result property="city" column="city" />
+		<result property="town" column="town" />
+		<result property="addr" column="addr" />
+		<result property="isDel" column="is_del" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="buyerSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			username,password,gender,email,real_name,register_time,province,city,town,addr,is_del
+			</if>
+		FROM bbs_buyer
+	</sql>
+	<sql id="buyerListWhere">
+		<where>
+				<if test="username != null">
+				<if test="usernameLike == false">
+					and username=#{username}
+				</if>
+				<if test="usernameLike == true">
+					and  username like "%"#{username}"%"
+				</if>
+				</if>
+				<if test="password != null">
+				<if test="passwordLike == false">
+					and password=#{password}
+				</if>
+				<if test="passwordLike == true">
+					and  password like "%"#{password}"%"
+				</if>
+				</if>
+				<if test="gender != null">
+				<if test="genderLike == false">
+					and gender=#{gender}
+				</if>
+				<if test="genderLike == true">
+					and  gender like "%"#{gender}"%"
+				</if>
+				</if>
+				<if test="email != null">
+				<if test="emailLike == false">
+					and email=#{email}
+				</if>
+				<if test="emailLike == true">
+					and  email like "%"#{email}"%"
+				</if>
+				</if>
+				<if test="realName != null">
+				<if test="realNameLike == false">
+					and real_name=#{realName}
+				</if>
+				<if test="realNameLike == true">
+					and  real_name like "%"#{realName}"%"
+				</if>
+				</if>
+				<if test="registerTime != null">
+					and register_time=#{registerTime}
+				</if>
+				<if test="provinceId != null">
+					and province=#{province}
+				</if>
+				<if test="cityId != null">
+					and city=#{city}
+				</if>
+				<if test="townId != null">
+					and town=#{town}
+				</if>
+				<if test="addr != null">
+				<if test="addrLike == false">
+					and addr=#{addr}
+				</if>
+				<if test="addrLike == true">
+					and  addr like "%"#{addr}"%"
+				</if>
+				</if>
+				<if test="isDel != null">
+					and is_del=#{isDel}
+				</if>
+		</where>
+	</sql>
+
+	<sql id="buyerListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="buyerListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getBuyerByKey" resultMap="buyer" parameterType="hashMap">
+		SELECT username,password,gender,email,real_name,register_time,province,city,town,addr,is_del FROM bbs_buyer
+		WHERE
+		username=#{id}
+	</select>
+	<select id="getBuyersByKeys" resultMap="buyer" parameterType="ArrayList">
+		SELECT username,password,gender,email,real_name,register_time,province,city,town,addr,is_del FROM bbs_buyer
+		WHERE
+		username in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_buyer
+		WHERE
+		username=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_buyer
+		WHERE
+		username in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateBuyerByKey" parameterType="Buyer">
+		UPDATE bbs_buyer
+		<set>
+			<trim suffixOverrides=",">
+				<if test="username != null">
+					username = #{username},
+				</if>
+				<if test="password != null">
+					password = #{password},
+				</if>
+				<if test="gender != null">
+					gender = #{gender},
+				</if>
+				<if test="email != null">
+					email = #{email},
+				</if>
+				<if test="realName != null">
+					real_name = #{realName},
+				</if>
+				<if test="registerTime != null">
+					register_time = #{registerTime},
+				</if>
+				<if test="province != null">
+					province = #{province},
+				</if>
+				<if test="city != null">
+					city = #{city},
+				</if>
+				<if test="town != null">
+					town = #{town},
+				</if>
+				<if test="addr != null">
+					addr = #{addr},
+				</if>
+				<if test="isDel != null">
+					is_del = #{isDel}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		username=#{username}
+	</update>
+	<!-- 分页 -->
+	<select id="getBuyerListWithPage" parameterType="BuyerQuery" resultMap="buyer">
+		<include refid="buyerSelector" />
+		<include refid="buyerListWhere" />
+		<include refid="buyerListOrder" />
+		<include refid="buyerListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getBuyerListCount" parameterType="BuyerQuery" resultType="int">
+		SELECT count(1) FROM bbs_buyer
+		<include refid="buyerListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getBuyerList" parameterType="BuyerQuery" resultMap="buyer">
+		<include refid="buyerSelector" />
+		<include refid="buyerListWhere" />
+		<include refid="buyerListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addBuyer" parameterType="Buyer">
+		INSERT INTO bbs_buyer
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="username != null">
+					username,
+				</if>
+				<if test="password != null">
+					password,
+				</if>
+				<if test="gender != null">
+					gender,
+				</if>
+				<if test="email != null">
+					email,
+				</if>
+				<if test="realName != null">
+					real_name,
+				</if>
+				<if test="registerTime != null">
+					register_time,
+				</if>
+				<if test="province != null">
+					province,
+				</if>
+				<if test="city != null">
+					city,
+				</if>
+				<if test="town != null">
+					town,
+				</if>
+				<if test="addr != null">
+					addr,
+				</if>
+					<if test="isDel != null">
+						is_del
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="username != null">
+						#{username},
+					</if>
+					<if test="password != null">
+						#{password},
+					</if>
+					<if test="gender != null">
+						#{gender},
+					</if>
+					<if test="email != null">
+						#{email},
+					</if>
+					<if test="realName != null">
+						#{realName},
+					</if>
+					<if test="registerTime != null">
+						#{registerTime},
+					</if>
+					<if test="province != null">
+						#{province},
+					</if>
+					<if test="city != null">
+						#{city},
+					</if>
+					<if test="town != null">
+						#{town},
+					</if>
+					<if test="addr != null">
+						#{addr},
+					</if>
+					<if test="isDel != null">
+						#{isDel}
+					</if>
+		</trim>
+	</insert>
+</mapper>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.user.AddrDao">
+	<resultMap id="addr" type="Addr">
+		<result property="id" column="id" />
+		<result property="buyerId" column="buyer_id" />
+		<result property="name" column="name" />
+		<result property="city" column="city" />
+		<result property="addr" column="addr" />
+		<result property="phone" column="phone" />
+		<result property="isDef" column="is_def" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="addrSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,buyer_id,name,city,addr,phone,is_def
+			</if>
+		FROM bbs_addr
+	</sql>
+	<sql id="addrListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="buyerId != null">
+				<if test="buyerIdLike == false">
+					and buyer_id=#{buyerId}
+				</if>
+				<if test="buyerIdLike == true">
+					and  buyer_id like "%"#{buyerId}"%"
+				</if>
+				</if>
+				<if test="name != null">
+				<if test="nameLike == false">
+					and name=#{name}
+				</if>
+				<if test="nameLike == true">
+					and  name like "%"#{name}"%"
+				</if>
+				</if>
+				<if test="city != null">
+				<if test="cityLike == false">
+					and city=#{city}
+				</if>
+				<if test="cityLike == true">
+					and  city like "%"#{city}"%"
+				</if>
+				</if>
+				<if test="addr != null">
+				<if test="addrLike == false">
+					and addr=#{addr}
+				</if>
+				<if test="addrLike == true">
+					and  addr like "%"#{addr}"%"
+				</if>
+				</if>
+				<if test="phone != null">
+				<if test="phoneLike == false">
+					and phone=#{phone}
+				</if>
+				<if test="phoneLike == true">
+					and  phone like "%"#{phone}"%"
+				</if>
+				</if>
+				<if test="isDef != null">
+					and is_def=#{isDef}
+				</if>
+		</where>
+	</sql>
+
+	<sql id="addrListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="addrListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getAddrByKey" resultMap="addr" parameterType="hashMap">
+		SELECT id,buyer_id,name,city,addr,phone,is_def FROM bbs_addr
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getAddrsByKeys" resultMap="addr" parameterType="ArrayList">
+		SELECT id,buyer_id,name,city,addr,phone,is_def FROM bbs_addr
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_addr
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_addr
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateAddrByKey" parameterType="Addr">
+		UPDATE bbs_addr
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="buyerId != null">
+					buyer_id = #{buyerId},
+				</if>
+				<if test="name != null">
+					name = #{name},
+				</if>
+				<if test="city != null">
+					city = #{city},
+				</if>
+				<if test="addr != null">
+					addr = #{addr},
+				</if>
+				<if test="phone != null">
+					phone = #{phone},
+				</if>
+				<if test="isDef != null">
+					is_def = #{isDef}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getAddrListWithPage" parameterType="AddrQuery" resultMap="addr">
+		<include refid="addrSelector" />
+		<include refid="addrListWhere" />
+		<include refid="addrListOrder" />
+		<include refid="addrListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getAddrListCount" parameterType="AddrQuery" resultType="int">
+		SELECT count(1) FROM bbs_addr
+		<include refid="addrListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getAddrList" parameterType="AddrQuery" resultMap="addr">
+		<include refid="addrSelector" />
+		<include refid="addrListWhere" />
+		<include refid="addrListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addAddr" parameterType="Addr">
+		INSERT INTO bbs_addr
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="buyerId != null">
+					buyer_id,
+				</if>
+				<if test="name != null">
+					name,
+				</if>
+				<if test="city != null">
+					city,
+				</if>
+				<if test="addr != null">
+					addr,
+				</if>
+				<if test="phone != null">
+					phone,
+				</if>
+					<if test="isDef != null">
+						is_def
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="buyerId != null">
+						#{buyerId},
+					</if>
+					<if test="name != null">
+						#{name},
+					</if>
+					<if test="city != null">
+						#{city},
+					</if>
+					<if test="addr != null">
+						#{addr},
+					</if>
+					<if test="phone != null">
+						#{phone},
+					</if>
+					<if test="isDef != null">
+						#{isDef}
+					</if>
+		</trim>
+	</insert>
+</mapper>

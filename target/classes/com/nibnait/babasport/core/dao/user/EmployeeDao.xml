@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.user.EmployeeDao">
+	<resultMap id="employee" type="Employee">
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="degree" column="degree" />
+		<result property="email" column="email" />
+		<result property="gender" column="gender" />
+		<result property="imgUrl" column="img_url" />
+		<result property="phone" column="phone" />
+		<result property="realName" column="real_name" />
+		<result property="school" column="school" />
+		<result property="isDel" column="is_del" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="employeeSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			username,password,degree,email,gender,img_url,phone,real_name,school,is_del
+			</if>
+		FROM bbs_employee
+	</sql>
+	<sql id="employeeListWhere">
+		<where>
+				<if test="username != null">
+				<if test="usernameLike == false">
+					and username=#{username}
+				</if>
+				<if test="usernameLike == true">
+					and  username like "%"#{username}"%"
+				</if>
+				</if>
+				<if test="password != null">
+				<if test="passwordLike == false">
+					and password=#{password}
+				</if>
+				<if test="passwordLike == true">
+					and  password like "%"#{password}"%"
+				</if>
+				</if>
+				<if test="degree != null">
+				<if test="degreeLike == false">
+					and degree=#{degree}
+				</if>
+				<if test="degreeLike == true">
+					and  degree like "%"#{degree}"%"
+				</if>
+				</if>
+				<if test="email != null">
+				<if test="emailLike == false">
+					and email=#{email}
+				</if>
+				<if test="emailLike == true">
+					and  email like "%"#{email}"%"
+				</if>
+				</if>
+				<if test="gender != null">
+					and gender=#{gender}
+				</if>
+				<if test="imgUrl != null">
+				<if test="imgUrlLike == false">
+					and img_url=#{imgUrl}
+				</if>
+				<if test="imgUrlLike == true">
+					and  img_url like "%"#{imgUrl}"%"
+				</if>
+				</if>
+				<if test="phone != null">
+				<if test="phoneLike == false">
+					and phone=#{phone}
+				</if>
+				<if test="phoneLike == true">
+					and  phone like "%"#{phone}"%"
+				</if>
+				</if>
+				<if test="realName != null">
+				<if test="realNameLike == false">
+					and real_name=#{realName}
+				</if>
+				<if test="realNameLike == true">
+					and  real_name like "%"#{realName}"%"
+				</if>
+				</if>
+				<if test="school != null">
+				<if test="schoolLike == false">
+					and school=#{school}
+				</if>
+				<if test="schoolLike == true">
+					and  school like "%"#{school}"%"
+				</if>
+				</if>
+				<if test="isDel != null">
+					and is_del=#{isDel}
+				</if>
+		</where>
+	</sql>
+
+	<sql id="employeeListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="employeeListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getEmployeeByKey" resultMap="employee" parameterType="hashMap">
+		SELECT username,password,degree,email,gender,img_url,phone,real_name,school,is_del FROM bbs_employee
+		WHERE
+		username=#{id}
+	</select>
+	<select id="getEmployeesByKeys" resultMap="employee" parameterType="ArrayList">
+		SELECT username,password,degree,email,gender,img_url,phone,real_name,school,is_del FROM bbs_employee
+		WHERE
+		username in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_employee
+		WHERE
+		username=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_employee
+		WHERE
+		username in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateEmployeeByKey" parameterType="Employee">
+		UPDATE bbs_employee
+		<set>
+			<trim suffixOverrides=",">
+				<if test="username != null">
+					username = #{username},
+				</if>
+				<if test="password != null">
+					password = #{password},
+				</if>
+				<if test="degree != null">
+					degree = #{degree},
+				</if>
+				<if test="email != null">
+					email = #{email},
+				</if>
+				<if test="gender != null">
+					gender = #{gender},
+				</if>
+				<if test="imgUrl != null">
+					img_url = #{imgUrl},
+				</if>
+				<if test="phone != null">
+					phone = #{phone},
+				</if>
+				<if test="realName != null">
+					real_name = #{realName},
+				</if>
+				<if test="school != null">
+					school = #{school},
+				</if>
+				<if test="isDel != null">
+					is_del = #{isDel}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		username=#{username}
+	</update>
+	<!-- 分页 -->
+	<select id="getEmployeeListWithPage" parameterType="EmployeeQuery" resultMap="employee">
+		<include refid="employeeSelector" />
+		<include refid="employeeListWhere" />
+		<include refid="employeeListOrder" />
+		<include refid="employeeListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getEmployeeListCount" parameterType="EmployeeQuery" resultType="int">
+		SELECT count(1) FROM bbs_employee
+		<include refid="employeeListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getEmployeeList" parameterType="EmployeeQuery" resultMap="employee">
+		<include refid="employeeSelector" />
+		<include refid="employeeListWhere" />
+		<include refid="employeeListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addEmployee" parameterType="Employee">
+		INSERT INTO bbs_employee
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="username != null">
+					username,
+				</if>
+				<if test="password != null">
+					password,
+				</if>
+				<if test="degree != null">
+					degree,
+				</if>
+				<if test="email != null">
+					email,
+				</if>
+				<if test="gender != null">
+					gender,
+				</if>
+				<if test="imgUrl != null">
+					img_url,
+				</if>
+				<if test="phone != null">
+					phone,
+				</if>
+				<if test="realName != null">
+					real_name,
+				</if>
+				<if test="school != null">
+					school,
+				</if>
+					<if test="isDel != null">
+						is_del
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="username != null">
+						#{username},
+					</if>
+					<if test="password != null">
+						#{password},
+					</if>
+					<if test="degree != null">
+						#{degree},
+					</if>
+					<if test="email != null">
+						#{email},
+					</if>
+					<if test="gender != null">
+						#{gender},
+					</if>
+					<if test="imgUrl != null">
+						#{imgUrl},
+					</if>
+					<if test="phone != null">
+						#{phone},
+					</if>
+					<if test="realName != null">
+						#{realName},
+					</if>
+					<if test="school != null">
+						#{school},
+					</if>
+					<if test="isDel != null">
+						#{isDel}
+					</if>
+		</trim>
+	</insert>
+</mapper>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.country.ProvinceDao">
+	<resultMap id="province" type="Province">
+		<result property="id" column="id" />
+		<result property="code" column="code" />
+		<result property="name" column="name" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="provinceSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,code,name
+			</if>
+		FROM bbs_province
+	</sql>
+	<sql id="provinceListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="code != null">
+				<if test="codeLike == false">
+					and code=#{code}
+				</if>
+				<if test="codeLike == true">
+					and  code like "%"#{code}"%"
+				</if>
+				</if>
+				<if test="name != null">
+				<if test="nameLike == false">
+					and name=#{name}
+				</if>
+				<if test="nameLike == true">
+					and  name like "%"#{name}"%"
+				</if>
+				</if>
+		</where>
+	</sql>
+
+	<sql id="provinceListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="provinceListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getProvinceByKey" resultMap="province" parameterType="hashMap">
+		SELECT id,code,name FROM bbs_province
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getProvincesByKeys" resultMap="province" parameterType="ArrayList">
+		SELECT id,code,name FROM bbs_province
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_province
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_province
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateProvinceByKey" parameterType="Province">
+		UPDATE bbs_province
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="code != null">
+					code = #{code},
+				</if>
+				<if test="name != null">
+					name = #{name}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getProvinceListWithPage" parameterType="ProvinceQuery" resultMap="province">
+		<include refid="provinceSelector" />
+		<include refid="provinceListWhere" />
+		<include refid="provinceListOrder" />
+		<include refid="provinceListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getProvinceListCount" parameterType="ProvinceQuery" resultType="int">
+		SELECT count(1) FROM bbs_province
+		<include refid="provinceListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getProvinceList" parameterType="ProvinceQuery" resultMap="province">
+		<include refid="provinceSelector" />
+		<include refid="provinceListWhere" />
+		<include refid="provinceListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addProvince" parameterType="Province">
+		INSERT INTO bbs_province
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="code != null">
+					code,
+				</if>
+					<if test="name != null">
+						name
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="code != null">
+						#{code},
+					</if>
+					<if test="name != null">
+						#{name}
+					</if>
+		</trim>
+	</insert>
+</mapper>

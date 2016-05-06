@@ -4,7 +4,6 @@ import com.nibnait.babasport.core.bean.product.Brand;
 import com.nibnait.babasport.core.dao.product.BrandDao;
 import com.nibnait.babasport.core.query.product.BrandQuery;
 import com.nibnait.common.page.Pagination;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,18 +43,18 @@ public class BrandServiceImpl implements BrandService {
     }
 
 
-    public void deleteBrandByIds(Integer[] ids) {
-        brandDao.deleteBrandByIds(ids);
+    public void deleteBrandByKeys(Integer[] ids) {
+        brandDao.deleteBrandByKeys(ids);
     }
-    public void deleteBrandById(Integer id) {
-        brandDao.deleteBrandById(id);
-    }
-
-    public void updateBrandById(Brand brand) {
-        brandDao.updateBrandById(brand);
+    public void deleteBrandByKey(Integer id) {
+        brandDao.deleteBrandByKey(id);
     }
 
-    public Brand getBrandById(Integer id){
-        return brandDao.getBrandById(id);
+    public void updateBrandByKey(Brand brand) {
+        brandDao.updateBrandByKey(brand);
+    }
+
+    public Brand getBrandByKey(Integer id){
+        return brandDao.getBrandByKey(id);
     }
 }

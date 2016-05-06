@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.product.ImgDao">
+	<resultMap id="img" type="Img">
+		<result property="id" column="id" />
+		<result property="productId" column="product_id" />
+		<result property="url" column="url" />
+		<result property="isDef" column="is_def" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="imgSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,product_id,url,is_def
+			</if>
+		FROM bbs_img
+	</sql>
+	<sql id="imgListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="productId != null">
+					and product_id=#{productId}
+				</if>
+				<if test="url != null">
+				<if test="urlLike == false">
+					and url=#{url}
+				</if>
+				<if test="urlLike == true">
+					and  url like "%"#{url}"%"
+				</if>
+				</if>
+				<if test="isDef != null">
+					and is_def=#{isDef}
+				</if>
+		</where>
+	</sql>
+
+	<sql id="imgListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="imgListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getImgByKey" resultMap="img" parameterType="hashMap">
+		SELECT id,product_id,url,is_def FROM bbs_img
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getImgsByKeys" resultMap="img" parameterType="ArrayList">
+		SELECT id,product_id,url,is_def FROM bbs_img
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_img
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_img
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateImgByKey" parameterType="Img">
+		UPDATE bbs_img
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="productId != null">
+					product_id = #{productId},
+				</if>
+				<if test="url != null">
+					url = #{url},
+				</if>
+				<if test="isDef != null">
+					is_def = #{isDef}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getImgListWithPage" parameterType="ImgQuery" resultMap="img">
+		<include refid="imgSelector" />
+		<include refid="imgListWhere" />
+		<include refid="imgListOrder" />
+		<include refid="imgListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getImgListCount" parameterType="ImgQuery" resultType="int">
+		SELECT count(1) FROM bbs_img
+		<include refid="imgListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getImgList" parameterType="ImgQuery" resultMap="img">
+		<include refid="imgSelector" />
+		<include refid="imgListWhere" />
+		<include refid="imgListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addImg" parameterType="Img">
+		INSERT INTO bbs_img
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="productId != null">
+					product_id,
+				</if>
+				<if test="url != null">
+					url,
+				</if>
+					<if test="isDef != null">
+						is_def
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="productId != null">
+						#{productId},
+					</if>
+					<if test="url != null">
+						#{url},
+					</if>
+					<if test="isDef != null">
+						#{isDef}
+					</if>
+		</trim>
+	</insert>
+</mapper>

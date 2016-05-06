@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.product.SkuDao">
+	<resultMap id="sku" type="Sku">
+		<result property="id" column="id" />
+		<result property="productId" column="product_id" />
+		<result property="colorId" column="color_id" />
+		<result property="size" column="size" />
+		<result property="deliveFee" column="delive_fee" />
+		<result property="skuPrice" column="sku_price" />
+		<result property="stockInventory" column="stock_inventory" />
+		<result property="skuUpperLimit" column="sku_upper_limit" />
+		<result property="location" column="location" />
+		<result property="skuImg" column="sku_img" />
+		<result property="skuSort" column="sku_sort" />
+		<result property="skuName" column="sku_name" />
+		<result property="marketPrice" column="market_price" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+		<result property="createUserId" column="create_user_id" />
+		<result property="updateUserId" column="update_user_id" />
+		<result property="lastStatus" column="last_status" />
+		<result property="skuType" column="sku_type" />
+		<result property="sales" column="sales" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="skuSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,product_id,color_id,size,delive_fee,sku_price,stock_inventory,sku_upper_limit,location,sku_img,sku_sort,sku_name,market_price,create_time,update_time,create_user_id,update_user_id,last_status,sku_type,sales
+			</if>
+		FROM bbs_sku
+	</sql>
+	<sql id="skuListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="productId != null">
+					and product_id=#{productId}
+				</if>
+				<if test="colorId != null">
+					and color_id=#{colorId}
+				</if>
+				<if test="size != null">
+				<if test="sizeLike == false">
+					and size=#{size}
+				</if>
+				<if test="sizeLike == true">
+					and  size like "%"#{size}"%"
+				</if>
+				</if>
+				<if test="deliveFee != null">
+					and delive_fee=#{deliveFee}
+				</if>
+				<if test="skuPrice != null">
+					and sku_price=#{skuPrice}
+				</if>
+				<if test="stockInventory != null">
+					and stock_inventory=#{stockInventory}
+				</if>
+				<if test="skuUpperLimit != null">
+					and sku_upper_limit=#{skuUpperLimit}
+				</if>
+				<if test="location != null">
+				<if test="locationLike == false">
+					and location=#{location}
+				</if>
+				<if test="locationLike == true">
+					and  location like "%"#{location}"%"
+				</if>
+				</if>
+				<if test="skuImg != null">
+				<if test="skuImgLike == false">
+					and sku_img=#{skuImg}
+				</if>
+				<if test="skuImgLike == true">
+					and  sku_img like "%"#{skuImg}"%"
+				</if>
+				</if>
+				<if test="skuSort != null">
+					and sku_sort=#{skuSort}
+				</if>
+				<if test="skuName != null">
+				<if test="skuNameLike == false">
+					and sku_name=#{skuName}
+				</if>
+				<if test="skuNameLike == true">
+					and  sku_name like "%"#{skuName}"%"
+				</if>
+				</if>
+				<if test="marketPrice != null">
+					and market_price=#{marketPrice}
+				</if>
+				<if test="createTime != null">
+					and create_time=#{createTime}
+				</if>
+				<if test="updateTime != null">
+					and update_time=#{updateTime}
+				</if>
+				<if test="createUserId != null">
+				<if test="createUserIdLike == false">
+					and create_user_id=#{createUserId}
+				</if>
+				<if test="createUserIdLike == true">
+					and  create_user_id like "%"#{createUserId}"%"
+				</if>
+				</if>
+				<if test="updateUserId != null">
+				<if test="updateUserIdLike == false">
+					and update_user_id=#{updateUserId}
+				</if>
+				<if test="updateUserIdLike == true">
+					and  update_user_id like "%"#{updateUserId}"%"
+				</if>
+				</if>
+				<if test="lastStatus != null">
+					and last_status=#{lastStatus}
+				</if>
+				<if test="skuType != null">
+					and sku_type=#{skuType}
+				</if>
+				<if test="sales != null">
+					and sales=#{sales}
+				</if>
+		</where>
+	</sql>
+
+	<sql id="skuListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="skuListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getSkuByKey" resultMap="sku" parameterType="hashMap">
+		SELECT id,product_id,color_id,size,delive_fee,sku_price,stock_inventory,sku_upper_limit,location,sku_img,sku_sort,sku_name,market_price,create_time,update_time,create_user_id,update_user_id,last_status,sku_type,sales FROM bbs_sku
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getSkusByKeys" resultMap="sku" parameterType="ArrayList">
+		SELECT id,product_id,color_id,size,delive_fee,sku_price,stock_inventory,sku_upper_limit,location,sku_img,sku_sort,sku_name,market_price,create_time,update_time,create_user_id,update_user_id,last_status,sku_type,sales FROM bbs_sku
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_sku
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_sku
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateSkuByKey" parameterType="Sku">
+		UPDATE bbs_sku
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="productId != null">
+					product_id = #{productId},
+				</if>
+				<if test="colorId != null">
+					color_id = #{colorId},
+				</if>
+				<if test="size != null">
+					size = #{size},
+				</if>
+				<if test="deliveFee != null">
+					delive_fee = #{deliveFee},
+				</if>
+				<if test="skuPrice != null">
+					sku_price = #{skuPrice},
+				</if>
+				<if test="stockInventory != null">
+					stock_inventory = #{stockInventory},
+				</if>
+				<if test="skuUpperLimit != null">
+					sku_upper_limit = #{skuUpperLimit},
+				</if>
+				<if test="location != null">
+					location = #{location},
+				</if>
+				<if test="skuImg != null">
+					sku_img = #{skuImg},
+				</if>
+				<if test="skuSort != null">
+					sku_sort = #{skuSort},
+				</if>
+				<if test="skuName != null">
+					sku_name = #{skuName},
+				</if>
+				<if test="marketPrice != null">
+					market_price = #{marketPrice},
+				</if>
+				<if test="createTime != null">
+					create_time = #{createTime},
+				</if>
+				<if test="updateTime != null">
+					update_time = #{updateTime},
+				</if>
+				<if test="createUserId != null">
+					create_user_id = #{createUserId},
+				</if>
+				<if test="updateUserId != null">
+					update_user_id = #{updateUserId},
+				</if>
+				<if test="lastStatus != null">
+					last_status = #{lastStatus},
+				</if>
+				<if test="skuType != null">
+					sku_type = #{skuType},
+				</if>
+				<if test="sales != null">
+					sales = #{sales}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getSkuListWithPage" parameterType="SkuQuery" resultMap="sku">
+		<include refid="skuSelector" />
+		<include refid="skuListWhere" />
+		<include refid="skuListOrder" />
+		<include refid="skuListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getSkuListCount" parameterType="SkuQuery" resultType="int">
+		SELECT count(1) FROM bbs_sku
+		<include refid="skuListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getSkuList" parameterType="SkuQuery" resultMap="sku">
+		<include refid="skuSelector" />
+		<include refid="skuListWhere" />
+		<include refid="skuListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addSku" parameterType="Sku">
+		INSERT INTO bbs_sku
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="productId != null">
+					product_id,
+				</if>
+				<if test="colorId != null">
+					color_id,
+				</if>
+				<if test="size != null">
+					size,
+				</if>
+				<if test="deliveFee != null">
+					delive_fee,
+				</if>
+				<if test="skuPrice != null">
+					sku_price,
+				</if>
+				<if test="stockInventory != null">
+					stock_inventory,
+				</if>
+				<if test="skuUpperLimit != null">
+					sku_upper_limit,
+				</if>
+				<if test="location != null">
+					location,
+				</if>
+				<if test="skuImg != null">
+					sku_img,
+				</if>
+				<if test="skuSort != null">
+					sku_sort,
+				</if>
+				<if test="skuName != null">
+					sku_name,
+				</if>
+				<if test="marketPrice != null">
+					market_price,
+				</if>
+				<if test="createTime != null">
+					create_time,
+				</if>
+				<if test="updateTime != null">
+					update_time,
+				</if>
+				<if test="createUserId != null">
+					create_user_id,
+				</if>
+				<if test="updateUserId != null">
+					update_user_id,
+				</if>
+				<if test="lastStatus != null">
+					last_status,
+				</if>
+				<if test="skuType != null">
+					sku_type,
+				</if>
+					<if test="sales != null">
+						sales
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="productId != null">
+						#{productId},
+					</if>
+					<if test="colorId != null">
+						#{colorId},
+					</if>
+					<if test="size != null">
+						#{size},
+					</if>
+					<if test="deliveFee != null">
+						#{deliveFee},
+					</if>
+					<if test="skuPrice != null">
+						#{skuPrice},
+					</if>
+					<if test="stockInventory != null">
+						#{stockInventory},
+					</if>
+					<if test="skuUpperLimit != null">
+						#{skuUpperLimit},
+					</if>
+					<if test="location != null">
+						#{location},
+					</if>
+					<if test="skuImg != null">
+						#{skuImg},
+					</if>
+					<if test="skuSort != null">
+						#{skuSort},
+					</if>
+					<if test="skuName != null">
+						#{skuName},
+					</if>
+					<if test="marketPrice != null">
+						#{marketPrice},
+					</if>
+					<if test="createTime != null">
+						#{createTime},
+					</if>
+					<if test="updateTime != null">
+						#{updateTime},
+					</if>
+					<if test="createUserId != null">
+						#{createUserId},
+					</if>
+					<if test="updateUserId != null">
+						#{updateUserId},
+					</if>
+					<if test="lastStatus != null">
+						#{lastStatus},
+					</if>
+					<if test="skuType != null">
+						#{skuType},
+					</if>
+					<if test="sales != null">
+						#{sales}
+					</if>
+		</trim>
+	</insert>
+	<!-- 库存大于>0 -->
+	<select id="getStock" parameterType="Integer" resultMap="sku">
+		select
+		id,product_id,color_id,size,delive_fee,sku_price,stock_inventory,sku_upper_limit,location,sku_img,sku_sort,sku_name,market_price,create_time,update_time,create_user_id,update_user_id,last_status,sku_type,sales
+		FROM bbs_sku
+		<where>
+			stock_inventory > 0 and product_id = #{productId}
+		</where>
+	
+	</select>
+</mapper>

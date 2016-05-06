@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.product.ColorDao">
+	<resultMap id="color" type="Color">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="parentId" column="parent_id" />
+		<result property="imgUrl" column="img_url" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="colorSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,name,parent_id,img_url
+			</if>
+		FROM bbs_color
+	</sql>
+	<sql id="colorListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="name != null">
+				<if test="nameLike == false">
+					and name=#{name}
+				</if>
+				<if test="nameLike == true">
+					and  name like "%"#{name}"%"
+				</if>
+				</if>
+				<if test="parentId != null">
+					and parent_id!=#{parentId}
+				</if>
+				<if test="imgUrl != null">
+				<if test="imgUrlLike == false">
+					and img_url=#{imgUrl}
+				</if>
+				<if test="imgUrlLike == true">
+					and  img_url like "%"#{imgUrl}"%"
+				</if>
+				</if>
+		</where>
+	</sql>
+
+	<sql id="colorListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="colorListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getColorByKey" resultMap="color" parameterType="hashMap">
+		SELECT id,name,parent_id,img_url FROM bbs_color
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getColorsByKeys" resultMap="color" parameterType="ArrayList">
+		SELECT id,name,parent_id,img_url FROM bbs_color
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_color
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_color
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateColorByKey" parameterType="Color">
+		UPDATE bbs_color
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="name != null">
+					name = #{name},
+				</if>
+				<if test="parentId != null">
+					parent_id = #{parentId},
+				</if>
+				<if test="imgUrl != null">
+					img_url = #{imgUrl}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getColorListWithPage" parameterType="ColorQuery" resultMap="color">
+		<include refid="colorSelector" />
+		<include refid="colorListWhere" />
+		<include refid="colorListOrder" />
+		<include refid="colorListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getColorListCount" parameterType="ColorQuery" resultType="int">
+		SELECT count(1) FROM bbs_color
+		<include refid="colorListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getColorList" parameterType="ColorQuery" resultMap="color">
+		<include refid="colorSelector" />
+		<include refid="colorListWhere" />
+		<include refid="colorListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addColor" parameterType="Color">
+		INSERT INTO bbs_color
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="name != null">
+					name,
+				</if>
+				<if test="parentId != null">
+					parent_id,
+				</if>
+					<if test="imgUrl != null">
+						img_url
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="name != null">
+						#{name},
+					</if>
+					<if test="parentId != null">
+						#{parentId},
+					</if>
+					<if test="imgUrl != null">
+						#{imgUrl}
+					</if>
+		</trim>
+	</insert>
+</mapper>

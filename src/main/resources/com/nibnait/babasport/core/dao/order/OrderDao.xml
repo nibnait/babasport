@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.order.OrderDao">
+	<resultMap id="order" type="Order">
+		<result property="id" column="id" />
+		<result property="oid" column="oid" />
+		<result property="deliverFee" column="deliver_fee" />
+		<result property="payableFee" column="payable_fee" />
+		<result property="totalPrice" column="total_price" />
+		<result property="paymentWay" column="payment_way" />
+		<result property="paymentCash" column="payment_cash" />
+		<result property="delivery" column="delivery" />
+		<result property="isConfirm" column="isConfirm" />
+		<result property="isPaiy" column="is_paiy" />
+		<result property="state" column="state" />
+		<result property="createDate" column="create_date" javaType="java.sql.Timestamp" jdbcType="TIMESTAMP"/>
+		<result property="note" column="note" />
+		<result property="buyerId" column="buyer_id" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="orderSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,oid,deliver_fee,payable_fee,total_price,payment_way,payment_cash,delivery,isConfirm,is_paiy,state,create_date,note,buyer_id
+			</if>
+		FROM bbs_order
+	</sql>
+	<sql id="orderListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="oid != null">
+				<if test="oidLike == false">
+					and oid=#{oid}
+				</if>
+				<if test="oidLike == true">
+					and  oid like "%"#{oid}"%"
+				</if>
+				</if>
+				<if test="deliverFee != null">
+					and deliver_fee=#{deliverFee}
+				</if>
+				<if test="payableFee != null">
+					and payable_fee=#{payableFee}
+				</if>
+				<if test="totalPrice != null">
+					and total_price=#{totalPrice}
+				</if>
+				<if test="paymentWay != null">
+					and payment_way=#{paymentWay}
+				</if>
+				<if test="paymentCash != null">
+					and payment_cash=#{paymentCash}
+				</if>
+				<if test="delivery != null">
+					and delivery=#{delivery}
+				</if>
+				<if test="isConfirm != null">
+					and isConfirm=#{isConfirm}
+				</if>
+				<if test="isPaiy != null">
+					and is_paiy=#{isPaiy}
+				</if>
+				<if test="state != null">
+					and state=#{state}
+				</if>
+				<if test="createDate != null">
+					and create_date=#{createDate}
+				</if>
+				<if test="note != null">
+				<if test="noteLike == false">
+					and note=#{note}
+				</if>
+				<if test="noteLike == true">
+					and  note like "%"#{note}"%"
+				</if>
+				</if>
+				<if test="buyerId != null">
+				<if test="buyerIdLike == false">
+					and buyer_id=#{buyerId}
+				</if>
+				<if test="buyerIdLike == true">
+					and  buyer_id like "%"#{buyerId}"%"
+				</if>
+				</if>
+		</where>
+	</sql>
+
+	<sql id="orderListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="orderListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getOrderByKey" resultMap="order" parameterType="hashMap">
+		SELECT id,oid,deliver_fee,payable_fee,total_price,payment_way,payment_cash,delivery,isConfirm,is_paiy,state,create_date,note,buyer_id FROM bbs_order
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getOrdersByKeys" resultMap="order" parameterType="ArrayList">
+		SELECT id,oid,deliver_fee,payable_fee,total_price,payment_way,payment_cash,delivery,isConfirm,is_paiy,state,create_date,note,buyer_id FROM bbs_order
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_order
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_order
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateOrderByKey" parameterType="Order">
+		UPDATE bbs_order
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="oid != null">
+					oid = #{oid},
+				</if>
+				<if test="deliverFee != null">
+					deliver_fee = #{deliverFee},
+				</if>
+				<if test="payableFee != null">
+					payable_fee = #{payableFee},
+				</if>
+				<if test="totalPrice != null">
+					total_price = #{totalPrice},
+				</if>
+				<if test="paymentWay != null">
+					payment_way = #{paymentWay},
+				</if>
+				<if test="paymentCash != null">
+					payment_cash = #{paymentCash},
+				</if>
+				<if test="delivery != null">
+					delivery = #{delivery},
+				</if>
+				<if test="isConfirm != null">
+					isConfirm = #{isConfirm},
+				</if>
+				<if test="isPaiy != null">
+					is_paiy = #{isPaiy},
+				</if>
+				<if test="state != null">
+					state = #{state},
+				</if>
+				<if test="createDate != null">
+					create_date = #{createDate},
+				</if>
+				<if test="note != null">
+					note = #{note},
+				</if>
+				<if test="buyerId != null">
+					buyer_id = #{buyerId}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getOrderListWithPage" parameterType="OrderQuery" resultMap="order">
+		<include refid="orderSelector" />
+		<include refid="orderListWhere" />
+		<include refid="orderListOrder" />
+		<include refid="orderListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getOrderListCount" parameterType="OrderQuery" resultType="int">
+		SELECT count(1) FROM bbs_order
+		<include refid="orderListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getOrderList" parameterType="OrderQuery" resultMap="order">
+		<include refid="orderSelector" />
+		<include refid="orderListWhere" />
+		<include refid="orderListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addOrder" parameterType="Order">
+		INSERT INTO bbs_order
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="oid != null">
+					oid,
+				</if>
+				<if test="deliverFee != null">
+					deliver_fee,
+				</if>
+				<if test="payableFee != null">
+					payable_fee,
+				</if>
+				<if test="totalPrice != null">
+					total_price,
+				</if>
+				<if test="paymentWay != null">
+					payment_way,
+				</if>
+				<if test="paymentCash != null">
+					payment_cash,
+				</if>
+				<if test="delivery != null">
+					delivery,
+				</if>
+				<if test="isConfirm != null">
+					isConfirm,
+				</if>
+				<if test="isPaiy != null">
+					is_paiy,
+				</if>
+				<if test="state != null">
+					state,
+				</if>
+				<if test="createDate != null">
+					create_date,
+				</if>
+				<if test="note != null">
+					note,
+				</if>
+					<if test="buyerId != null">
+						buyer_id
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="oid != null">
+						#{oid},
+					</if>
+					<if test="deliverFee != null">
+						#{deliverFee},
+					</if>
+					<if test="payableFee != null">
+						#{payableFee},
+					</if>
+					<if test="totalPrice != null">
+						#{totalPrice},
+					</if>
+					<if test="paymentWay != null">
+						#{paymentWay},
+					</if>
+					<if test="paymentCash != null">
+						#{paymentCash},
+					</if>
+					<if test="delivery != null">
+						#{delivery},
+					</if>
+					<if test="isConfirm != null">
+						#{isConfirm},
+					</if>
+					<if test="isPaiy != null">
+						#{isPaiy},
+					</if>
+					<if test="state != null">
+						#{state},
+					</if>
+					<if test="createDate != null">
+						#{createDate},
+					</if>
+					<if test="note != null">
+						#{note},
+					</if>
+					<if test="buyerId != null">
+						#{buyerId}
+					</if>
+		</trim>
+	</insert>
+</mapper>

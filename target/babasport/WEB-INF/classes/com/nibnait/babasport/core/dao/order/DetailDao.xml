@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.order.DetailDao">
+	<resultMap id="detail" type="Detail">
+		<result property="id" column="id" />
+		<result property="orderId" column="order_id" />
+		<result property="productNo" column="product_no" />
+		<result property="productName" column="product_name" />
+		<result property="color" column="color" />
+		<result property="size" column="size" />
+		<result property="skuPrice" column="sku_price" />
+		<result property="amount" column="amount" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="detailSelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,order_id,product_no,product_name,color,size,sku_price,amount
+			</if>
+		FROM bbs_detail
+	</sql>
+	<sql id="detailListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="orderId != null">
+					and order_id=#{orderId}
+				</if>
+				<if test="productNo != null">
+				<if test="productNoLike == false">
+					and product_no=#{productNo}
+				</if>
+				<if test="productNoLike == true">
+					and  product_no like "%"#{productNo}"%"
+				</if>
+				</if>
+				<if test="productName != null">
+				<if test="productNameLike == false">
+					and product_name=#{productName}
+				</if>
+				<if test="productNameLike == true">
+					and  product_name like "%"#{productName}"%"
+				</if>
+				</if>
+				<if test="color != null">
+				<if test="colorLike == false">
+					and color=#{color}
+				</if>
+				<if test="colorLike == true">
+					and  color like "%"#{color}"%"
+				</if>
+				</if>
+				<if test="size != null">
+				<if test="sizeLike == false">
+					and size=#{size}
+				</if>
+				<if test="sizeLike == true">
+					and  size like "%"#{size}"%"
+				</if>
+				</if>
+				<if test="skuPrice != null">
+					and sku_price=#{skuPrice}
+				</if>
+				<if test="amount != null">
+					and amount=#{amount}
+				</if>
+		</where>
+	</sql>
+
+	<sql id="detailListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="detailListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getDetailByKey" resultMap="detail" parameterType="hashMap">
+		SELECT id,order_id,product_no,product_name,color,size,sku_price,amount FROM bbs_detail
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getDetailsByKeys" resultMap="detail" parameterType="ArrayList">
+		SELECT id,order_id,product_no,product_name,color,size,sku_price,amount FROM bbs_detail
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_detail
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_detail
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateDetailByKey" parameterType="Detail">
+		UPDATE bbs_detail
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="orderId != null">
+					order_id = #{orderId},
+				</if>
+				<if test="productNo != null">
+					product_no = #{productNo},
+				</if>
+				<if test="productName != null">
+					product_name = #{productName},
+				</if>
+				<if test="color != null">
+					color = #{color},
+				</if>
+				<if test="size != null">
+					size = #{size},
+				</if>
+				<if test="skuPrice != null">
+					sku_price = #{skuPrice},
+				</if>
+				<if test="amount != null">
+					amount = #{amount}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getDetailListWithPage" parameterType="DetailQuery" resultMap="detail">
+		<include refid="detailSelector" />
+		<include refid="detailListWhere" />
+		<include refid="detailListOrder" />
+		<include refid="detailListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getDetailListCount" parameterType="DetailQuery" resultType="int">
+		SELECT count(1) FROM bbs_detail
+		<include refid="detailListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getDetailList" parameterType="DetailQuery" resultMap="detail">
+		<include refid="detailSelector" />
+		<include refid="detailListWhere" />
+		<include refid="detailListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addDetail" parameterType="Detail">
+		INSERT INTO bbs_detail
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="orderId != null">
+					order_id,
+				</if>
+				<if test="productNo != null">
+					product_no,
+				</if>
+				<if test="productName != null">
+					product_name,
+				</if>
+				<if test="color != null">
+					color,
+				</if>
+				<if test="size != null">
+					size,
+				</if>
+				<if test="skuPrice != null">
+					sku_price,
+				</if>
+					<if test="amount != null">
+						amount
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="orderId != null">
+						#{orderId},
+					</if>
+					<if test="productNo != null">
+						#{productNo},
+					</if>
+					<if test="productName != null">
+						#{productName},
+					</if>
+					<if test="color != null">
+						#{color},
+					</if>
+					<if test="size != null">
+						#{size},
+					</if>
+					<if test="skuPrice != null">
+						#{skuPrice},
+					</if>
+					<if test="amount != null">
+						#{amount}
+					</if>
+		</trim>
+	</insert>
+</mapper>

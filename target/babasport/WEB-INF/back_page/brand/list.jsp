@@ -7,6 +7,7 @@
     <title>babasport-list</title>
     <script type="text/javascript">
 
+        //表头的checkBox联动
         function checkHead(brand) {
             var s = $("input[name='ids']:checked").size();
             var pageSize = 5;
@@ -17,10 +18,12 @@
             }
         }
 
+        //全选
         function checkBox(brandHead){
             $("input[type=checkbox][name=ids]").attr("checked",brandHead.checked);
         }
 
+        //删除
         function optDelete(name,isDisplay) {
             var s = $("input[name='ids']:checked").size();
             if (s <= 0) {

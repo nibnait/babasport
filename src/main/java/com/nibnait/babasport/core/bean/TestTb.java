@@ -3,35 +3,34 @@ package com.nibnait.babasport.core.bean;
 import java.util.Date;
 
 /**
- * Created by nibnait on 2016/5/4.
+ * 测试JavaBean
+ * @author lx
+ *
  */
 public class TestTb {
+	
+	private Integer id;
+	private String name;
+	private Date birthday;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	
 
-    private Integer id;
-    private String name;
-    private Date birthday;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
 }

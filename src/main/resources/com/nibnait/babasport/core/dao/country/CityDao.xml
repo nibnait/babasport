@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nibnait.babasport.core.dao.country.CityDao">
+	<resultMap id="city" type="City">
+		<result property="id" column="id" />
+		<result property="code" column="code" />
+		<result property="name" column="name" />
+		<result property="province" column="province" />
+	</resultMap>
+	<!-- Select SQL -->
+	<sql id="citySelector">
+		SELECT
+			<if test="fields != null">
+				${fields}
+			</if>
+			<if test="fields == null">
+			id,code,name,province
+			</if>
+		FROM bbs_city
+	</sql>
+	<sql id="cityListWhere">
+		<where>
+				<if test="id != null">
+					and id=#{id}
+				</if>
+				<if test="code != null">
+				<if test="codeLike == false">
+					and code=#{code}
+				</if>
+				<if test="codeLike == true">
+					and  code like "%"#{code}"%"
+				</if>
+				</if>
+				<if test="name != null">
+				<if test="nameLike == false">
+					and name=#{name}
+				</if>
+				<if test="nameLike == true">
+					and  name like "%"#{name}"%"
+				</if>
+				</if>
+				<if test="province != null">
+				<if test="provinceLike == false">
+					and province=#{province}
+				</if>
+				<if test="provinceLike == true">
+					and  province like "%"#{province}"%"
+				</if>
+				</if>
+		</where>
+	</sql>
+
+	<sql id="cityListOrder">
+		<if test="orderFields != null and orderFields.size >0">
+		order by 
+			<foreach collection="orderFields" separator="," item="orderField">
+				${orderField.fieldName} ${orderField.order}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="cityListLimit">
+		<if test="startRow != null">
+			limit #{startRow},#{pageSize}
+		</if>
+	</sql>
+
+	<!-- 根据主键查询 -->
+	<select id="getCityByKey" resultMap="city" parameterType="hashMap">
+		SELECT id,code,name,province FROM bbs_city
+		WHERE
+		id=#{id}
+	</select>
+	<select id="getCitysByKeys" resultMap="city" parameterType="ArrayList">
+		SELECT id,code,name,province FROM bbs_city
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- 根据主键删除 -->
+	<delete id="deleteByKey" parameterType="hashMap">
+		DELETE FROM bbs_city
+		WHERE
+		id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByKeys">
+		DELETE FROM bbs_city
+		WHERE
+		id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!-- 根据主键更新 -->
+	<update id="updateCityByKey" parameterType="City">
+		UPDATE bbs_city
+		<set>
+			<trim suffixOverrides=",">
+				<if test="id != null">
+					id = #{id},
+				</if>
+				<if test="code != null">
+					code = #{code},
+				</if>
+				<if test="name != null">
+					name = #{name},
+				</if>
+				<if test="province != null">
+					province = #{province}
+				</if>
+			</trim>
+		</set>
+		WHERE
+		id=#{id}
+	</update>
+	<!-- 分页 -->
+	<select id="getCityListWithPage" parameterType="CityQuery" resultMap="city">
+		<include refid="citySelector" />
+		<include refid="cityListWhere" />
+		<include refid="cityListOrder" />
+		<include refid="cityListLimit" />
+	</select>
+	<!-- 数据总数 -->
+	<select id="getCityListCount" parameterType="CityQuery" resultType="int">
+		SELECT count(1) FROM bbs_city
+		<include refid="cityListWhere" />
+	</select>
+	<!-- 数据集合 -->
+	<select id="getCityList" parameterType="CityQuery" resultMap="city">
+		<include refid="citySelector" />
+		<include refid="cityListWhere" />
+		<include refid="cityListOrder" />
+	</select>
+	<!-- 添加 -->
+	<insert id="addCity" parameterType="City">
+		INSERT INTO bbs_city
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="id != null">
+					id,
+				</if>
+				<if test="code != null">
+					code,
+				</if>
+				<if test="name != null">
+					name,
+				</if>
+					<if test="province != null">
+						province
+					</if>
+		</trim>
+		VALUES
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+					<if test="id != null">
+						#{id},
+					</if>
+					<if test="code != null">
+						#{code},
+					</if>
+					<if test="name != null">
+						#{name},
+					</if>
+					<if test="province != null">
+						#{province}
+					</if>
+		</trim>
+	</insert>
+</mapper>
