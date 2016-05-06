@@ -1,6 +1,7 @@
 package com.nibnait.babasport.core.dao.product;
 
 import com.nibnait.babasport.core.bean.product.Brand;
+import com.nibnait.babasport.core.query.product.BrandQuery;
 
 import java.util.List;
 
@@ -10,6 +11,8 @@ import java.util.List;
  */
 public interface BrandDao {
 
+    public List<Brand> getBrandList(BrandQuery brandQuery);
+
     //List集合
     public List<Brand> getBrandListWithPage(Brand brand);
 
@@ -18,8 +21,6 @@ public interface BrandDao {
 
     //添加品牌
     public void addBrand(Brand brand);
-
-
 
     //删除
     public void deleteBrandByIds(Integer[] ids);

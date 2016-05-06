@@ -36,7 +36,7 @@
  - 异步上传技术：  
 ```UniformInterfaceException：returned a response status of 409 Conflict```
 （！BUG）失败，只能将图片上传到本地服务器上了  
-文件路径问题：值得注意![]()
+文件路径问题：值得注意![](https://github.com/nibnait/babasport/blob/master/%E6%8A%80%E6%9C%AF%E7%82%B9%E7%AC%94%E8%AE%B0%E9%99%84%E4%BB%B6/README-1.png?raw=true)
 
  - 由于mybatis.xml无法接收Serializable数组，所以 deleteById,和deleteByIds只能分开写了
 

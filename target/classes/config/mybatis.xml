@@ -15,7 +15,7 @@
 		<property name="dataSource" ref="dataSource"/>
 		<property name="mapperLocations" value="classpath:com/nibnait/babasport/core/dao/*.xml"/>
 		<!--指定别名包-->
-		<property name="typeAliasesPackage" value="com.nibnait.babasport.core.bean"/>
+		<property name="typeAliasesPackage" value="com.nibnait.babasport.core.bean,com.nibnait.babasport.core.query"/>
 	</bean>
 	
 	<!-- 扫包  -->
