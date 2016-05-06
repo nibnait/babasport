@@ -40,4 +40,6 @@
 
  - 由于mybatis.xml无法接收Serializable数组，所以 deleteById,和deleteByIds只能分开写了
 
- - 
+## day03 商品管理模块
+1. 商品编辑页面：FCK
+ - sdaf  

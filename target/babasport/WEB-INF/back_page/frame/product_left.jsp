@@ -23,7 +23,7 @@
 <div class="left">
 <%@ include file="/WEB-INF/back_page/date.jsp" %>
      <ul class="w-lful">
-		<li><a href="../product/list.do" target="rightFrame">商品管理</a></li>
+		<li><a href="/product/list.do" target="rightFrame">商品管理</a></li>
 		<li><a href="/brand/list.do" target="rightFrame">品牌管理</a></li>
 		<li><a href="../type/list.jsp" target="rightFrame">类型管理</a></li>
      </ul>
