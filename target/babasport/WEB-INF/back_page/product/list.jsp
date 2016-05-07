@@ -30,14 +30,14 @@ function changePageNo(){
 <div class="box-positon">
 	<div class="rpos">当前位置: 商品管理 - 列表</div>
 	<form class="ropt">
-		<input class="add" type="button" value="添加" onclick="javascript:window.location.href='add.jsp'"/>
+		<input class="add" type="button" value="添加" onclick="javascript:window.location.href='toAdd.do'"/>
 	</form>
 	<div class="clear"></div>
 </div>
 <div class="body-box">
 <form action="/product/list.do" method="post" style="padding-top:5px;">
-名称: <input type="text" onkeyup="changePageNo()" value="" name="name"/>
-	<select onchange="changePageNo()" name="brandId">
+名称: <input type="text"  value="${name}" name="name"/>
+	<select name="brandId">
 		<option value="">请选择品牌</option>
 		<c:forEach items="${brandList}" var="brand">
 			<option value="${brand.id}" <c:if test="${brandId == brand.id}">selected="selected"</c:if>>${brand.name}</option>
@@ -50,8 +50,6 @@ function changePageNo(){
 	<input type="submit" class="query" value="查询"/>
 </form>
 <form method="post" id="tableForm">
-<input type="hidden" value="" name="pageNo"/>
-<input type="hidden" value="" name="queryName"/>
 <table cellspacing="1" cellpadding="0" width="100%" border="0" class="pn-ltable">
 	<thead class="pn-lthead">
 		<tr>
@@ -67,12 +65,12 @@ function changePageNo(){
 		</tr>
 	</thead>
 	<tbody class="pn-ltbody">
-	<c:forEach items="${productList}" var="entry">
+	<c:forEach items="${pagination.list}" var="entry">
 		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
 			<td><input type="checkbox" name="ids" value="${entry.id}"/></td>
 			<td>${entry.id}---${entry.no}</td>
 			<td align="center">${entry.name}</td>
-			<td align="center"><img width="50" height="50" src="/res/img/pic/ppp0.jpg"/></td>
+			<td align="center"><img width="50" height="50" src="${entry.img.allUrl}"/></td>
 			<td align="center">是</td>
 			<td align="center">是</td>
 			<td align="center">是</td>

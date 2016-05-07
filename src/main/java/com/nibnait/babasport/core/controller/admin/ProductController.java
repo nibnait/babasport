@@ -1,10 +1,8 @@
 package com.nibnait.babasport.core.controller.admin;
 
-import com.nibnait.babasport.core.bean.product.Brand;
-import com.nibnait.babasport.core.query.product.BrandQuery;
-import com.nibnait.babasport.core.query.product.ProductQuery;
-import com.nibnait.babasport.core.service.product.BrandService;
-import com.nibnait.babasport.core.service.product.ProductService;
+import com.nibnait.babasport.core.bean.product.*;
+import com.nibnait.babasport.core.query.product.*;
+import com.nibnait.babasport.core.service.product.*;
 import com.nibnait.common.page.Pagination;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +26,12 @@ public class ProductController {
     BrandService brandService;
     @Autowired
     ProductService productService;
+    @Autowired
+    TypeService typeService;
+    @Autowired
+    FeatureService featureService;
+    @Autowired
+    ColorService colorService;
 
 
     //商品列表
@@ -75,6 +79,8 @@ public class ProductController {
         productQuery.setPageNo(Pagination.cpn(pageNo));
         productQuery.setPageSize(5);
 
+        productQuery.orderbyBrandId(false);
+
         Pagination pagination = productService.getProductListWithPage(productQuery);
         //setPageView
         String url = "/product/list.do";
@@ -82,6 +88,49 @@ public class ProductController {
 
         model.addAttribute("pagination",pagination);
         return "product/list";
+    }
+
+    //跳转到 添加页面
+    @RequestMapping(value = "/product/toAdd.do")
+    public String toAdd(ModelMap model){
+
+        //加载类型
+        TypeQuery typeQuery = new TypeQuery();
+        typeQuery.setFields("id,name");
+        typeQuery.setIsDisplay(1);
+        typeQuery.setParentId(0);   //(父Id不等于0的)
+        List<Type> typeList = typeService.getTypeList(typeQuery);
+        model.addAttribute("typeList",typeList);
+
+        //加载品牌
+        BrandQuery brandQuery = new BrandQuery();
+        brandQuery.setFields("id,name");
+        brandQuery.setIsDisplay(1);
+        List<Brand> brandList = brandService.getBrandList(brandQuery);
+        model.addAttribute("brandList",brandList);
+
+        //加载商品属性
+        FeatureQuery featureQuery = new FeatureQuery();
+        List<Feature> featureList = featureService.getFeatureList(featureQuery);
+        model.addAttribute("featureList",featureList);
+        
+        //加载颜色
+        ColorQuery colorQuery = new ColorQuery();
+        colorQuery.setParentId(0);
+        List<Color> colorList = colorService.getColorList(colorQuery);
+        model.addAttribute("colorList",colorList);
+
+        return "/product/add";
+    }
+
+
+    //添加页面
+    @RequestMapping(value = "/product/add.do")
+    public String add(Product product, Img img){
+
+        product.setImg(img);
+        productService.addProduct(product);
+        return "redirect:/product/list.do";
     }
 
 

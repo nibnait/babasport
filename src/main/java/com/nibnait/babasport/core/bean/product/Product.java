@@ -19,9 +19,9 @@ public class Product implements Serializable {
 	private String no;
 	private String name;
 	private Double weight;
-	private Integer isNew = 0;
-	private Integer isHot = 0;
-	private Integer isCommend = 0;
+	private Integer isNew;
+	private Integer isHot;
+	private Integer isCommend;
 	private Date createTime;
 	private String createUserId;
 	private Date checkTime;
@@ -38,6 +38,15 @@ public class Product implements Serializable {
 	private String color;//9,10,11,12
 	private String size;//S,L,XXL
 
+	//添加外部对象
+	private Img img;
+
+	public Img getImg() {
+		return img;
+	}
+	public void setImg(Img img) {
+		this.img = img;
+	}
 	public Integer getId() {
 		return id;
 	}

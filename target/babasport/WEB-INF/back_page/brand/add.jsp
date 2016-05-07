@@ -9,7 +9,7 @@
 function uploadPic(){
 	//定义参数
 	var options = {
-		url : "/upload/uploadPic.do",
+		url : "/upload/uploadBrandPic.do",
 		dataType : "json",
 		type :  "post",
 		success : function(data){
@@ -18,7 +18,11 @@ function uploadPic(){
 			//path
 			$("#allImgUrl").attr("src",data.url);
 			$("#path").val(data.path);
-		}
+		},
+        error: function (detail) {
+
+            alert(detail.toString());
+        }
 	};
 	
 	//jquery.form使用方式

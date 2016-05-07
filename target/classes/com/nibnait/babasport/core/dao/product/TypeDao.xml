@@ -1,182 +1,182 @@
-<?xml version="1.0" encoding="UTF-8" ?>  
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.nibnait.babasport.core.dao.product.TypeDao">
-	<resultMap id="type" type="Type">
-		<result property="id" column="id" />
-		<result property="name" column="name" />
-		<result property="parentId" column="parent_id" />
-		<result property="note" column="note" />
-		<result property="isDisplay" column="is_display" />
-	</resultMap>
-	<!-- Select SQL -->
-	<sql id="typeSelector">
-		SELECT
-			<if test="fields != null">
-				${fields}
-			</if>
-			<if test="fields == null">
-			id,name,parent_id,note,is_display
-			</if>
-		FROM bbs_type
-	</sql>
-	<sql id="typeListWhere">
-		<where>
-				<if test="id != null">
-					and id=#{id}
-				</if>
-				<if test="name != null">
-				<if test="nameLike == false">
-					and name=#{name}
-				</if>
-				<if test="nameLike == true">
-					and  name like "%"#{name}"%"
-				</if>
-				</if>
-				<if test="parentId != null">
-					and parent_id!=#{parentId}
-				</if>
-				<if test="note != null">
-				<if test="noteLike == false">
-					and note=#{note}
-				</if>
-				<if test="noteLike == true">
-					and  note like "%"#{note}"%"
-				</if>
-				</if>
-				<if test="isDisplay != null">
-					and is_display=#{isDisplay}
-				</if>
-		</where>
-	</sql>
+    <resultMap id="type" type="Type">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="note" column="note"/>
+        <result property="isDisplay" column="is_display"/>
+    </resultMap>
+    <!-- Select SQL -->
+    <sql id="typeSelector">
+        SELECT
+        <if test="fields != null">
+            ${fields}
+        </if>
+        <if test="fields == null">
+            id,name,parent_id,note,is_display
+        </if>
+        FROM bbs_type
+    </sql>
+    <sql id="typeListWhere">
+        <where>
+            <if test="id != null">
+                and id=#{id}
+            </if>
+            <if test="name != null">
+                <if test="nameLike == false">
+                    and name=#{name}
+                </if>
+                <if test="nameLike == true">
+                    and name like "%"#{name}"%"
+                </if>
+            </if>
+            <if test="parentId != null">
+                and parent_id!=#{parentId}
+            </if>
+            <if test="note != null">
+                <if test="noteLike == false">
+                    and note=#{note}
+                </if>
+                <if test="noteLike == true">
+                    and note like "%"#{note}"%"
+                </if>
+            </if>
+            <if test="isDisplay != null">
+                and is_display=#{isDisplay}
+            </if>
+        </where>
+    </sql>
 
-	<sql id="typeListOrder">
-		<if test="orderFields != null and orderFields.size >0">
-		order by 
-			<foreach collection="orderFields" separator="," item="orderField">
-				${orderField.fieldName} ${orderField.order}
-			</foreach>
-		</if>
-	</sql>
+    <sql id="typeListOrder">
+        <if test="orderFields != null and orderFields.size >0">
+            order by
+            <foreach collection="orderFields" separator="," item="orderField">
+                ${orderField.fieldName} ${orderField.order}
+            </foreach>
+        </if>
+    </sql>
 
-	<sql id="typeListLimit">
-		<if test="startRow != null">
-			limit #{startRow},#{pageSize}
-		</if>
-	</sql>
+    <sql id="typeListLimit">
+        <if test="startRow != null">
+            limit #{startRow},#{pageSize}
+        </if>
+    </sql>
 
-	<!-- 根据主键查询 -->
-	<select id="getTypeByKey" resultMap="type" parameterType="hashMap">
+    <!-- 根据主键查询 -->
+    <select id="getTypeByKey" resultMap="type" parameterType="hashMap">
 		SELECT id,name,parent_id,note,is_display FROM bbs_type
 		WHERE
 		id=#{id}
 	</select>
-	<select id="getTypesByKeys" resultMap="type" parameterType="ArrayList">
-		SELECT id,name,parent_id,note,is_display FROM bbs_type
-		WHERE
-		id in
-		<foreach collection="list" separator="," item="id" open="(" close=")">
-			#{id}
-		</foreach>
-	</select>
+    <select id="getTypesByKeys" resultMap="type" parameterType="ArrayList">
+        SELECT id,name,parent_id,note,is_display FROM bbs_type
+        WHERE
+        id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </select>
 
-	<!-- 根据主键删除 -->
-	<delete id="deleteByKey" parameterType="hashMap">
+    <!-- 根据主键删除 -->
+    <delete id="deleteByKey" parameterType="hashMap">
 		DELETE FROM bbs_type
 		WHERE
 		id=#{id}
 	</delete>
 
-	<!-- 根据主键批量删除 -->
-	<delete id="deleteByKeys">
-		DELETE FROM bbs_type
-		WHERE
-		id in
-		<foreach collection="list" separator="," item="id" open="(" close=")">
-			#{id}
-		</foreach>
-	</delete>
+    <!-- 根据主键批量删除 -->
+    <delete id="deleteByKeys">
+        DELETE FROM bbs_type
+        WHERE
+        id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
 
-	<!-- 根据主键更新 -->
-	<update id="updateTypeByKey" parameterType="Type">
-		UPDATE bbs_type
-		<set>
-			<trim suffixOverrides=",">
-				<if test="id != null">
-					id = #{id},
-				</if>
-				<if test="name != null">
-					name = #{name},
-				</if>
-				<if test="parentId != null">
-					parent_id = #{parentId},
-				</if>
-				<if test="note != null">
-					note = #{note},
-				</if>
-				<if test="isDisplay != null">
-					is_display = #{isDisplay}
-				</if>
-			</trim>
-		</set>
-		WHERE
-		id=#{id}
-	</update>
-	<!-- 分页 -->
-	<select id="getTypeListWithPage" parameterType="TypeQuery" resultMap="type">
-		<include refid="typeSelector" />
-		<include refid="typeListWhere" />
-		<include refid="typeListOrder" />
-		<include refid="typeListLimit" />
-	</select>
-	<!-- 数据总数 -->
-	<select id="getTypeListCount" parameterType="TypeQuery" resultType="int">
-		SELECT count(1) FROM bbs_type
-		<include refid="typeListWhere" />
-	</select>
-	<!-- 数据集合 -->
-	<select id="getTypeList" parameterType="TypeQuery" resultMap="type">
-		<include refid="typeSelector" />
-		<include refid="typeListWhere" />
-		<include refid="typeListOrder" />
-	</select>
-	<!-- 添加 -->
-	<insert id="addType" parameterType="Type">
-		INSERT INTO bbs_type
-		<trim prefix="(" suffix=")" suffixOverrides=",">
-				<if test="id != null">
-					id,
-				</if>
-				<if test="name != null">
-					name,
-				</if>
-				<if test="parentId != null">
-					parent_id,
-				</if>
-				<if test="note != null">
-					note,
-				</if>
-					<if test="isDisplay != null">
-						is_display
-					</if>
-		</trim>
-		VALUES
-		<trim prefix="(" suffix=")" suffixOverrides=",">
-					<if test="id != null">
-						#{id},
-					</if>
-					<if test="name != null">
-						#{name},
-					</if>
-					<if test="parentId != null">
-						#{parentId},
-					</if>
-					<if test="note != null">
-						#{note},
-					</if>
-					<if test="isDisplay != null">
-						#{isDisplay}
-					</if>
-		</trim>
-	</insert>
+    <!-- 根据主键更新 -->
+    <update id="updateTypeByKey" parameterType="Type">
+        UPDATE bbs_type
+        <set>
+            <trim suffixOverrides=",">
+                <if test="id != null">
+                    id = #{id},
+                </if>
+                <if test="name != null">
+                    name = #{name},
+                </if>
+                <if test="parentId != null">
+                    parent_id = #{parentId},
+                </if>
+                <if test="note != null">
+                    note = #{note},
+                </if>
+                <if test="isDisplay != null">
+                    is_display = #{isDisplay}
+                </if>
+            </trim>
+        </set>
+        WHERE
+        id=#{id}
+    </update>
+    <!-- 分页 -->
+    <select id="getTypeListWithPage" parameterType="TypeQuery" resultMap="type">
+        <include refid="typeSelector"/>
+        <include refid="typeListWhere"/>
+        <include refid="typeListOrder"/>
+        <include refid="typeListLimit"/>
+    </select>
+    <!-- 数据总数 -->
+    <select id="getTypeListCount" parameterType="TypeQuery" resultType="int">
+        SELECT count(1) FROM bbs_type
+        <include refid="typeListWhere"/>
+    </select>
+    <!-- 数据集合 -->
+    <select id="getTypeList" parameterType="TypeQuery" resultMap="type">
+        <include refid="typeSelector"/>
+        <include refid="typeListWhere"/>
+        <include refid="typeListOrder"/>
+    </select>
+    <!-- 添加 -->
+    <insert id="addType" parameterType="Type">
+        INSERT INTO bbs_type
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+            <if test="note != null">
+                note,
+            </if>
+            <if test="isDisplay != null">
+                is_display
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="parentId != null">
+                #{parentId},
+            </if>
+            <if test="note != null">
+                #{note},
+            </if>
+            <if test="isDisplay != null">
+                #{isDisplay}
+            </if>
+        </trim>
+    </insert>
 </mapper>

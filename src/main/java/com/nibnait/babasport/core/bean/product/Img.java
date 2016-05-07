@@ -1,5 +1,7 @@
 package com.nibnait.babasport.core.bean.product;
 
+import com.nibnait.babasport.core.web.Constants;
+
 import java.io.Serializable;
 
 /**
@@ -17,6 +19,11 @@ public class Img implements Serializable {
 	private Integer productId;
 	private String url;
 	private Integer isDef;
+
+	//获取全路径
+	public String getAllUrl() {
+		return Constants.IMAGE_URL+url;
+	}
 
 	public Integer getId() {
 		return id;

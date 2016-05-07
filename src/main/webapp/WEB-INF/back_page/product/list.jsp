@@ -30,7 +30,7 @@ function changePageNo(){
 <div class="box-positon">
 	<div class="rpos">当前位置: 商品管理 - 列表</div>
 	<form class="ropt">
-		<input class="add" type="button" value="添加" onclick="javascript:window.location.href='add.jsp'"/>
+		<input class="add" type="button" value="添加" onclick="javascript:window.location.href='toAdd.do'"/>
 	</form>
 	<div class="clear"></div>
 </div>
@@ -70,7 +70,7 @@ function changePageNo(){
 			<td><input type="checkbox" name="ids" value="${entry.id}"/></td>
 			<td>${entry.id}---${entry.no}</td>
 			<td align="center">${entry.name}</td>
-			<td align="center"><img width="50" height="50" src="/res/img/pic/ppp0.jpg"/></td>
+			<td align="center"><img width="50" height="50" src="${entry.img.allUrl}"/></td>
 			<td align="center">是</td>
 			<td align="center">是</td>
 			<td align="center">是</td>

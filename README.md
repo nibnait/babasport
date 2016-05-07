@@ -33,7 +33,7 @@
 	 - 1. 该服务器配置文件（tomcat8之后 就不用担心此问题了，因为）
 	 - 2. 配置过滤器，将请求重编码: new String("".getByte("iso-8859-1"), utf8);  
 
- - 异步上传技术：  
+ - 异步上传技术： jersey put提交 2号服务器总是返回409错误。。。  
 ```UniformInterfaceException：returned a response status of 409 Conflict```
 （！BUG）失败，只能将图片上传到本地服务器上了  
 文件路径问题：值得注意![](https://github.com/nibnait/babasport/blob/master/%E6%8A%80%E6%9C%AF%E7%82%B9%E7%AC%94%E8%AE%B0%E9%99%84%E4%BB%B6/README-1.png?raw=true)
@@ -41,5 +41,9 @@
  - 由于mybatis.xml无法接收Serializable数组，所以 deleteById,和deleteByIds只能分开写了
 
 ## day03 商品管理模块
-1. 商品编辑页面：FCK
- - sdaf  
+1. 商品管理的添加：
+ - 用```MultipartHttpServletRequest```接收图片
+ - mybatis 标签：
+```useGeneratedKeys="true" keyProperty="id"```：返回 id主键
+ - 往商品表添加数据的时候，注入的是Service 为了之后做分布式缓存的时候，刷新数据。
+ - sadf 
