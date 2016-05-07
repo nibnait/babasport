@@ -1,8 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
-<%response.sendRedirect("/product/display/list.shtml");%>
+<%--<%response.sendRedirect("/product/display/list.shtml");%>--%>
 
-<%--
 <html><head>
     <script type="text/javascript">
         window.onload= function(){
@@ -13,4 +12,4 @@
 <body>
 
 
-</body></html>--%>
+</body></html>

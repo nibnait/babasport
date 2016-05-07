@@ -32,7 +32,8 @@ Pn.checkbox = function(name, checked) {
  * */
 Pn.checkHead = function checkHead() {
     var s = $("input[name='ids']:checked").size();
-    var pageSize = 5;   //这里应该再传个pageSize过来的，懒了
+    var pageSize = $("input[name='ids']").size();
+
     if(s<pageSize){
         $('input[type=checkbox][name=head]').attr('checked', false);
     }else if (s===pageSize){

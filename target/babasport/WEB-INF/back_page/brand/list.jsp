@@ -10,7 +10,7 @@
         //表头的checkBox联动
         function checkHead() {
             var s = $("input[name='ids']:checked").size();
-            var pageSize = 5;   //pageSize应该是传过来的，（但是这里的jsp分页和其他模块是完全分离的，难度较高）
+            var pageSize = $("input[name='ids']").size();
             if(s < pageSize){
                 $('input[type=checkbox][name=brandhead]').attr('checked', false);
             }else if (s===pageSize){
