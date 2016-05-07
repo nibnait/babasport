@@ -8,12 +8,12 @@
     <script type="text/javascript">
 
         //表头的checkBox联动
-        function checkHead(brand) {
+        function checkHead() {
             var s = $("input[name='ids']:checked").size();
-            var pageSize = 5;
-            if(s<pageSize){
+            var pageSize = $("input[name='ids']").size();
+            if(s < pageSize){
                 $('input[type=checkbox][name=brandhead]').attr('checked', false);
-            }else if (s=pageSize){
+            }else if (s===pageSize){
                 $('input[type=checkbox][name=brandhead]').attr('checked', true);
             }
         }
@@ -75,7 +75,7 @@
             <c:forEach items="${pagination.list }" var="entry">
 
                 <tr bgcolor="#ffffff" onmouseout="this.bgColor='#ffffff'" onmouseover="this.bgColor='#eeeeee'">
-                    <td><input type="checkbox" value="${entry.id }" name="ids" onclick="checkHead(this)"/></td>
+                    <td><input type="checkbox" value="${entry.id }" name="ids" onclick="checkHead()"/></td>
                     <td align="center">${entry.id }</td>
                     <td align="center">${entry.name }</td>
                     <td align="center"><img width="40" height="40" src="${entry.allUrl}"/></td>
@@ -84,8 +84,7 @@
                     <td align="center"><c:if test="${entry.isDisplay == 1 }">是</c:if><c:if
                             test="${entry.isDisplay == 0 }">不是</c:if></td>
                     <td align="center">
-                        <a class="pn-opt" href="javascript:void(0)" onclick="window.location.href='/brand/toEdit.do?id=${entry.id}'">修改</a> | <a class="pn-opt"
-                                                               href="/brand/delete.do?id=${entry.id }&name=${name}&isDisplay=${isDisplay}">删除</a>
+                        <a class="pn-opt" href="javascript:void(0)" onclick="window.location.href='/brand/toEdit.do?id=${entry.id}'">修改</a> | <a class="pn-opt" href="/brand/delete.do?id=${entry.id }&name=${name}&isDisplay=${isDisplay}">删除</a>
                     </td>
                 </tr>
             </c:forEach>

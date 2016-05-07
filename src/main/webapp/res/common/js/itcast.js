@@ -28,6 +28,20 @@ Pn.checkbox = function(name, checked) {
 	});
 }
 /**
+ * 与表头的checkBox联动
+ * */
+Pn.checkHead = function checkHead() {
+    var s = $("input[name='ids']:checked").size();
+    var pageSize = $("input[name='ids']").size();
+
+    if(s<pageSize){
+        $('input[type=checkbox][name=head]').attr('checked', false);
+    }else if (s===pageSize){
+        $('input[type=checkbox][name=head]').attr('checked', true);
+    }
+}
+
+/**
  * 复选框选中的个数
  * 
  * @param name

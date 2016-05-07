@@ -17,7 +17,6 @@ public class ResponseUtils {
         try {
             response.getWriter().write(text);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

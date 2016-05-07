@@ -15,6 +15,9 @@ public class Product implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+    /** 前台的 pageSize*/
+    public static final int FRONT_PAGE_SIZE = 8;
+
 	private Integer id;
 	private String no;
 	private String name;

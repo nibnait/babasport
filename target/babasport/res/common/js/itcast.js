@@ -28,6 +28,19 @@ Pn.checkbox = function(name, checked) {
 	});
 }
 /**
+ * 与表头的checkBox联动
+ * */
+Pn.checkHead = function checkHead() {
+    var s = $("input[name='ids']:checked").size();
+    var pageSize = 5;   //这里应该再传个pageSize过来的，懒了
+    if(s<pageSize){
+        $('input[type=checkbox][name=head]').attr('checked', false);
+    }else if (s===pageSize){
+        $('input[type=checkbox][name=head]').attr('checked', true);
+    }
+}
+
+/**
  * 复选框选中的个数
  * 
  * @param name

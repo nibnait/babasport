@@ -46,7 +46,6 @@ public class UploadController {
             try {
                 response.getWriter().print(ok);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
