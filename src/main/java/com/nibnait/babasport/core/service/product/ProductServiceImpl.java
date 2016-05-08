@@ -83,7 +83,16 @@ public class ProductServiceImpl implements ProductService {
      */
     @Transactional(readOnly = true)
     public Product getProductByKey(Integer id) {
-        return productDao.getProductByKey(id);
+
+        /**2016-05-08 13:22:37 添加 在查看商品详情页的时候，把ProDefaultPic放进Product中*/
+        ImgQuery imgQuery = new ImgQuery();
+        imgQuery.setProductId(id);
+        imgQuery.setIsDef(1);
+        List<Img> imgs = imgService.getImgList(imgQuery);
+        Product product = productDao.getProductByKey(id);
+        product.setImg(imgs.get(0));
+
+        return product;
     }
 
     @Transactional(readOnly = true)
@@ -113,7 +122,11 @@ public class ProductServiceImpl implements ProductService {
 
     private void deleteServerPic(HttpServletRequest request, Integer id) {
         String webRoot = request.getServletContext().getRealPath("/");
-        Img img = imgService.getImgByProductId(id);
+        ImgQuery imgQuery = new ImgQuery();
+        imgQuery.setProductId(id);
+        imgQuery.setIsDef(1);
+        List<Img> imgs = imgService.getImgList(imgQuery);
+        Img img = imgs.get(0);
         String bathpath = img.getUrl();
         String filePath = webRoot + bathpath;
 
@@ -150,6 +163,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(readOnly = true)
     public Pagination getProductListWithPage(ProductQuery productQuery) {
+
         Pagination p = new Pagination(productQuery.getPageNo(), productQuery.getPageSize(), productDao.getProductListCount(productQuery));
         List<Product> products = productDao.getProductListWithPage(productQuery);
         /**2016-05-07 08:05:47添加 根据productId查找对应的默认图片，设置product.setImg的url*/

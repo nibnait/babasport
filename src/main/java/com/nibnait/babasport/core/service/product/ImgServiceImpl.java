@@ -88,8 +88,5 @@ public class ImgServiceImpl implements ImgService {
         imgDao.deleteByProductIds(ids);
     }
 
-    public Img getImgByProductId(Integer id) {
-        return imgDao.getImgByProductId(id);
-    }
 
 }

@@ -37,7 +37,7 @@
             var url = "/sku/add.do";
             var params = {"marketPrice" : m,"skuPrice" : p,"stockInventory" : i,"skuUpperLimit" : l,"deliveFee" : f,"id" : skuId };
             $.post(url,params,function(data){
-                alert(data.message);
+//                alert(data.message);
             },"json");
         }
 

@@ -74,6 +74,4 @@ public interface ImgService {
     //根据ProductIds删除
     public void deleteByProductIds(List<Integer> ids);
 
-    //根据ProductId查询
-    public Img getImgByProductId(Integer id);
 }

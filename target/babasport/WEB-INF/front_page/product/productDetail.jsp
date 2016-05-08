@@ -14,6 +14,7 @@
 <title>新巴巴运动网-商品详情页</title>
 <link rel="stylesheet" href="/res/css/style.css" />
 <script src="/res/js/jquery.js"></script>
+<script src="/res/js/nibnait.js"></script>
 <script type="text/javascript" src="/res/js/com.js"></script>
 <style type="text/css">
 .changToRed {
@@ -43,7 +44,40 @@
 </head>
 <script type="text/javascript">
 
+    $(function(){
+
+        //初始化点击第一个颜色
+        $("#colors a:first").trigger("click");
+
+        //购买件数 -
+        $("#sub").click(function(){
+            var num = $("#num").val();
+            num--;
+            if (num <= 0){
+                return;
+            }
+            $("#num").val(num);
+        });
+        //购买件数 +
+        $("#add").click(function(){
+            var num = $("#num").val();
+            num++;
+            if (num > buyLimit){
+                alert("此商品只能购买"+buyLimit+"件");
+                return;
+            }
+            $("#num").val(num);
+        });
+
+    });
+//全局变量
+    var colorId;
+    var skuId;
+    var buyLimit;
+
+    //点击颜色
     function colorToRed(target,id){
+        colorId = id;
         //先清除其他颜色
         $("#colors a").each(function(){
             $(this).attr("class","changToWhite");
@@ -52,22 +86,98 @@
         $("#sizes a").each(function(){
             $(this).attr("class","not-allow");
         })
-        ${target}.attr("class","changeToRed");
-
+        $(target).attr("class","changToRed");
+        //让第一个尺码也被选中
 
         //控制尺码
+        var flag = 0;
         <c:forEach items="${skuList}" var="sku">
+
             if(id == "${sku.colorId}"){
-                $("#"+"${sku.size}").attr("class","changeToWhite");
+
+                if(flag == 0){
+                    $("#" + '${sku.size}').attr("class","changToRed");
+                    flag = 1;
+                    //并将此color下的第一个可选size对应的sku 赋值
+                    //巴巴价
+                    $("#price").html("￥" + '${sku.skuPrice}');
+                    //市场价
+                    $("#mprice").html("￥" + '${sku.marketPrice}');
+                    //运费
+                    $("#fee").html('${sku.deliveFee}');
+                    //库存
+                    $("#stock").html('${sku.stockInventory}');
+                    //skuId
+                    skuId = '${sku.id}';
+                    //
+                    //限购
+                    buyLimit = '${sku.skuUpperLimit}';
+
+                }else{
+                    $("#" + '${sku.size}').attr("class","changToWhite");
+                }
             }
         </c:forEach>
 
+        //让第一个可选尺码被点击
+//        $("#sizes a:first").trigger("click");
 
+    }
+    //点击尺码
+    function sizeToRed(target,id){
+        var cc = $(target).attr("class");
+        if(cc == "not-allow"){
+            return;
+        }
+
+        $("#sizes a").each(function() {
+            var c = $(this).attr("class");
+            if (c != "not-allow") {
+                $(this).attr("class", "changToWhite");
+            }
+        })
+
+        $(target).attr("class","changToRed");
+
+        <c:forEach items="${skuList}" var="sku">
+            if (colorId=="${sku.colorId}" && id=="${sku.size}"){
+                //赋值
+                //巴巴价
+                $("#price").html("￥" + '${sku.skuPrice}');
+                //市场价
+                $("#mprice").html("￥" + '${sku.marketPrice}');
+                //运费
+                $("#fee").html('${sku.deliveFee}');
+                //库存
+                $("#stock").html('${sku.stockInventory}');
+                //skuId
+                skuId = '${sku.id}';
+                //
+                //限购
+                buyLimit = '${sku.skuUpperLimit}';
+            }
+        </c:forEach>
+    }
+
+    //check buyLimit
+    function checkbuyLimit(target){
+        var num = $(target).val();
+        if(Trim(num)==""){
+            alert("购买数量不能为空");
+        }
+        if(!checkNum(num)){
+            alert("请输入一个整数型的件数");
+            $("#num").focus();
+        }
+        if (num > buyLimit){
+            alert("此商品只能购买"+buyLimit+"件");
+        }
 
     }
 
 
-//加入购物车
+
+    //加入购物车
 function addCart(){
 	alert("添加购物车成功!");
 }
@@ -167,19 +277,19 @@ function buy(){
 <div class="w ofc mt">
 	<div class="l">
 		<div class="showPro">
-			<div class="big"><a id="showImg" class="cloud-zoom" href="${product.img.allUrl}" rel="adjustX:10,adjustY:-1"><img alt="" src="/res/img/pic/ppp0.jpg"></a></div>
+			<div class="big"><a id="showImg" class="cloud-zoom" href="${product.img.allUrl}" rel="adjustX:10,adjustY:-1"><img alt="" src="${product.img.allUrl}"></a></div>
 		</div>
 	</div>
 	<div class="r" style="width: 640px">
 		<ul class="uls form">
             <li><h2>${product.name }</h2></li>
-			<li><label>巴  巴 价：</label><span class="word"><b class="f14 red mr">￥128.00</b>(市场价:<del>￥150.00</del>)</span></li>
+			<li><label>巴  巴 价：</label><span class="word"><b class="f14 red mr" id="price">￥128.00</b>(市场价:<del id="mprice">￥150.00</del>)</span></li>
 			<li><label>商品评价：</label><span class="word"><span class="val_no val3d4" title="4分">4分</span><var class="blue">(已有888人评价)</var></span></li>
-			<li><label>运　　费：</label><span class="word">10元</span></li>
-			<li><label>库　　存：</label><span class="word" id="stockInventory">100</span><span class="word" >件</span></li>
+			<li><label>运　　费：</label><span class="word" id="fee">10元</span></li>
+			<li><label>库　　存：</label><span class="word" id="stock">100</span><span class="word" >件</span></li>
             <li><label>选择颜色：</label>
                 <div id="colors" class="pre spec">
-                    <c:forEach items="${colors }" var="color">
+                    <c:forEach items="${colorList }" var="color">
                         <a onclick="colorToRed(this,${color.id})" href="javascript:void(0)" title="${color.name }" class="changToWhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="${color.name } "><i>${color.name }</i></a>
                     </c:forEach>
                 </div>
@@ -193,7 +303,7 @@ function buy(){
             </li>
 			<li><label>我 要 买：</label>
 				<a id="sub" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="减" href="javascript:void(0);" >-</a>
-				<input id="num" type="text" value="1" name="" size="1" readonly="readonly">
+				<input id="num" type="text" value="1" name="" size="1" onblur="checkbuyLimit(this);">
 				<a id="add" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="加" href="javascript:void(0);">+</a></li>
 			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy();"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
 		</ul>

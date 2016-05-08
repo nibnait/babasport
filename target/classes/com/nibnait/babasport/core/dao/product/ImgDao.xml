@@ -71,14 +71,6 @@
 		</foreach>
 	</select>
 
-    <!-- 2016-05-08 11:09:35 添加 根据ProductId查询*************************begin*****************-->
-	<select id="getImgByProductId" resultMap="img" parameterType="hashMap">
-		SELECT id,product_id,url,is_def FROM bbs_img
-		WHERE
-		product_id=#{id}
-	</select>
-    <!-- 2016-05-08 11:09:35 添加 根据ProductId查询*************************end*****************-->
-
 	<!-- 根据主键删除 -->
 	<delete id="deleteByKey" parameterType="hashMap">
 		DELETE FROM bbs_img
