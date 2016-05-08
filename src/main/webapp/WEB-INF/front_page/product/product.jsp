@@ -330,7 +330,7 @@
                         <a href="javascript:void(0)" onclick="window.open('/product/detail.shtml?id=${entry.id}')" title="${entry.name }" class="pic"><img src="${entry.img.allUrl }" alt="${entry.name }" /></a>
                         <dl>
                             <!-- dt 10个文字+... -->
-                            <dt><a href="javascript:void(0)" onclick="window.open('/product/detail.shtml?id=${entry.id}')" title="${entry.name }" >${entry.name }</a></dt>
+                            <dt><a href="javascript:void(0)" onclick="window.open('/html/product/${entry.id}.html')" title="${entry.name }" >${entry.name }</a></dt>
                             <!-- dt 25个文字+... -->
                             <dd class="h40">${entry.name }</dd>
                             <dd class="orange">￥128.00</dd>

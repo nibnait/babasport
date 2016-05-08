@@ -33,7 +33,7 @@
         </filter-mapping> -->
 
 
-    <!-- 中文过滤器 -->
+    <!-- request+response 中文过滤器 -->
     <filter>
         <filter-name>encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

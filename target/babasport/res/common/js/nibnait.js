@@ -10,7 +10,7 @@
  */
 function checkNumber(theObj)
 {
-    if(typeof(theObj.value)!="undefined"&&theObj.value!=""&&!isNaN(theObj.value))
+    if(typeof(theObj)!="undefined"&&theObj!=""&&!isNaN(theObj))
     {
         return true;
     }

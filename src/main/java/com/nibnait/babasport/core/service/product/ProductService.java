@@ -36,14 +36,14 @@ public interface ProductService {
 	 * 
 	 * @return
 	 */
-	public Integer deleteByKey(HttpServletRequest request, Integer id);
+	public Integer deleteByKey(Integer id);
 
 	/**
 	 * 根据主键批量删除
 	 * 
 	 * @return
 	 */
-    public Integer deleteByKeys(HttpServletRequest request, Integer[] idList);
+    public Integer deleteByKeys(Integer[] idList);
 
 	/**
 	 * 根据主键更新

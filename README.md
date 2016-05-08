@@ -59,7 +59,7 @@
 ## day04 前台商品列表页面+商品详情页面
  - 一级缓存：一次Session中，随着这一次Dao Session的消失而消失
  - 二级缓存：事物级别， 在全局（定时刷新）
- - 分布式缓存：一处缓存，多地存取
+ - 分布式缓存：一处缓存，多地存取【但是同步慢（设置时间）】
  - Oscached：页面缓存
 
 ----------------------------
@@ -70,11 +70,19 @@
 
 2. 库存管理
 3. 商品的删除（多表，删图片时，要先删服务器中的文件，再删数据库中的数据）
-4. 商品的修改（）
+4. 商品的修改（不做了）
 
-3. 商品详情页面 **sku联动**
+5. 商品详情页面 **sku联动**
 
  - 在页面隐藏list集合 
  - 对象bean.contains()比较的是:
 	对象bean重写的equals方法
- - **sku JQuery联动**
+
+
+## day05 
+
+1. 页面静态化
+	 - 使用FreeMarker技术 生成商品详情页（完成上架）
+	 - 通过 implements **ServletContextAware**类，重写setServletContext(ServletContext servletContext)方法，通过**servletContext.getRealPath(name);**即可获得服务器下的任意目录的实际地址。
+
+2. asdf 

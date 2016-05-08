@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -19,7 +18,7 @@ import java.util.UUID;
 public class UploadUtils {
 
 
-    public static JSONObject uploadPic(MultipartFile pic, HttpServletRequest request, String model) {
+    public static JSONObject uploadPic(MultipartFile pic, String model, HttpServletRequest request) {
         String ext = FilenameUtils.getExtension(pic.getOriginalFilename());//扩展名
 //        String datepath = FormatDateUtils.dateToString1(new Date());
         String filename = UUID.randomUUID().toString()+"."+ext;
@@ -43,10 +42,12 @@ public class UploadUtils {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                out.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (out!=null){
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 

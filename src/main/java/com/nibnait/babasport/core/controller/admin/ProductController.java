@@ -3,6 +3,7 @@ package com.nibnait.babasport.core.controller.admin;
 import com.nibnait.babasport.core.bean.product.*;
 import com.nibnait.babasport.core.query.product.*;
 import com.nibnait.babasport.core.service.product.*;
+import com.nibnait.babasport.core.service.staticpage.StaticPageService;
 import com.nibnait.common.page.Pagination;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 后台商品管理
@@ -33,6 +37,10 @@ public class ProductController {
     private FeatureService featureService;
     @Autowired
     private ColorService colorService;
+    @Autowired
+    private StaticPageService staticPageService;
+    @Autowired
+    private SkuService skuService;
 
 
     //商品列表
@@ -147,10 +155,24 @@ public class ProductController {
                 product.setId(id);
                 //修改上架状态
                 productService.updateProductByKey(product);
+
+                //  静态化
+                Map<String, Object> rootMap = new HashMap<String, Object>();
+                Product p = productService.getProductByKey(id);
+                rootMap.put("product", p);
+                List<Sku> skuList = skuService.getStock(id);
+                rootMap.put("skuList",skuList);
+                List<Color> colorList = new ArrayList<Color>();
+                for(Sku sku:skuList){
+                    if (!colorList.contains(sku.getColor())){  //去重：
+                        colorList.add(sku.getColor());
+                    }
+                }
+                rootMap.put("colorList",colorList);
+
+                staticPageService.productIndex(rootMap,id);
             }
         }
-        //TODO  静态化
-
 
 
         //判断
@@ -173,12 +195,12 @@ public class ProductController {
 
     //删除一个商品
     @RequestMapping(value = "/product/delete.do")
-    public String delete(Integer id, String name, Integer isShow, Integer brandId , ModelMap model, HttpServletRequest request){
+    public String delete(Integer id, String name, Integer isShow, Integer brandId , ModelMap model){
 
 //        System.out.println("id="+id+"---name="+name+"---brandId="+brandId+"---isShow="+isShow);
 
 
-        productService.deleteByKey(request,id);//先删bbs_img数据库&服务器中的图片//再删bbs_sku//最后删bbs_product
+        productService.deleteByKey(id);//先删bbs_img数据库&服务器中的图片//再删bbs_sku//最后删bbs_product
 
         if (StringUtils.isNotBlank(name)) {
             model.addAttribute("name", name);
@@ -194,9 +216,9 @@ public class ProductController {
     }
     //删除多个商品
     @RequestMapping(value = "/product/deletes.do")
-    public String deletes(Integer[] ids,String name, Integer isShow,Integer brandId ,ModelMap model, HttpServletRequest request ){
+    public String deletes(Integer[] ids,String name, Integer isShow,Integer brandId ,ModelMap model){
 
-        productService.deleteByKeys(request, ids);//先删bbs_img数据库&服务器中的图片//再删bbs_sku//最后删bbs_product
+        productService.deleteByKeys(ids);//先删bbs_img数据库&服务器中的图片//再删bbs_sku//最后删bbs_product
 
         if (StringUtils.isNotBlank(name)) {
             model.addAttribute("name", name);

@@ -14,7 +14,7 @@
 <title>新巴巴运动网-商品详情页</title>
 <link rel="stylesheet" href="/res/css/style.css" />
 <script src="/res/js/jquery.js"></script>
-<script src="/res/js/nibnait.js"></script>
+<script src="/res/common/js/nibnait.js"></script>
 <script type="text/javascript" src="/res/js/com.js"></script>
 <style type="text/css">
 .changToRed {
@@ -164,17 +164,19 @@
         var num = $(target).val();
         if(Trim(num)==""){
             alert("购买数量不能为空");
+            return false;
         }
-        if(!checkNum(num)){
+        if(!checkNumber(num)){
             alert("请输入一个整数型的件数");
             $("#num").focus();
+            return false;
         }
         if (num > buyLimit){
             alert("此商品只能购买"+buyLimit+"件");
+            return false;
         }
-
+        return true;
     }
-
 
 
     //加入购物车
@@ -183,7 +185,11 @@ function addCart(){
 }
 //立即购买
 function buy(){
-	window.location.href='cart.jsp';
+    var num = $("#num").val();
+    alert(num);
+    if(!checkbuyLimit(num)) {
+        window.location.href = 'cart.jsp';
+    }
 }
 </script>
 </head>

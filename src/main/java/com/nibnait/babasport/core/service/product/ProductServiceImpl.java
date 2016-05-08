@@ -9,9 +9,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import com.nibnait.babasport.common.web.FormatDateUtils;
+import com.nibnait.babasport.common.web.UploadUtils;
 import com.nibnait.babasport.core.bean.product.Img;
 import com.nibnait.babasport.core.bean.product.Sku;
 import com.nibnait.babasport.core.query.product.ImgQuery;
+import com.nibnait.babasport.core.service.BaseServiceImpl;
 import com.sun.glass.ui.Size;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +31,7 @@ import com.nibnait.babasport.core.query.product.ProductQuery;
  */
 @Service
 @Transactional
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl extends BaseServiceImpl implements ProductService{
 
     @Resource
     private ProductDao productDao;
@@ -105,10 +107,10 @@ public class ProductServiceImpl implements ProductService {
      *
      * @return
      */
-    public Integer deleteByKey(HttpServletRequest request, Integer id) {
+    public Integer deleteByKey(Integer id) {
 
         //删除服务器中的图片
-        deleteServerPic(request, id);
+        deleteServerPic(id);
 
         //先删bbs_img
         imgService.deleteByProductId(id);
@@ -120,8 +122,8 @@ public class ProductServiceImpl implements ProductService {
         return i;
     }
 
-    private void deleteServerPic(HttpServletRequest request, Integer id) {
-        String webRoot = request.getServletContext().getRealPath("/");
+    private void deleteServerPic(Integer id) {
+        String webRoot = getPath("/");
         ImgQuery imgQuery = new ImgQuery();
         imgQuery.setProductId(id);
         imgQuery.setIsDef(1);
@@ -136,11 +138,11 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    public Integer deleteByKeys(HttpServletRequest request, Integer[] ids) {
+    public Integer deleteByKeys(Integer[] ids) {
 
         List<Integer> idList = new ArrayList<Integer>();
         for (int i = 0; i < ids.length; i++) {
-            deleteServerPic(request,ids[i]);//先删服务器中的图片
+            deleteServerPic(ids[i]);//先删服务器中的图片
             idList.add(ids[i]);
         }
 

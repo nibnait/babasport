@@ -39,7 +39,7 @@ public class UploadController {
         Map<String, MultipartFile> fileMap = req.getFileMap();
 
         for (Map.Entry<String, MultipartFile> entry : fileMap.entrySet()) {
-            JSONObject jo = UploadUtils.uploadPic(entry.getValue(), request, "ProductDesc");
+            JSONObject jo = UploadUtils.uploadPic(entry.getValue(), "ProductDesc",request);
             //返回Url给Fck
             UploadResponse ok = UploadResponse.getOK(jo.getString("url"));
 
@@ -54,8 +54,8 @@ public class UploadController {
 
     //商品的默认图片
     @RequestMapping(value = "/upload/uploadProDefaultPic")
-    public void uploadProDefaultPic(@RequestParam(required = false) MultipartFile pic, HttpServletResponse response, HttpServletRequest request) {
-        JSONObject jo = UploadUtils.uploadPic(pic, request, "ProDefaultPic");
+    public void uploadProDefaultPic(@RequestParam(required = false) MultipartFile pic, HttpServletResponse response,HttpServletRequest request) {
+        JSONObject jo = UploadUtils.uploadPic(pic, "ProDefaultPic",request);
 
         ResponseUtils.renderJson(response, jo.toString());
     }
@@ -64,7 +64,7 @@ public class UploadController {
     //上传品牌图片到本地服务器
     @RequestMapping(value = "/upload/uploadBrandPic.do")
     public void uploadBrandPic(@RequestParam(required = false) MultipartFile pic, HttpServletResponse response, HttpServletRequest request) {
-        JSONObject jo = UploadUtils.uploadPic(pic, request, "Brand");
+        JSONObject jo = UploadUtils.uploadPic(pic, "Brand",request);
 
         ResponseUtils.renderJson(response, jo.toString());
     }
