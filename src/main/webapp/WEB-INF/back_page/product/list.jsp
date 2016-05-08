@@ -6,9 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>babasport-list</title>
 <script type="text/javascript">
-/*function getTableForm() {
-	return document.getElementById('tableForm');
-}*/
+
 //上架
 function isShow(pageNo,name,brandId,isShow){
     if(Pn.checkedCount('ids')<=0) {
@@ -22,19 +20,20 @@ function isShow(pageNo,name,brandId,isShow){
     $("#tableForm").submit();
 }
 
+//批量删除
+function optDelete (name,isShow,brandId) {
 
-/*function optDelete() {
-	if(Pn.checkedCount('ids')<=0) {
-		alert("请至少选择一个!");
-		return;
-	}
-	if(!confirm("确定删除吗?")) {
-		return;
-	}
-	var f = getTableForm();
-	f.action="o_delete.do";
-	f.submit();
-}*/
+    var s = $("input[name='ids']:checked").size();
+    if (s <= 0) {
+        alert("请选择至少一个商品");
+    }
+    if (!confirm("你确定删除吗？")) {
+        return false;
+    }
+    $("#tableForm").attr("action","deletes.do?name="+name+"&isShow="+isShow+"&brandId="+brandId);
+    $("#tableForm").attr("method","post").submit();
+
+}
 function changePageNo(){
 	$("input[name='pageNo']").val(1);
 }
@@ -90,7 +89,7 @@ function changePageNo(){
 			<td align="center">是</td>
 			<td align="center"><c:if test="${isShow == 0 }">下架</c:if><c:if test="${isShow == 1 }">上架</c:if></td>
 			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="/sku/list.do" class="pn-opt">库存</a>
+			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="/product/delete.do?id=${entry.id }&name=${name}&isShow=${isShow}&brandId=${brandId}" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="/sku/list.do" class="pn-opt">库存</a>
 			</td>
 		</tr>
 	</c:forEach>
@@ -103,7 +102,7 @@ function changePageNo(){
 		</c:forEach>
 	
 </span></div>
-<div style="margin-top:15px;"><input class="del-button" type="button" value="删除" onclick="optDelete();"/><input class="add" type="button" value="上架" onclick="isShow('${pagination.pageNo}','${name }','${brandId }','${isShow }');"/><input class="del-button" type="button" value="下架" onclick="optDelete();"/></div>
+<div style="margin-top:15px;"><input class="del-button" type="button" value="删除" onclick="optDelete('${name}','${isShow}','${brandId}');"/><input class="add" type="button" value="上架" onclick="isShow('${pagination.pageNo}','${name }','${brandId }','${isShow }');"/><input class="del-button" type="button" value="下架" onclick="isNotShow();"/></div>
 </form>
 </div>
 </body>

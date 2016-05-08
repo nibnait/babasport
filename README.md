@@ -62,9 +62,17 @@
  - 分布式缓存：一处缓存，多地存取
  - Oscached：页面缓存
 
+----------------------------
+
 1. Oscached页面缓存技术
 
-Map<K,V>:	K:url,V:页面html
+	Map<K,V>:	K:url,V:页面html
 
 2. 库存管理
+
 3. 商品详情页面 **sku联动**
+
+ - 在页面隐藏list集合 
+ - 对象bean.contains()比较的是:
+	对象bean重写的equals方法
+ - **sku JQuery联动**

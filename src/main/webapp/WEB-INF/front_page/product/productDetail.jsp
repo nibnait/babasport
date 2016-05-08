@@ -42,6 +42,31 @@
 </style>
 </head>
 <script type="text/javascript">
+
+    function colorToRed(target,id){
+        //先清除其他颜色
+        $("#colors a").each(function(){
+            $(this).attr("class","changToWhite");
+        })
+        //先清除其他尺码
+        $("#sizes a").each(function(){
+            $(this).attr("class","not-allow");
+        })
+        ${target}.attr("class","changeToRed");
+
+
+        //控制尺码
+        <c:forEach items="${skuList}" var="sku">
+            if(id == "${sku.colorId}"){
+                $("#"+"${sku.size}").attr("class","changeToWhite");
+            }
+        </c:forEach>
+
+
+
+    }
+
+
 //加入购物车
 function addCart(){
 	alert("添加购物车成功!");
@@ -142,30 +167,30 @@ function buy(){
 <div class="w ofc mt">
 	<div class="l">
 		<div class="showPro">
-			<div class="big"><a id="showImg" class="cloud-zoom" href="/res/img/pic/ppp0.jpg" rel="adjustX:10,adjustY:-1"><img alt="" src="/res/img/pic/ppp0.jpg"></a></div>
+			<div class="big"><a id="showImg" class="cloud-zoom" href="${product.img.allUrl}" rel="adjustX:10,adjustY:-1"><img alt="" src="/res/img/pic/ppp0.jpg"></a></div>
 		</div>
 	</div>
 	<div class="r" style="width: 640px">
 		<ul class="uls form">
-			<li><h2>依琦莲2014瑜伽服套装新款 瑜珈健身服三件套 广场舞蹈服装 性价比最高的瑜伽服 三件套 送胸垫 支持货到付款</h2></li>
+            <li><h2>${product.name }</h2></li>
 			<li><label>巴  巴 价：</label><span class="word"><b class="f14 red mr">￥128.00</b>(市场价:<del>￥150.00</del>)</span></li>
 			<li><label>商品评价：</label><span class="word"><span class="val_no val3d4" title="4分">4分</span><var class="blue">(已有888人评价)</var></span></li>
 			<li><label>运　　费：</label><span class="word">10元</span></li>
 			<li><label>库　　存：</label><span class="word" id="stockInventory">100</span><span class="word" >件</span></li>
-			<li><label>选择颜色：</label>
-				<div id="colors" class="pre spec">
-					<a onclick="colorToRed(this,9)" href="javascript:void(0)" title="西瓜红" class="changToRed"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="西瓜红 "><i>西瓜红</i></a>
-					<a onclick="colorToRed(this,11)" href="javascript:void(0)" title="墨绿" class="changToWhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="墨绿 "><i>墨绿</i></a>
-					<a onclick="colorToRed(this,18)" href="javascript:void(0)" title="浅粉" class="changToWhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="浅粉 "><i>浅粉</i></a>
-				</div>
-			</li>
-			<li id="sizes"><label>尺　　码：</label>
-						<a href="javascript:void(0)" class="not-allow"  id="S">S</a>
-						<a href="javascript:void(0)" class="not-allow"  id="M">M</a>
-						<a href="javascript:void(0)" class="not-allow"  id="L">L</a>
-						<a href="javascript:void(0)" class="not-allow"  id="XL">XL</a>
-						<a href="javascript:void(0)" class="not-allow"  id="XXL">XXL</a>
-			</li>
+            <li><label>选择颜色：</label>
+                <div id="colors" class="pre spec">
+                    <c:forEach items="${colors }" var="color">
+                        <a onclick="colorToRed(this,${color.id})" href="javascript:void(0)" title="${color.name }" class="changToWhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="${color.name } "><i>${color.name }</i></a>
+                    </c:forEach>
+                </div>
+            </li>
+            <li id="sizes"><label>尺　　码：</label>
+                <a href="javascript:void(0)" class="not-allow"  id="S" onclick="sizeToRed(this,'S')">S</a>
+                <a href="javascript:void(0)" class="not-allow"  id="M" onclick="sizeToRed(this,'M')">M</a>
+                <a href="javascript:void(0)" class="not-allow"  id="L" onclick="sizeToRed(this,'L')">L</a>
+                <a href="javascript:void(0)" class="not-allow"  id="XL" onclick="sizeToRed(this,'XL')">XL</a>
+                <a href="javascript:void(0)" class="not-allow"  id="XXL" onclick="sizeToRed(this,'XXL')">XXL</a>
+            </li>
 			<li><label>我 要 买：</label>
 				<a id="sub" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="减" href="javascript:void(0);" >-</a>
 				<input id="num" type="text" value="1" name="" size="1" readonly="readonly">

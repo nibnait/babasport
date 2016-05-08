@@ -61,4 +61,15 @@ public interface SkuDao {
 	 */
 	public int getSkuListCount(SkuQuery skuQuery);
 
+    //查询库存大于>0
+    public List<Sku> getStock(Integer id);
+
+    //根据ProductId删除
+    public void deleteByProductId(Integer id);
+
+    //根据ProductIds删除
+    public void deleteByProductIds(List<Integer> ids);
+
+
+
 }

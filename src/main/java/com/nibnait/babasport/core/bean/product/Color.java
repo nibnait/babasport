@@ -1,6 +1,7 @@
 package com.nibnait.babasport.core.bean.product;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * 颜色
@@ -45,4 +46,17 @@ public class Color implements Serializable {
 	public String toString() {
 		return "Color [id=" + id + ",name=" + name + ",parentId=" + parentId + ",imgUrl=" + imgUrl + "]";
 	}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Color color = (Color) o;
+        return Objects.equals(getId(), color.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 }

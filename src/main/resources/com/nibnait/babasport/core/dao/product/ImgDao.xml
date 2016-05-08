@@ -71,6 +71,14 @@
 		</foreach>
 	</select>
 
+    <!-- 2016-05-08 11:09:35 添加 根据ProductId查询*************************begin*****************-->
+	<select id="getImgByProductId" resultMap="img" parameterType="hashMap">
+		SELECT id,product_id,url,is_def FROM bbs_img
+		WHERE
+		product_id=#{id}
+	</select>
+    <!-- 2016-05-08 11:09:35 添加 根据ProductId查询*************************end*****************-->
+
 	<!-- 根据主键删除 -->
 	<delete id="deleteByKey" parameterType="hashMap">
 		DELETE FROM bbs_img
@@ -87,6 +95,23 @@
 			#{id}
 		</foreach>
 	</delete>
+    <!-- 2016-05-08 11:08:31添加  根据productId删除*************begin*************-->
+	<delete id="deleteByProductId" parameterType="hashMap">
+		DELETE FROM bbs_img
+		WHERE
+		product_id=#{id}
+	</delete>
+
+	<!-- 根据主键批量删除 -->
+	<delete id="deleteByProductIds">
+		DELETE FROM bbs_img
+		WHERE
+        product_id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+    <!-- 2016-05-08 11:08:31添加  根据productId删除*************end*************-->
 
 	<!-- 根据主键更新 -->
 	<update id="updateImgByKey" parameterType="Img">

@@ -169,4 +169,5 @@ public class Sku implements Serializable {
 	public String toString() {
 		return "Sku [id=" + id + ",productId=" + productId + ",colorId=" + colorId + ",size=" + size + ",deliveFee=" + deliveFee + ",skuPrice=" + skuPrice + ",stockInventory=" + stockInventory + ",skuUpperLimit=" + skuUpperLimit + ",location=" + location + ",skuImg=" + skuImg + ",skuSort=" + skuSort + ",skuName=" + skuName + ",marketPrice=" + marketPrice + ",createTime=" + createTime + ",updateTime=" + updateTime + ",createUserId=" + createUserId + ",updateUserId=" + updateUserId + ",lastStatus=" + lastStatus + ",skuType=" + skuType + ",sales=" + sales + "]";
 	}
+
 }

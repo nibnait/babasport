@@ -6,6 +6,8 @@ import com.nibnait.common.page.Pagination;
 import com.nibnait.babasport.core.bean.product.Product;
 import com.nibnait.babasport.core.query.product.ProductQuery;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 
  * @author lixu
@@ -34,14 +36,14 @@ public interface ProductService {
 	 * 
 	 * @return
 	 */
-	public Integer deleteByKey(Integer id);
+	public Integer deleteByKey(HttpServletRequest request, Integer id);
 
 	/**
 	 * 根据主键批量删除
 	 * 
 	 * @return
 	 */
-	public Integer deleteByKeys(List<Integer> idList);
+    public Integer deleteByKeys(HttpServletRequest request, Integer[] idList);
 
 	/**
 	 * 根据主键更新
@@ -67,4 +69,6 @@ public interface ProductService {
 	 * @return
 	 */
 	public List<Product> getProductList(ProductQuery productQuery);
+
+
 }

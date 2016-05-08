@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -23,15 +24,15 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    BrandService brandService;
+    private BrandService brandService;
     @Autowired
-    ProductService productService;
+    private ProductService productService;
     @Autowired
-    TypeService typeService;
+    private TypeService typeService;
     @Autowired
-    FeatureService featureService;
+    private FeatureService featureService;
     @Autowired
-    ColorService colorService;
+    private ColorService colorService;
 
 
     //商品列表
@@ -170,5 +171,44 @@ public class ProductController {
     }
 
 
+    //删除一个商品
+    @RequestMapping(value = "/product/delete.do")
+    public String delete(Integer id, String name, Integer isShow, Integer brandId , ModelMap model, HttpServletRequest request){
+
+//        System.out.println("id="+id+"---name="+name+"---brandId="+brandId+"---isShow="+isShow);
+
+
+        productService.deleteByKey(request,id);//先删bbs_img数据库&服务器中的图片//再删bbs_sku//最后删bbs_product
+
+        if (StringUtils.isNotBlank(name)) {
+            model.addAttribute("name", name);
+        }
+        if (isShow!=null){
+            model.addAttribute("isShow", isShow);
+        }
+        if (brandId!=null){
+            model.addAttribute("brandId", brandId);
+        }
+
+        return "redirect:/product/list.do";
+    }
+    //删除多个商品
+    @RequestMapping(value = "/product/deletes.do")
+    public String deletes(Integer[] ids,String name, Integer isShow,Integer brandId ,ModelMap model, HttpServletRequest request ){
+
+        productService.deleteByKeys(request, ids);//先删bbs_img数据库&服务器中的图片//再删bbs_sku//最后删bbs_product
+
+        if (StringUtils.isNotBlank(name)) {
+            model.addAttribute("name", name);
+        }
+        if (isShow!=null){
+            model.addAttribute("isShow", isShow);
+        }
+        if (brandId!=null){
+            model.addAttribute("brandId", brandId);
+        }
+
+        return "redirect:/product/list.do";
+    }
 
 }

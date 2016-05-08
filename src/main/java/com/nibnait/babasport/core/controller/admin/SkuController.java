@@ -22,8 +22,9 @@ import java.util.List;
 public class SkuController {
 
     @Autowired
-    SkuService skuService;
+    private SkuService skuService;
 
+    /**库存管理*/
     @RequestMapping(value = "/sku/list.do")
     public String list(Integer productId, String pno, ModelMap model){
 
@@ -39,7 +40,7 @@ public class SkuController {
         return "sku/list";
     }
 
-
+    /**保存*/
     @RequestMapping(value = "/sku/add.do")
     public void add(Sku sku ,HttpServletResponse response){
 

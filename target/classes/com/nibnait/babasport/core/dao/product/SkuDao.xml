@@ -177,6 +177,24 @@
 		</foreach>
 	</delete>
 
+    <!-- 2016-05-08 11:08:31添加  根据productId删除*************begin*************-->
+	<delete id="deleteByProductId" parameterType="hashMap">
+		DELETE FROM bbs_sku
+		WHERE
+		product_id=#{id}
+	</delete>
+
+	<!-- 根据ProductIds批量删除 -->
+	<delete id="deleteByProductIds">
+		DELETE FROM bbs_sku
+		WHERE
+        product_id in
+		<foreach collection="list" separator="," item="id" open="(" close=")">
+			#{id}
+		</foreach>
+	</delete>
+    <!-- 2016-05-08 11:08:31添加  根据productId删除*************end*************-->
+
 	<!-- 根据主键更新 -->
 	<update id="updateSkuByKey" parameterType="Sku">
 		UPDATE bbs_sku

@@ -8,8 +8,4 @@
             window.location.href="http://localhost:8080/control/index.do";
         }
     </script>
-</head>
-<body>
-
-
-</body></html>
+</head><body></body></html>

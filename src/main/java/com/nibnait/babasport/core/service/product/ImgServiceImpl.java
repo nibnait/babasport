@@ -78,4 +78,18 @@ public class ImgServiceImpl implements ImgService {
 	public List<Img> getImgList(ImgQuery imgQuery) {
 		return imgDao.getImgList(imgQuery);
 	}
+
+
+    public void deleteByProductId(Integer id) {
+        imgDao.deleteByProductId(id);
+    }
+
+    public void deleteByProductIds(List<Integer> ids) {
+        imgDao.deleteByProductIds(ids);
+    }
+
+    public Img getImgByProductId(Integer id) {
+        return imgDao.getImgByProductId(id);
+    }
+
 }

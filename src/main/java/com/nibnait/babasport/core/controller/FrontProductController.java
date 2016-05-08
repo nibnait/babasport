@@ -1,23 +1,15 @@
 package com.nibnait.babasport.core.controller;
 
-import com.nibnait.babasport.core.bean.product.Brand;
-import com.nibnait.babasport.core.bean.product.Feature;
-import com.nibnait.babasport.core.bean.product.Product;
-import com.nibnait.babasport.core.bean.product.Type;
-import com.nibnait.babasport.core.query.product.BrandQuery;
-import com.nibnait.babasport.core.query.product.FeatureQuery;
-import com.nibnait.babasport.core.query.product.ProductQuery;
-import com.nibnait.babasport.core.query.product.TypeQuery;
-import com.nibnait.babasport.core.service.product.BrandService;
-import com.nibnait.babasport.core.service.product.FeatureService;
-import com.nibnait.babasport.core.service.product.ProductService;
-import com.nibnait.babasport.core.service.product.TypeService;
+import com.nibnait.babasport.core.bean.product.*;
+import com.nibnait.babasport.core.query.product.*;
+import com.nibnait.babasport.core.service.product.*;
 import com.nibnait.common.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +31,8 @@ public class FrontProductController {
     private TypeService typeService;
     @Autowired
     private FeatureService featureService;
+    @Autowired
+    private SkuService skuService;
 
     //商品列表页面
     @RequestMapping(value = "/product/display/list.shtml")
@@ -130,6 +124,29 @@ public class FrontProductController {
 
         return "product/product";
     }
+
+
+    //商品详情页
+    @RequestMapping(value = "/product/detail.shtml")
+    public String detail(Integer id, ModelMap model){
+
+        Product product = productService.getProductByKey(id);
+        model.addAttribute("product", product);
+
+        List<Sku> skuList = skuService.getStock(id);
+        model.addAttribute("skuList",skuList);
+        //去重：
+        List<Color> colorList = new ArrayList<Color>();
+        for(Sku sku:skuList){
+            if (!colorList.contains(sku.getColor())){
+                colorList.add(sku.getColor());
+            }
+        }
+        model.addAttribute("colorList",colorList);
+
+        return "product/productDetail";
+    }
+
 
 
 }

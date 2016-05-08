@@ -21,9 +21,9 @@ import com.nibnait.babasport.core.query.product.SkuQuery;
 public class SkuServiceImpl implements SkuService {
 
 	@Resource
-	SkuDao skuDao;
+	private SkuDao skuDao;
 	@Resource
-	ColorService colorService;
+	private ColorService colorService;
 
 	/**
 	 * 插入数据库
@@ -79,10 +79,27 @@ public class SkuServiceImpl implements SkuService {
 	@Transactional(readOnly = true)
 	public List<Sku> getSkuList(SkuQuery skuQuery) {
         List<Sku> skuList = skuDao.getSkuList(skuQuery);
+        /**2016-05-07 18:10:29添加 根据colorId填充sku的Color.name*/
         for (Sku sku:skuList){
             sku.setColor(colorService.getColorByKey(sku.getColorId()));
         }
 
         return skuList;
 	}
+
+    public List<Sku> getStock(Integer id) {
+        List<Sku> skuList = skuDao.getStock(id);
+        for (Sku sku:skuList){
+            sku.setColor(colorService.getColorByKey(sku.getColorId()));
+        }
+        return skuList;
+    }
+
+    public void deleteByProductId(Integer id) {
+        skuDao.deleteByProductId(id);
+    }
+
+    public void deleteByProductIds(List<Integer> ids) {
+        skuDao.deleteByProductIds(ids);
+    }
 }
