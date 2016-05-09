@@ -9,6 +9,46 @@
 <link rel="stylesheet" href="/res/css/style.css" />
 <script src="/res/js/jquery.js"></script>
 <script src="/res/js/com.js"></script>
+
+    <script type="text/javascript">
+        function changeProvince(provinceCode){
+
+            var url = "/buyer/city.shtml";
+            var params = {"code":provinceCode}
+
+            $.post(url,params,function(data){
+                var citys = data.citys;
+                var html = ' <option value="" selected>城市</option>';
+                for (var i=0;i<citys.length;i++){
+                    html+='<option value="' + citys[i].code + '">'+ citys[i].name +'</option>';
+                }
+                $("#city").html(html);
+                $("#town").html('<option value="" selected>县/区</option>');
+
+            },"json")
+
+        }
+        function changeCity(cityCode){
+
+            var url = "/buyer/town.shtml";
+            var params = {"code":cityCode}
+
+            $.post(url,params,function(data){
+                var towns = data.towns;
+                var html = ' <option value="" selected>县/区</option>';
+                for (var i=0;i<towns.length;i++){
+                    html+='<option value=" '+ towns[i].code + '">'+ towns[i].name +'</option>';
+                }
+                $("#town").html(html);
+
+            },"json")
+
+        }
+
+
+
+    </script>
+
 </head>
 <body>
 <div class="bar"><div class="bar_w">
@@ -123,38 +163,46 @@
 					<input type="hidden" name="processUrl" value="${processUrl}"/>
 					<ul class="uls form">
 					<li id="errorName" class="errorTip" style="display:none">${error}</li>
-					<li>
-						<label for="username">用 户 名：</label>
-						<span class="word">fbb2016</span>
-					</li>
-					<li>
-						<label for="username">邮　　箱：</label>
-						<span class="word">fbb2014@qq.com</span>
-					</li>
-					<li>
-						<label for="realName">真实姓名：</label>
-						<span class="bg_text"><input type="text" id="realName" name="realName" maxLength="32" value="范冰冰"/></span>
-						<span class="pos"><span class="tip okTip">&nbsp;</span></span>
-					</li>
-					<li>
-						<label for="gender">性　　别：</label>
-						<span class="word"><input type="radio" name="gender" checked="checked"/>保密<input type="radio" name="gender" />男<input type="radio" name="gender" />女</span>
-					</li>
-					<li>
-						<label for="residence">居 住 地：</label>
+                        <li>
+                            <label for="username">用 户 名：</label>
+                            <span class="word">${buyer.username }</span>
+                        </li>
+                        <li>
+                            <label for="username">邮　　箱：</label>
+                            <span class="word">${buyer.email }</span>
+                        </li>
+                        <li>
+                            <label for="realName">真实姓名：</label>
+                            <span class="bg_text"><input type="text" id="realName" name="realName" maxLength="32" value="${buyer.realName }"/></span>
+                            <span class="pos"><span class="tip okTip">&nbsp;</span></span>
+                        </li>
+                        <li>
+                            <label for="gender">性　　别：</label>
+						<span class="word"><input type="radio" name="gender" value="SECRECY" <c:if test="${buyer.gender == 'SECRECY' }">checked="checked"</c:if>/>保密
+						<input type="radio" name="gender" value="MAN" <c:if test="${buyer.gender == 'MAN' }">checked="checked"</c:if>/>男
+						<input type="radio" name="gender" value="WOMAN" <c:if test="${buyer.gender == 'WOMAN' }">checked="checked"</c:if>/>女</span>
+                        </li>
+                        <li>
+                            <label for="residence">居 住 地：</label>
 						<span class="word">
 							<select name="province"  id="province" onchange="changeProvince(this.value)">
-								<option value="" selected>省/直辖市</option>
-								<option value=""></option>
-							</select>
-							<select name="" id="city">
-								<option value="" selected>城市</option>
-								<option value=""></option>
-							</select>
-							<select name="">
-								<option value="" selected>县/区</option>
-								<option value=""></option>
-							</select>
+                                <option value="" selected>省/直辖市</option>
+                                <c:forEach items="${provinceList }" var="province">
+                                    <option value="${province.code }" <c:if test="${buyer.province == province.code }">selected="selected"</c:if>>${province.name }</option>
+                                </c:forEach>
+                            </select>
+							<select name="" id="city" onchange="changeCity(this.value)">
+                                <option value="" selected>城市</option>
+                                <c:forEach items="${cityList }" var="city">
+                                    <option value="${city.code }"  <c:if test="${buyer.city == city.code }">selected="selected"</c:if>>${city.name }</option>
+                                </c:forEach>
+                            </select>
+							<select name="" id="town">
+                                <option value="" selected>县/区</option>
+                                <c:forEach items="${townList }" var="town">
+                                    <option value="${town.code }" <c:if test="${buyer.town == town.code }">selected="selected"</c:if>>${town.name }</option>
+                                </c:forEach>
+                            </select>
 						</span>
 					</li>
 					<li><label for="address">详细地址：</label>
