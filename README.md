@@ -138,4 +138,33 @@ char[] encodeHex = Hex.encodeHex(digest);
 >```request.getURI()```：/buyer/index.shtml  
 >```request.getURL()```：http://localhost:8080/buyer/index.shtml
 
-2. 购物车 面向对象编程
+## day06 购物车模块(面向对象编程)
+
+1. 存放位置：Cookie
+
+2. 使用sprigmvc提供的ObjectMapper进行  
+	ObjectMapper om = new ObjectMapper();
+	om.setSerializationInclusion(Inclusion.NON_NULL);  
+	StringWriter str = new StringWriter();
+	 - **对象转Json**：om.writeValue(str,buyer);
+	 - **Json转对象**：om.readValue(str.toString(),Buyer.class);
+>ObjectMapper要转化的为json对象的java对象必须要是标准的java对象（有声明，有set、get方法）。
+>否则 请使用@JsonIgnore注解，不让ObjectMapper转化此属性。
+
+3. 对象和List集合的equals比较，执行remove方法，
+	对象都必须重写equals和hashCode方法，否则比较的就是地址了。  
+
+
+4. Controller层：
+5. Service层：整合多个Dao对象，处理数据。
+
+
+
+
+
+
+
+
+## ？？？（一些逻辑上的问题）
+ - 如果用户删除了订单
+ - 如果商家删除了商品，然而用户已经下单。

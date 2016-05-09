@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">    
+<meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -174,20 +174,36 @@
         }
         return true;
     }
+    function checkbuyLimit2(){
+        var num = $("#num").val();
+        if(Trim(num)==""){
+            alert("购买数量不能为空");
+            return false;
+        }
+        if(!checkNumber(num)){
+            alert("请输入一个整数型的件数");
+            $("#num").focus();
+            return false;
+        }
+        if (num > buyLimit){
+            alert("此商品只能购买"+buyLimit+"件");
+            return false;
+        }
+        return true;
+    }
 
 
     //加入购物车
-function addCart(){
-	alert("添加购物车成功!");
-}
-//立即购买
-function buy(){
-    var num = $("#num").val();
-    alert(num);
-    if(!checkbuyLimit(num)) {
-        window.location.href = 'cart.jsp';
+    function addCart(){
+        alert("添加购物车成功!");
     }
-}
+    //立即购买
+    function buy(productId){
+        if(checkbuyLimit2()) {
+            var url = '/shopping/buyCart.shtml?skuId=' + skuId + "&amount=" + $("#num").val() + "&buyLimit=" + buyLimit + "&productId=" + productId;
+            window.location.href= url;
+        }
+    }
 </script>
 </head>
 <body>
@@ -293,7 +309,7 @@ function buy(){
             <li><label>选择颜色：</label>
                 <div id="colors" class="pre spec">
                     <#list colorList as color>
-                        <a onclick="colortored(this,${color.id})" href="javascript:void(0)" title="${color.name }" class="changtowhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="${color.name } "><i>${color.name }</i></a>
+                        <a onclick="colorToRed(this,${color.id})" href="javascript:void(0)" title="${color.name }" class="changtowhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="${color.name } "><i>${color.name }</i></a>
                     </#list>
                 </div>
             </li>
@@ -308,7 +324,7 @@ function buy(){
 				<a id="sub" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="减" href="javascript:void(0);" >-</a>
 				<input id="num" type="text" value="1" name="" size="1" onblur="checkbuyLimit(this);">
 				<a id="add" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="加" href="javascript:void(0);">+</a></li>
-			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy();"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
+			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy('${product.id}');"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
 		</ul>
 	</div>
 </div>
@@ -431,7 +447,7 @@ function buy(){
 			</li>
 		</ul>
 	</div>
-	
+
 	<h2 class="h2 h2_l mt"><em title="商家精选">商家精选</em><cite></cite></h2>
 	<img src="/res/img/pic/ad200x75.jpg" alt="" />
 </div>
@@ -444,21 +460,21 @@ function buy(){
 			<div id="detailTab1" class="detail">
 				<img src="/res/img/pic/p800b.jpg" /><img src="/res/img/pic/p800a.jpg" /><img src="/res/img/pic/p800c.jpg" /><img src="/res/img/pic/p800d.jpg" />
 			</div>
-			
+
 			<div id="detailTab2" style="display:none">
 				<strong>服务承诺：</strong><br>
 	京东向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。凭质保证书及京东发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东还为您提供具有竞争力的商品价格和<a target="_blank" href="http://www.jd.com/help/kdexpress.aspx">运费政策</a>，请您放心购买！
 	<br><br>
 	注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！ <br/>
 		<strong>权利声明：</strong><br>京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。
-	<p><b>注：</b>本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。</p>	
-				
+	<p><b>注：</b>本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。</p>
+
 			</div>
 
 			<div id="detailTab3" class="detail" style="display:none">
 
 	<pre class="f14">
-		上衣*1 裤子*1 抹胸*1 包装*1 
+		上衣*1 裤子*1 抹胸*1 包装*1
 	</pre>
 
 			</div>

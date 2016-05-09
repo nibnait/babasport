@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.nibnait.babasport.core.bean.product.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +25,8 @@ public class SkuServiceImpl implements SkuService {
 	private SkuDao skuDao;
 	@Resource
 	private ColorService colorService;
+	@Resource
+	private ProductService productService;
 
 	/**
 	 * 插入数据库
@@ -39,7 +42,12 @@ public class SkuServiceImpl implements SkuService {
 	 */
 	@Transactional(readOnly = true)
 	public Sku getSkuByKey(Integer id) {
-		return skuDao.getSkuByKey(id);
+
+        Sku sku = skuDao.getSkuByKey(id);
+        Product product = productService.getProductByKey(sku.getProductId());
+        sku.setProduct(product);
+
+		return sku;
 	}
 	
 	@Transactional(readOnly = true)

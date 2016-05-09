@@ -177,6 +177,23 @@
         }
         return true;
     }
+    function checkbuyLimit2(){
+        var num = $("#num").val();
+        if(Trim(num)==""){
+            alert("购买数量不能为空");
+            return false;
+        }
+        if(!checkNumber(num)){
+            alert("请输入一个整数型的件数");
+            $("#num").focus();
+            return false;
+        }
+        if (num > buyLimit){
+            alert("此商品只能购买"+buyLimit+"件");
+            return false;
+        }
+        return true;
+    }
 
 
     //加入购物车
@@ -184,11 +201,10 @@ function addCart(){
 	alert("添加购物车成功!");
 }
 //立即购买
-function buy(){
-    var num = $("#num").val();
-    alert(num);
-    if(!checkbuyLimit(num)) {
-        window.location.href = 'cart.jsp';
+function buy(productId){
+    if(checkbuyLimit2()) {
+        var url = '/shopping/buyCart.shtml?skuId=' + skuId + "&amount=" + $("#num").val() + "&buyLimit=" + buyLimit + "&productId=" + productId;
+        window.location.href= url;
     }
 }
 </script>
@@ -274,7 +290,7 @@ function buy(){
 			</ul>
 			<div>
 				<p>共<b>5</b>件商品&nbsp;&nbsp;&nbsp;&nbsp;共计<b class="f20">¥640.00</b></p>
-				<a href="#" title="去购物车结算" class="inb btn120x30c">去购物车结算</a>
+				<a href="/shopping/buyCart.shtml" title="去购物车结算" class="inb btn120x30c">去购物车结算</a>
 			</div>
 		</dd>
 	</dl>
@@ -311,7 +327,7 @@ function buy(){
 				<a id="sub" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="减" href="javascript:void(0);" >-</a>
 				<input id="num" type="text" value="1" name="" size="1" onblur="checkbuyLimit(this);">
 				<a id="add" class="inb arr" style="border: 1px solid #919191;width: 10px;height: 10px;line-height: 10px;text-align: center;" title="加" href="javascript:void(0);">+</a></li>
-			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy();"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
+			<li class="submit"><input type="button" value="" class="hand btn138x40" onclick="buy('${product.id}');"/><input type="button" value="" class="hand btn138x40b" onclick="addCart()"/></li>
 		</ul>
 	</div>
 </div>

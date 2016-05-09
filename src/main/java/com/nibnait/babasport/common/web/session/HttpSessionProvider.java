@@ -31,11 +31,14 @@ public class HttpSessionProvider implements SessionProvider{
             session.invalidate();
 
         // 根据JSESSIONID 清除对应的Cookie
-//            String sessionId = session.getId();
-//            Cookie cookie = new Cookie("JSESSIONID",sessionId);
-//            cookie.setPath();
-//            cookie.setMaxAge(0);
-//            response.addCookie(cookie);
+            //expiry 单位 秒
+            //      默认是 -1 关闭浏览器就没了
+            //             0  马上消失
+            String sessionId = session.getId();
+            Cookie cookie = new Cookie("JSESSIONID",sessionId);
+            cookie.setPath("/");
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
         }
 
 

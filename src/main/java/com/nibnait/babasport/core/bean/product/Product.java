@@ -44,7 +44,7 @@ public class Product implements Serializable {
 	//添加外部对象
 	private Img img;
 
-	public Img getImg() {
+    public Img getImg() {
 		return img;
 	}
 	public void setImg(Img img) {
