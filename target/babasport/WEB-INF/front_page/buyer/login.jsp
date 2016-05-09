@@ -40,7 +40,7 @@
         <form id="jvForm" action="/shopping/login.shtml" method="post">
             <input type="hidden" name="returnUrl" value="${param.directUrl}"/>
             <ul class="uls form">
-                <li id="errorName" class="errorTip" style="display:none">${error}</li>
+                <li id="errorName" class="errorTip" <c:if test="${empty error }">style="display:none"</c:if>>${error}</li>
                 <li><label for="username">用户名：</label>
 				<span class="bg_text">
 					<input type="text" id="username" name="username" maxLength="100"/>

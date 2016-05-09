@@ -3,6 +3,9 @@ package com.nibnait.babasport.core.controller;
 import com.nibnait.babasport.common.encode.Md5Pwd;
 import com.nibnait.babasport.common.web.session.SessionProvider;
 import com.nibnait.babasport.core.bean.user.Buyer;
+import com.nibnait.babasport.core.service.country.CityService;
+import com.nibnait.babasport.core.service.country.ProvinceService;
+import com.nibnait.babasport.core.service.country.TownService;
 import com.nibnait.babasport.core.service.user.BuyerService;
 import com.nibnait.babasport.core.web.Constants;
 import org.apache.commons.lang3.StringUtils;
@@ -30,7 +33,12 @@ public class ProfileController {
     private BuyerService buyerService;
     @Autowired
     private Md5Pwd md5Pwd;
-
+    @Autowired
+    private ProvinceService provinceService;
+    @Autowired
+    private CityService cityService;
+    @Autowired
+    protected TownService townService;
 
     //GET
     // 跳转到登陆页面
@@ -96,11 +104,21 @@ public class ProfileController {
         return "buyer/login";
     }
 
+    //我的订单
     @RequestMapping(value = "/buyer/index.shtml")
     public String index(){
         return "buyer/index";
     }
 
+    //个人资料
+    @RequestMapping(value = "/buyer/profile.shtml")
+    public String profile(HttpServletRequest request,ModelMap model){
 
+
+
+
+
+        return "buyer/profile";
+    }
 
 }

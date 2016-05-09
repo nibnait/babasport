@@ -3,7 +3,7 @@
 这是一个 基于maven的ssm整合项目。  
 开发环境：  
 	 - IntelliJ IDEA 15.0.1  
-	 - JDK 1.8.0——05 
+	 - JDK 1.8.0——05   
 	 - tomcat 7.0.69
 
 
@@ -97,14 +97,30 @@
 
 
 2. ${param.returnUrl}:自己从url中获取对应的参数
+3. 关于枚举： 
+	1. ${buyer.gender.name}	中文
+	2. ${buyer.gender}	对应的英文
+
+```
+<label for="gender">性　　别：</label> 
+<span class="word">
+	<input type="radio" name="gender" value="SECRECY" <c:if test="${buyer.gender == 'SECRECY' }">checked="checked"</c:if>/>保密
+	<input type="radio" name="gender" value="MAN" <c:if test="${buyer.gender == 'MAN' }">checked="checked"</c:if>/>男
+	<input type="radio" name="gender" value="WOMAN" <c:if test="${buyer.gender == 'WOMAN' }">checked="checked"</c:if>/>女
+</span>
+```
 
 3. 密码加密：
 
 加盐+MD5+Hexencode
 
 ```
-
-
+//加盐
+String password = pwd + new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+//MD5加密
+byte[] digest = MessageDigest.getInstance("MD5").digest(password.getBytes());
+//十六进制加密
+char[] encodeHex = Hex.encodeHex(digest);
 ```
 
 4. springmvc拦截器
