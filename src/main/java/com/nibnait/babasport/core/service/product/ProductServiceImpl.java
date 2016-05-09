@@ -6,15 +6,12 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
-import com.nibnait.babasport.common.web.FormatDateUtils;
-import com.nibnait.babasport.common.web.UploadUtils;
+import com.nibnait.babasport.common.FormatDateUtils;
 import com.nibnait.babasport.core.bean.product.Img;
 import com.nibnait.babasport.core.bean.product.Sku;
 import com.nibnait.babasport.core.query.product.ImgQuery;
 import com.nibnait.babasport.core.service.BaseServiceImpl;
-import com.sun.glass.ui.Size;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

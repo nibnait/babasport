@@ -1,4 +1,4 @@
-# babasport 
+# babasport 整理每天学到的技术点
 新巴巴运动网（10天）  
 这是一个 基于maven的ssm整合项目。  
 开发环境：  
@@ -79,10 +79,47 @@
 	对象bean重写的equals方法
 
 
-## day05 
+6. 页面静态化，使用[FreeMarker]()技术 生成商品详情页（完成上架）
 
-1. 页面静态化
-	 - 使用FreeMarker技术 生成商品详情页（完成上架）
 	 - 通过 implements **ServletContextAware**类，重写setServletContext(ServletContext servletContext)方法，通过**servletContext.getRealPath(name);**即可获得服务器下的任意目录的实际地址。
 
-2. asdf 
+
+## day05 用户模块
+1. Session共享 面向接口编程
+>
+ - ```HttpSession session = request.getSession();```//默认为true，如果request中有Session(用Cookie中的JESSIONID在request域中找)，则返回此Session，如果没有这创建一个新的Session返回。
+ - ```HttpSession session = request.getSession(false);```//request中有则返回Session，无则返回null
+
+----
+>
+ - ```request.getSession().getId();```//有则返回此request中的JESSIONID,无则创建个新的Session返回其id
+ - ```request.getRequestSessionId();```//返回url中的JSESSIONID
+
+
+2. ${param.returnUrl}:自己从url中获取对应的参数
+
+3. 密码加密：
+
+加盐+MD5+Hexencode
+
+```
+
+
+```
+
+4. springmvc拦截器
+
+中央处理器(DispatcherServlet)**<拦截器>**，中央调度各个器
+	 处理器映射器（根据Url， 找对应的handler）
+	 处理器适配器（执行handler）
+
+	 视图解析器（根据modelMap,填充页面（进行页面渲染））
+
+
+5. 
+>http://localhost:8080/buyer/index.shtml
+>
+>```request.getURI()```：/buyer/index.shtml  
+>```request.getURL()```：http://localhost:8080/buyer/index.shtml
+
+2. 购物车 面向对象编程

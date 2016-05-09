@@ -1,13 +1,8 @@
 package com.nibnait.babasport.core.controller.admin;
 
-import com.nibnait.babasport.common.web.FormatDateUtils;
 import com.nibnait.babasport.common.web.ResponseUtils;
 import com.nibnait.babasport.common.web.UploadUtils;
-import com.nibnait.babasport.core.web.Constants;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.WebResource;
 import net.fckeditor.response.UploadResponse;
-import org.apache.commons.io.FilenameUtils;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +13,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * 上传图片

@@ -89,7 +89,7 @@ function changePageNo(){
 			<td align="center">是</td>
 			<td align="center"><c:if test="${isShow == 0 }">下架</c:if><c:if test="${isShow == 1 }">上架</c:if></td>
 			<td align="center">
-			<a href="/product/detail.shtml?id=${entry.id}')" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="/product/delete.do?id=${entry.id }&name=${name}&isShow=${isShow}&brandId=${brandId}" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="/sku/list.do?productId=${entry.id}&pno=${entry.no}" class="pn-opt">库存</a>
+			<a href="/product/detail.shtml?id=${entry.id}" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="/product/delete.do?id=${entry.id }&name=${name}&isShow=${isShow}&brandId=${brandId}" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="/sku/list.do?productId=${entry.id}&pno=${entry.no}" class="pn-opt">库存</a>
 			</td>
 		</tr>
 	</c:forEach>

@@ -1,5 +1,6 @@
 package com.nibnait.babasport.core.controller;
 
+import com.nibnait.babasport.common.web.session.SessionProvider;
 import com.nibnait.babasport.core.bean.product.*;
 import com.nibnait.babasport.core.query.product.*;
 import com.nibnait.babasport.core.service.product.*;
@@ -33,10 +34,13 @@ public class FrontProductController {
     private FeatureService featureService;
     @Autowired
     private SkuService skuService;
+    @Autowired
+    private SessionProvider sessionProvider;
 
     //商品列表页面
     @RequestMapping(value = "/product/display/list.shtml")
     public String list(Integer pageNo, Integer brandId, String brandName, Integer typeId, String typeName, ModelMap model) {
+
 
 
         //加载商品属性

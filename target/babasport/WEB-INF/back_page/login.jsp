@@ -63,7 +63,7 @@ body{margin:0;padding:0;font-size:12px;background:url(${base}/res/jeecms/img/log
                     </tr>
                     <#if errorRemaining?? && errorRemaining<=0>
                     <tr>
-                    	<td colspan="2" align="center"><img src="${base}/captcha.svl" onclick="this.src='${base}/captcha.svl?d='+new Date()*1"/></td>
+                    	<td colspan="2" align="center"><img src="/captcha" onclick="this.src='/captcha?d='+new Date()*1"/></td>
                     </tr>
                     <tr>
                       <td height="40" align="right"><strong><@s.m "login.captcha"/>ï¼</strong></td>

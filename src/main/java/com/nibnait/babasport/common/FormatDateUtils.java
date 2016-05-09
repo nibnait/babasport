@@ -1,4 +1,4 @@
-package com.nibnait.babasport.common.web;
+package com.nibnait.babasport.common;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
