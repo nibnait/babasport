@@ -23,7 +23,7 @@
 <div class="left">
 <%@ include file="/WEB-INF/back_page/date.jsp" %>
      <ul class="w-lful">
-		<li><a target="rightFrame" href="order_right.jsp">货到付款</a></li>
+		<li><a target="rightFrame" href="/order/list.do?isPaiy=0">货到付款</a></li>
 		<li><a target="rightFrame" href="order_right.jsp">待付款</a></li>
 		<li><a target="rightFrame" href="order_right.jsp">已取消</a></li>
 		<li><a target="rightFrame" href="order_right.jsp">已付款</a></li>

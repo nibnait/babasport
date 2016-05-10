@@ -22,7 +22,7 @@ import com.nibnait.babasport.core.query.product.SkuQuery;
 public class SkuServiceImpl implements SkuService {
 
 	@Resource
-	private SkuDao skuDao;
+	SkuDao skuDao;
 	@Resource
 	private ColorService colorService;
 	@Resource
@@ -34,7 +34,7 @@ public class SkuServiceImpl implements SkuService {
 	 * @return
 	 */
 	public Integer addSku(Sku sku) {
-		return skuDao.addSku(sku);
+        return skuDao.addSku(sku);
 	}
 
 	/**
@@ -44,10 +44,14 @@ public class SkuServiceImpl implements SkuService {
 	public Sku getSkuByKey(Integer id) {
 
         Sku sku = skuDao.getSkuByKey(id);
+        //通过商品ID
         Product product = productService.getProductByKey(sku.getProductId());
-        sku.setProduct(product);
 
-		return sku;
+        sku.setProduct(product);
+        //颜色加载
+        sku.setColor(colorService.getColorByKey(sku.getColorId()));
+
+        return sku;
 	}
 	
 	@Transactional(readOnly = true)

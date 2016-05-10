@@ -1,6 +1,6 @@
 # babasport 整理每天学到的技术点
 新巴巴运动网（10天）  
-这是一个 基于maven的ssm整合项目。  
+这是一个 基于maven的SSM整合 demo项目。  
 开发环境：  
 	 - IntelliJ IDEA 15.0.1  
 	 - JDK 1.8.0——05   
@@ -43,8 +43,7 @@
 ## day03 商品管理模块
 1. 商品管理的添加：
  - 用```MultipartHttpServletRequest```接收图片
- - mybatis 标签：
-```useGeneratedKeys="true" keyProperty="id"```：返回 id主键
+
  - 往商品表添加数据的时候，注入的是Service 为了之后做分布式缓存的时候，刷新数据。
 
 
@@ -139,6 +138,13 @@ char[] encodeHex = Hex.encodeHex(digest);
 >```request.getURL()```：http://localhost:8080/buyer/index.shtml
 
 ## day06 购物车模块(面向对象编程)
+//判断Cookie中有没有购物车  
+//如果Cookie中还没有，则new一个BuyCart  
+ if (skuId != null) {
+            //往购物车中添加商品  
+//将购物车装满-->model.addAttribute("buyCart", buyCart);
+
+
 
 1. 存放位置：Cookie
 
@@ -156,12 +162,29 @@ char[] encodeHex = Hex.encodeHex(digest);
 
 
 4. Controller层：
-5. Service层：整合多个Dao对象，处理数据。
+5. Service层：整合多个Dao对象，处理数据。事物（Transactional）相关。
 
+## day07 订单模块
+1. 结算按钮（就不写那么多ajax校验了，直接把所有逻辑写后台了）  
+//1:判断是否登陆 --> 否则登陆  
+//2:判断购物车中是否有商品 --> 去首页(redirect:/shopping/buyCart.shtml)(用户点完结算，再返回的时候，看到的浏览器缓存，误会)  
+//3:判断购物车中的各个购物项是否还有库存 --> 如果库存小于购买数量，直接删除此商品。  
+//4:再判断购物车是否为空    
+//5:收货地址加载
 
+ - fn:length()
+ - fn:substring(str,startIndex,endIndex)
 
+2. 提交订单(保存Order、Detail 二张表)  
+mybatis 自动生成主键标签：
+	- ```useGeneratedKeys="true" keyProperty="id"```：返回 id主键
+	- ```<selectKey order="@1" resultType="@2" KeyProperty="id">select LAST_INSERT_ID()</selectKey>```
+ 		- @1:BEFORE(Oracle数据库先生成ID，后生成数据)
+ 		- @1:AFTER(MySQL先生成数据，后生成ID)
+ 		- @2:此表主键的类型
 
-
+3. 后台-订单列表
+4. 后天-订单查看
 
 
 

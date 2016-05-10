@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 public class TestTbServiceImpl implements TestTbService {
 
     @Resource
-    private TestTbDao testTbDao;
+    TestTbDao testTbDao;
 
     public void addTestTb(TestTb testTb) {
         testTbDao.addTestTb(testTb);

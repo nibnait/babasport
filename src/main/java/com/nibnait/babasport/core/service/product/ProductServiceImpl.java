@@ -31,7 +31,7 @@ import com.nibnait.babasport.core.query.product.ProductQuery;
 public class ProductServiceImpl extends BaseServiceImpl implements ProductService{
 
     @Resource
-    private ProductDao productDao;
+    ProductDao productDao;
     @Resource
     private ImgService imgService;
     @Resource

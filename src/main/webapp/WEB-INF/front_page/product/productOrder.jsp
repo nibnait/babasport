@@ -46,15 +46,15 @@ $(function(){
 <li title="2.填写核对订单信息" class="here">2.填写核对订单信息</li>
 <li title="3.成功提交订单">3.成功提交订单</li>
 </ul>
-<form action="confirmOrder.jsp" method="post">
+<form action="/buyer/confirmOrder.shtml" method="post">
 
 <div class="w ofc case">
 	<h2 class="h2 h2_r mt"><em title="收货人信息">收货人信息      [<a href="#"><font style="color:blue;">修改</font></a>]</em><cite></cite></h2>
-	<div class="box bg_white">
-		<dl class="distr">
-			<dd>范冰冰   13888888888 <span style="margin-left: 30px">北京海淀区西三旗 XXXXXXXXXXXXXXXXXXXXXXXXXXX</span></dd>
-		</dl>
-	</div>
+    <div class="box bg_white">
+        <dl class="distr">
+            <dd>${addr.name }   ${addr.phone } <span style="margin-left: 30px">${addr.city } ${addr.addr }</span></dd>
+        </dl>
+    </div>
 	
 	<div class="box bg_white pb">
 		<dl class="distr">
@@ -116,36 +116,18 @@ $(function(){
 		</tr>                                                                                           
 		</thead>
 		<tbody>
-			<tr>
-				<td>20141028114510004</td>
-				<td class="img48x20">
-					<span class="inb"><img src="/res/img/pic/ppp0.jpg"></span>
-					<a target="block" href="javascript:void(0);"> 喜悦2014秋冬新款瑜伽服三件套装 韩版女士瑜珈舞蹈服 愈--西瓜红--S</a>
-				</td>
-				<td>￥333.01元</td>
-				<td>x1</td>
-				<td>88</td>
-			</tr>
-			<tr>
-				<td>20141028114510004</td>
-				<td class="img48x20">
-					<span class="inb"><img src="/res/img/pic/ppp0.jpg"></span>
-					<a target="block" href="javascript:void(0);"> 喜悦2014秋冬新款瑜伽服三件套装 韩版女士瑜珈舞蹈服 愈--典雅灰--M</a>
-				</td>
-				<td>￥235.0元</td>
-				<td>x1</td>
-				<td>333</td>
-			</tr>
-			<tr>
-				<td>20141028114510004</td>
-				<td class="img48x20">
-					<span class="inb"><img src="/res/img/pic/ppp0.jpg"></span>
-					<a target="block" href="javascript:void(0);"> 喜悦2014秋冬新款瑜伽服三件套装 韩版女士瑜珈舞蹈服 愈--草绿--XL</a>
-				</td>
-				<td>￥121.0元</td>
-				<td>x1</td>
-				<td>66</td>
-			</tr>
+        <c:forEach items="${buyCart.items }" var="item">
+            <tr>
+                <td>${item.sku.product.no }</td>
+                <td class="img48x20">
+                    <span class="inb"><img src="${item.sku.product.img.allUrl }"></span>
+                    <a target="block" href="javascript:void(0);">${fn:substring(item.sku.product.name,0,30) }--${item.sku.color.name }--${item.sku.size }</a>
+                </td>
+                <td>￥${item.sku.skuPrice }元</td>
+                <td>x${item.amount }</td>
+                <td>${item.sku.stockInventory }</td>
+            </tr>
+        </c:forEach>
 		</tbody>
 		</table>
 	</div>
@@ -154,14 +136,14 @@ $(function(){
 		<div class="tl"></div><div class="tr"></div>
 		<div class="ofc">
 			<div class="r">
-				<dl class="total">
-					<dt>订单金额：<cite>(共<var id="totalNum">3</var>个商品)</cite></dt>
-					<dd><em class="l">商品金额：</em>￥<var>689.01</var></dd>
-					<dd><em class="l">返现：</em>￥<var>0.00</var></dd>
-					<dd><em class="l">运费：</em>￥<var>0.0</var></dd>
-					<dd class="orange"><em class="l">应付总额：</em>￥<var id="totalMoney">689.01</var></dd>
-					<dd class="alg_c"><input type="submit" class="hand btn136x36a" value="提交订单" id="submitOrderID"></dd>
-				</dl>
+                <dl class="total">
+                    <dt>订单金额：<cite>(共<var id="totalNum">${buyCart.productAmount }</var>个商品)</cite></dt>
+                    <dd><em class="l">商品金额：</em>￥<var>${buyCart.productPrice }</var></dd>
+                    <dd><em class="l">返现：</em>￥<var>0.00</var></dd>
+                    <dd><em class="l">运费：</em>￥<var>${buyCart.fee }</var></dd>
+                    <dd class="orange"><em class="l">应付总额：</em>￥<var id="totalMoney">${buyCart.totalPrice }</var></dd>
+                    <dd class="alg_c"><input type="submit" class="hand btn136x36a" value="提交订单" id="submitOrderID"></dd>
+                </dl>
 			</div>
 		</div>
     </div>

@@ -19,7 +19,7 @@ import java.util.List;
 public class BrandServiceImpl implements BrandService {
 
     @Resource
-    private BrandDao brandDao;
+    BrandDao brandDao;
 
     public List<Brand> getBrandList(BrandQuery brandQuery) {
         return brandDao.getBrandList(brandQuery);

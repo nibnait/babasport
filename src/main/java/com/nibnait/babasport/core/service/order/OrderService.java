@@ -2,6 +2,7 @@ package com.nibnait.babasport.core.service.order;
 
 import java.util.List;
 
+import com.nibnait.babasport.core.bean.BuyCart;
 import com.nibnait.common.page.Pagination;
 import com.nibnait.babasport.core.bean.order.Order;
 import com.nibnait.babasport.core.query.order.OrderQuery;
@@ -17,7 +18,7 @@ public interface OrderService {
 	 * 
 	 * @return
 	 */
-	public Integer addOrder(Order order);
+	public Integer addOrder(Order order, BuyCart buyCart);
 
 	/**
 	 * 根据主键查询
