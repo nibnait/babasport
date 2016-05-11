@@ -9,7 +9,7 @@
         function uploadPic() {
             //定义参数
             var options = {
-                url: "/upload/uploadPic.do",
+                url: "/upload/uploadBrandPic.do",
                 dataType: "json",
                 type: "post",
                 success: function (data) {

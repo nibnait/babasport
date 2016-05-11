@@ -4,14 +4,25 @@
 开发环境：  
 	 - IntelliJ IDEA 15.0.1  
 	 - JDK 1.8.0——05   
-	 - tomcat 7.0.69
-
-
+	 - apache-tomcat-7.0.69
+	 - apache-maven-3.3.9
 
 [TOC]
 
+1. Mysql主从复制-双主结构
+ - 读写分离
+ - 主有变化，调动从的触发器，并以二进制形式 写入log日志中
 
-##day01 系统框架搭建
+2. 解决高并发：
+	1. 硬件：NetScaler、F5、Radware、Array
+	2. 软件：LVS+keepalived、**Nginx**、apache+JK
+	 - LVS对比Nginx：
+	 - LVS 的负载度高、稳定度高、服务器性能要求低
+	 - Nginx工作在应用层 功能多（可缓存一些静态文件）
+
+
+## day01 系统框架搭建
+
 1. 商品列表页的优化方案：  
  - 1. 整合Lucene+Solr 建立索引，进行全文检索  
  - 2. 页面缓存（Os）  
@@ -20,6 +31,7 @@
 
 2. 商品详情页（单品页）：  
  - 页面静态化技术 Freemarker
+
 
 ## day02 品牌模块开发
 1. 查询： 条件+分页
@@ -115,7 +127,7 @@
 
 ```
 //加盐
-String password = pwd + new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+String password = pwd + UUID;
 //MD5加密
 byte[] digest = MessageDigest.getInstance("MD5").digest(password.getBytes());
 //十六进制加密
@@ -175,7 +187,7 @@ char[] encodeHex = Hex.encodeHex(digest);
  - fn:length()
  - fn:substring(str,startIndex,endIndex)
 
-2. 提交订单(保存Order、Detail 二张表)  
+2. 提交订单(保存Order、Detail二张表 【存的是购物车的快照】)  
 mybatis 自动生成主键标签：
 	- ```useGeneratedKeys="true" keyProperty="id"```：返回 id主键
 	- ```<selectKey order="@1" resultType="@2" KeyProperty="id">select LAST_INSERT_ID()</selectKey>```
@@ -186,8 +198,16 @@ mybatis 自动生成主键标签：
 3. 后台-订单列表
 4. 后天-订单查看
 
+## day08
+1. 搭建Lvs+Keepalived负载均衡解决高并发
+2. 搭建 MySQL 主从复制
+3. 搭建Memcache缓存服务器（全内存级）
+4. java接口实现和Memcache缓存服务器进行交流
+	 - sockIOPool	将自己的引用放在了自己的构造器中了【高端】
+5. 手动配置SpringAop进行切面，:@Transcation
+	（在查数据库之前 先切到缓存服务器）
+	 - 切面规则【环绕(手动控制没有数据时，该回到哪一层)、前置(方法前 进切面，自动回service层)、后置(方法前 进切面，自动回Controller层)】
+	 - 数据库变更信息，**缓存服务器的同步**
+6. SpringIOC: @AutoWare
+7. 数据库的水平拆封，库表散列(Hash算法对数据进行一个路由)
 
-
-## ？？？（一些逻辑上的问题）
- - 如果用户删除了订单
- - 如果商家删除了商品，然而用户已经下单。

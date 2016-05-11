@@ -108,5 +108,7 @@
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-client:1.18.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.18.1" level="project" />
     <orderEntry type="library" name="Maven: com.nibnait:common-pagination:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.danga:memcached:2.6.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache:commons.pool:1.0" level="project" />
   </component>
 </module>

@@ -2,12 +2,14 @@ package com.nibnait.babasport.core.bean.product;
 
 import com.nibnait.babasport.core.web.Constants;
 
+import java.io.Serializable;
+
 /**
  * 品牌
  * @author lx
  *
  */
-public class Brand {
+public class Brand implements Serializable{
 
 	private Integer id;
 	private String name;

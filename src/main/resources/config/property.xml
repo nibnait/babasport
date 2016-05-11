@@ -10,14 +10,13 @@
      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-	<!-- 读取jdbc配置 -->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<!-- jdbc配置 -->
 				<value>classpath:properties/jdbc.properties</value>
 				<!-- memcached配置 -->
-
+                <value>classpath:properties/memcached.properties</value>
 			</list>
 		</property>
 	</bean>

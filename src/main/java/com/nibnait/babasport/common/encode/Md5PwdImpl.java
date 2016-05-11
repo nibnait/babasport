@@ -1,5 +1,6 @@
 package com.nibnait.babasport.common.encode;
 
+import com.nibnait.common.page.Pagination;
 import org.apache.commons.codec.binary.Hex;
 
 import java.security.MessageDigest;
@@ -14,6 +15,8 @@ public class Md5PwdImpl implements Md5Pwd {
     public String  encode(String password){
         String algorithm = "MD5";
         //加盐所谓加盐就是在用户密码的基础上按照某一规则添加不规律的字符
+        //并保存起来，保证下次加密的盐值相同
+
         MessageDigest instance = null;
         try {
             instance = MessageDigest.getInstance(algorithm);
