@@ -26,7 +26,7 @@
         <property name="interceptors">
             <list>
                 <bean class="com.nibnait.babasport.core.web.SpringmvcInterceptor">
-                    <property name="adminId" value="1"/>
+                    <property name="adminId" value="0"/>
                 </bean>
             </list>
         </property>

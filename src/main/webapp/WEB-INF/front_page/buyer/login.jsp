@@ -55,8 +55,8 @@
 				<span class="bg_text small">
 					<input type="text" id="captcha" name="captcha" maxLength="7"/>
 				</span>
-                    <img src="/captcha" onclick="this.src='/captcha?d='+new Date()" class="code" alt="换一张"/><a
-                            href="javascript:void(0);" onclick="$('.code').attr('src','/captcha?d='+new Date())"
+                    <img src="/captcha.do" onclick="this.src='/captcha?d='+new Date()" class="code" alt="换一张"/><a
+                            href="javascript:void(0);" onclick="$('.code').attr('src','/captcha.do?d='+new Date())"
                             title="换一张">换一张</a></li>
                 <li>
                     <label for="">&nbsp;</label><input type="submit" value="登 录" class="hand btn66x23"/>

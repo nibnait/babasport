@@ -209,5 +209,8 @@ mybatis 自动生成主键标签：
 	 - 切面规则【环绕(手动控制没有数据时，该回到哪一层)、前置(方法前 进切面，自动回service层)、后置(方法前 进切面，自动回Controller层)】
 	 - 数据库变更信息，**缓存服务器的同步**
 6. SpringIOC: @AutoWare
-7. 数据库的水平拆封，库表散列(Hash算法对数据进行一个路由)
+7. Session共享：
+	 - CacheSessionProvider
+ 
+8. 数据库的水平拆封，库表散列(Hash算法对数据进行一个路由)
 

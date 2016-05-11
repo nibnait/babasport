@@ -36,7 +36,7 @@ public class FrontOrderController {
     @RequestMapping(value = "/buyer/confirmOrder.shtml")
     public String confirmOrder(Order order, HttpServletRequest request, HttpServletResponse response){
 
-        Buyer buyer = (Buyer) sessionProvider.getAttribute(request, Constants.BUYER_SESSION);
+        Buyer buyer = (Buyer) sessionProvider.getAttribute(request, Constants.BUYER_SESSION,response);
         order.setBuyerId(buyer.getUsername());
         BuyCart buyCart = loadBuyCartFromCookie(request);
         //保存订单   订单详情  二张表

@@ -11,12 +11,12 @@ import java.io.Serializable;
  */
 public class HttpSessionProvider implements SessionProvider{
 
-    public void setAttribute(HttpServletRequest request, String name, Serializable value) {
+    public void setAttribute(HttpServletRequest request, String name, Serializable value,HttpServletResponse response) {
         HttpSession session = request.getSession();
         session.setAttribute(name,value);
     }
 
-    public Serializable getAttribute(HttpServletRequest request, String name) {
+    public Serializable getAttribute(HttpServletRequest request, String name,HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         if (session!=null) {
             return (Serializable) session.getAttribute(name);
@@ -44,7 +44,7 @@ public class HttpSessionProvider implements SessionProvider{
 
     }
 
-    public String getSessionId(HttpServletRequest request) {
+    public String getSessionId(HttpServletRequest request,HttpServletResponse response) {
         return request.getSession().getId();
     }
 }

@@ -143,7 +143,7 @@ public class CartController {
     public String trueBuy(HttpServletRequest request,HttpServletResponse response,ModelMap model){
 
         //1:判断是否登陆
-        Buyer buyer = (Buyer) sessionProvider.getAttribute(request,Constants.BUYER_SESSION);
+        Buyer buyer = (Buyer) sessionProvider.getAttribute(request,Constants.BUYER_SESSION,response);
         if (buyer != null){
             //2:判断购物车中是否有商品
             Cookie[] cookies = request.getCookies();

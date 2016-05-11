@@ -9,12 +9,12 @@ import java.io.Serializable;
  */
 public interface SessionProvider {
 
-    public void setAttribute(HttpServletRequest request, String name, Serializable value);
+    public void setAttribute(HttpServletRequest request, String name, Serializable value,HttpServletResponse response);
 
-    public Serializable getAttribute(HttpServletRequest request,String name);
+    public Serializable getAttribute(HttpServletRequest request,String name,HttpServletResponse response);
 
     public void logout(HttpServletRequest request, HttpServletResponse response);
 
-    public String getSessionId(HttpServletRequest request);
+    public String getSessionId(HttpServletRequest request, HttpServletResponse response);
 
 }

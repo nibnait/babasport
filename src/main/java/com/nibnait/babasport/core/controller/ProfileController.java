@@ -69,10 +69,10 @@ public class ProfileController {
         放进Session   跳转ReturnUrl
      */
     @RequestMapping(value = "/shopping/login.shtml",method = RequestMethod.POST)
-    public String login(Buyer buyer, String captcha, String returnUrl, ModelMap model, HttpServletRequest request){
+    public String login(Buyer buyer, String captcha, String returnUrl, ModelMap model, HttpServletRequest request,HttpServletResponse response){
 
         if(StringUtils.isNotBlank(captcha)){
-            String GenerateCaptcha = (String) sessionProvider.getAttribute(request,"captcha");
+            String GenerateCaptcha = (String) sessionProvider.getAttribute(request,"captcha",response);
             if (GenerateCaptcha.equals(captcha.toUpperCase())){
 
                 if(buyer!=null && StringUtils.isNotBlank(buyer.getUsername())){
@@ -82,7 +82,7 @@ public class ProfileController {
                         if (b!=null){
                             if (md5Pwd.encode(buyer.getPassword()).equals(b.getPassword())){
 
-                                sessionProvider.setAttribute(request, Constants.BUYER_SESSION,b);
+                                sessionProvider.setAttribute(request, Constants.BUYER_SESSION,b,response);
                                 if (StringUtils.isNotBlank(returnUrl)){
                                     return "redirect:"+returnUrl;
                                 }else {
@@ -121,9 +121,9 @@ public class ProfileController {
 
     //个人资料
     @RequestMapping(value = "/buyer/profile.shtml")
-    public String profile(HttpServletRequest request,ModelMap model){
+    public String profile(HttpServletRequest request,ModelMap model,HttpServletResponse response){
 
-        Buyer b = (Buyer) sessionProvider.getAttribute(request,Constants.BUYER_SESSION);
+        Buyer b = (Buyer) sessionProvider.getAttribute(request,Constants.BUYER_SESSION,response);
         Buyer buyer = buyerService.getBuyerByKey(b.getUsername());
         model.addAttribute("buyer",buyer);
 

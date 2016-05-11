@@ -18,6 +18,7 @@ public class CreateCaptcha {
     private final static int FontNum = 28;				//字体大小
     private final static int startX = 2;
     private final static int startY = 30;
+    private static Color backColor = Color.white;
 
     /**
      * 绘制验证码
@@ -27,7 +28,7 @@ public class CreateCaptcha {
     public static BufferedImage getCaptcha(String s){
         BufferedImage bImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = (Graphics2D) bImg.getGraphics();
-        Color backColor = backColor();
+        backColor = backColor();
         g.setColor(backColor);
         Color reColor = reColor(g.getColor());
         g.setFont(new Font(null, Font.BOLD, FontNum));
@@ -37,7 +38,7 @@ public class CreateCaptcha {
         drawBug(g);
         drawLines(g);
         g.dispose();
-        return bImg;//SinWaveFilter(bImg);
+        return SinWaveFilter(bImg);
     }
     //绘制验证码字符串
     private static void drawFont(Graphics2D g, String s) {
@@ -60,7 +61,7 @@ public class CreateCaptcha {
         int h = img.getHeight();
         BufferedImage outImg = new BufferedImage(w, h, img.getType());
         Graphics g = outImg.getGraphics();
-        g.setColor(Color.white);
+        g.setColor(backColor);
         g.fillRect(0, 0, w, h);
         g.dispose();
         //幅度倍数
@@ -80,7 +81,8 @@ public class CreateCaptcha {
     }
     //绘制背景色
     private static Color backColor(){
-        return new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+//        return new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+        return new Color(222,222,222);
     }
     //背景色的反色
     private static Color reColor(Color color){
