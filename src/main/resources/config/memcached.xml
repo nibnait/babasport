@@ -23,12 +23,12 @@
         </constructor-arg>
         <property name="servers">
             <list>
-                <value>${servers}</value>
+                <value>${memcached.servers}</value>
             </list>
         </property>
         <property name="weights">
             <list>
-                <value>${weights}</value>
+                <value>${memcached.weights}</value>
             </list>
         </property>
     </bean>
